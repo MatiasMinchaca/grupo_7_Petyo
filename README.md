@@ -1,3 +1,4 @@
+![logotipo petshop2](https://user-images.githubusercontent.com/85649241/124056716-9c2b4700-d9fc-11eb-8a0d-26a8033ef8fd.png)
 ¡Bienvenidos a **Petyo**!, somos un comercio dedicado al cuidado de tu mascota. En nuestra página podrás encontrar desde comida hasta juguetes y artículos de marcas seleccionadas. También contamos con una sección exclusiva para nuestra comunidad donde podrás compartir tus consejos con otros clientes o recibirlos de ellos. Asesórate de la mejor manera con nuestros profesionales las 24 horas.
 
 **Público objetivo:**
