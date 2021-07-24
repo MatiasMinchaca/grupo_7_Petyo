@@ -12,7 +12,6 @@
 
 - Hola! me llamo **Patricio Andres Di Bastiano**. Tengo 34 años, soy de la ciudad de La Plata, Buenos Aires,Argentina.
 
-- Hola! me llamo **Gastón Díaz**...
 
 **Sitios de referencia:**
 
