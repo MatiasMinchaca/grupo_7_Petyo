@@ -1,0 +1,173 @@
+.forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-container{
+    height: 200px;
+    width: 300px;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    position: relative;
+    margin-top: 130px;
+    font-family: 'Roboto', sans-serif;
+    transition: all 1s;
+}
+.form-container .floating-image-form{
+    max-width: 250px;
+    height: 226px;
+    position: absolute;
+    top: -145px;
+    left: 40px;
+    transition: all 1s;
+}
+.form-container .logo-form{
+    max-width: 100px;
+    margin-left: 6px;
+}
+.form-container .close{
+    border:0;
+    background: none;
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    font-size: 18px;
+    color: black;
+}
+
+.form-container .email-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-container .email-form input{
+    margin-top: 15px;
+    width: 258px;
+    height: 28px;
+    font-size: 16px;
+    border-bottom: solid 1px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    align-items: center;
+    transition: all 1s;
+}
+.form-container .email-form input:hover{
+    border-bottom: solid 1px gray;
+}
+.form-container .email-form input:focus{
+    outline: none;
+}
+.form-container .error-message{
+    margin-left: 21px;
+    color: red;
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+.form-container .create-account{
+    margin-left: 21px;
+    margin-top: 5px;
+}
+.form-container .create-account a{
+    text-decoration: none;
+    color: #0067b8;
+}
+.form-container .keep-sesion{
+    margin-left: 21px;
+    margin-top: 5px;
+}
+.form-container .keep-sesion input{
+    position: relative;
+    top: 2px;
+}
+.form-container .button-forms{
+    width: 90px;
+    border: 0;
+    background-color: var(--mantis2);
+    height: 25px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 16px;
+}
+.form-container .button-forms:hover{
+    background-color: var(--mantis);
+}
+.form-container .button-forms a{
+    color: white;
+}
+.recovery-options{
+    width: 300px;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    height: 40px;
+    margin-top: 20px;
+    transition: all 1s;
+}
+.recovery-options{
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+
+}
+.recovery-options:hover{
+    background-color: rgb(214, 208, 208);
+}
+.recovery-options i{
+    color: var(--white);
+    font-size: 14px;
+    text-shadow: 0 0 6px rgb(0, 0, 0);
+}
+.recovery-options p{
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 8px;
+}
+
+/* Login Confirmation */
+.form-container .write-password{
+    font-size: 18px;
+    position: absolute;
+    top: 60px;
+    left: 21px;
+}
+.form-container .login-button a{
+    font-size: 14px;
+}
+
+/* Tablet */
+@media screen and (min-width: 475px) {
+    .form-container{
+        height: 250px;
+        width: 350px;
+        max-width: 350px;
+    }
+    .form-container .floating-image-form{
+        height: 245px;
+        top: -157px;
+        left: 44px;
+    }
+    .form-container .email-form input{
+        width: 300px;
+    }
+    .form-container .error-message{
+        margin-left: 25px;
+    }
+    .form-container .create-account{
+        margin-left: 25px;
+    }
+    .recovery-options{
+        width: 350px;
+        max-width: 350px;
+        height: 50px;
+    }
+}
