@@ -1,9 +1,3 @@
-.forms{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 .form-container{
     height: 200px;
     width: 300px;
@@ -29,26 +23,25 @@
     max-width: 100px;
     margin-left: 6px;
 }
-.form-container .close{
-    border:0;
-    background: none;
+.form-container .close img{
+    color: #a70e0e;
+    max-width: 40px;
     position: absolute;
-    top: 2px;
+    top: 5px;
     right: 5px;
-    font-size: 18px;
-    color: black;
+    transition: all 1s;
 }
-
 .form-container .email-form{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 1s;
 }
 .form-container .email-form input{
     margin-top: 15px;
     width: 258px;
     height: 28px;
-    font-size: 16px;
+    font-size: 14px;
     border-bottom: solid 1px;
     border-top: 0;
     border-left: 0;
@@ -57,7 +50,7 @@
     transition: all 1s;
 }
 .form-container .email-form input:hover{
-    border-bottom: solid 1px gray;
+    border-bottom: solid 1px var(--mantis);
 }
 .form-container .email-form input:focus{
     outline: none;
@@ -70,12 +63,17 @@
 }
 
 .form-container .create-account{
+    font-style: normal;
+    font-weight: 400;
     margin-left: 21px;
     margin-top: 5px;
 }
 .form-container .create-account a{
     text-decoration: none;
     color: #0067b8;
+}
+.form-container .create-account a:hover{
+    text-decoration:underline;
 }
 .form-container .keep-sesion{
     margin-left: 21px;
@@ -94,6 +92,10 @@
     bottom: 5px;
     right: 5px;
     font-size: 16px;
+    transition: all 1s;
+}
+.form-container .button-forms:hover{
+    text-shadow: 0 0 2px black;
 }
 .form-container .button-forms:hover{
     background-color: var(--mantis);
@@ -117,6 +119,7 @@
 .recovery-options{
     font-family: 'Roboto', sans-serif;
     background-color: white;
+    
 
 }
 .recovery-options:hover{
@@ -128,6 +131,8 @@
     text-shadow: 0 0 6px rgb(0, 0, 0);
 }
 .recovery-options p{
+    color: black;
+    font-weight: 599;
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
     margin-left: 8px;
@@ -135,7 +140,7 @@
 
 /* Login Confirmation */
 .form-container .write-password{
-    font-size: 18px;
+    font-size: 17px;
     position: absolute;
     top: 60px;
     left: 21px;
@@ -147,7 +152,7 @@
 /* Tablet */
 @media screen and (min-width: 475px) {
     .form-container{
-        height: 250px;
+        height: 225px;
         width: 350px;
         max-width: 350px;
     }
@@ -158,16 +163,96 @@
     }
     .form-container .email-form input{
         width: 300px;
+        font-size: 15px;
     }
     .form-container .error-message{
         margin-left: 25px;
+        font-size: 11px;
     }
     .form-container .create-account{
         margin-left: 25px;
+        font-size: 13px;
     }
     .recovery-options{
         width: 350px;
         max-width: 350px;
+        height: 45px;
+    }
+    .recovery-options i{
+        font-size: 15px;
+    }
+    .recovery-options p{
+        font-size: 14px;
+    }
+    .form-container .button-forms{
+        width: 100px;
+        height: 30px;
+        bottom: 10px;
+        right: 10px;
+        font-size: 17px;
+    }
+    /* Login Confirmation */
+    .form-container .logo-form{
+        margin-left: 10px;
+    }
+    .form-container .write-password{
+        font-size: 17px;
+        position: absolute;
+        top: 60px;
+        left: 25px;
+    }
+    .form-container .keep-sesion{
+        margin-left: 25px;
+        margin-top: 6px;
+    }
+    .form-container .login-button a{
+        font-size: 15px;
+    }
+}
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    .form-container{
+        height: 250px;
+        width: 400px;
+        max-width: 400px;
+    }
+    .form-container .floating-image-form{
+        height: 260px;
+        top: -166px;
+        left: 74px;
+    }
+    .form-container .logo-form{
+        margin-left: 10px;
+    }
+    .form-container .email-form input{
+        width: 350px;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+    .form-container .error-message{
+        margin-left: 25px;
+        font-size: 12px;
+    }
+    .form-container .create-account{
+        margin-left: 25px;
+        font-size: 14px;
+    }
+    .recovery-options{
+        width: 400px;
+        max-width: 400px;
         height: 50px;
+    }
+    .recovery-options i{
+        font-size: 16px;
+    }
+    .recovery-options p{
+        font-size: 15px;
+    }
+    .form-container .button-forms{
+        width: 108px;
+        height: 33px;
+        bottom: 11px;
+        right: 13px;
+        font-size: 19px;
     }
 }
