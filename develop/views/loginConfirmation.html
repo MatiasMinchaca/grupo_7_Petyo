@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Confirmación de login</title>
     <link rel="stylesheet" href="styleSheet/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,12 @@
     <div class="form-container">
         <img src="/images/floatingImage.png" alt="" class="floating-image-form">
         <img src="/images/logo.png" alt="" class="logo-form">
-        <a href="#" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
-        <form action="" class="email-form"><input type="email" placeholder="Correo electronico o teléfono"></form>
-        <h6 class="error-message">No hay ninguna cuenta asociada a ese correo electronico</h6>
-        <h6 class="create-account">¿No tienes una cuenta?<a href="/register">Cree una.</a></h6>
-        <button class="button-forms"><a href="/loginConfirmation">Siguiente</a></button>
+        <a href="/login" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
+        <h2 class="write-password">Escribir Contraseña</h2>
+        <form action="" class="email-form"><input type="password" placeholder="Contraseña"></form>
+        <h6 class="error-message">Contraseña incorrecta</h6>
+        <h6 class="keep-sesion"><input type="checkbox">Mantener sesión iniciada</h6>
+        <button class="button-forms login-button"><a href="/">iniciar sesión</a></button>
     </div>
     <a href="/register" class="recovery-options">
         <i class="fas fa-key"></i><p>Opciones de recuperacion de tu cuenta</p>

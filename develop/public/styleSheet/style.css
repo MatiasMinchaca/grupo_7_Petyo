@@ -3,3 +3,14 @@
 @import url('register.css');
 @import url('productDetail.css');
 @import url('shoppingCart.css');
+@import url('variables.css');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
