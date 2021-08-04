@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+} 
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+/* HEADER */
+
+header.header-agus {
+    /* background-color: rgb(49, 133, 0) ;  */
+    background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
+    padding: 5px 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header.header-agus div.banner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+header.header-agus div.banner div.logo {
+    width: 130px;
+}
+
+header.header-agus div.banner div.logo a img {
+    width: 100%;
+}
+
+header.header-agus div.banner div.lupa-menu {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+header.header-agus div.banner div.menu {
+    display: block;
+}
+
+header.header-agus div.banner div.menu a i {
+    font-size: 30px;
+    color: var(--kombuGreen);
+    opacity: 0.8;
+    margin-left: 15px;
+}
+
+header.header-agus div.banner div.lupa a i {
+    font-size: 30px;
+    opacity: 0.8;
+    color: var(--kombuGreen)
+}
+
+/* MAIN */
+
+main section.body h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: var(--davysGray);
+    text-align: center;
+    padding-top: 15px;
+}
+
+
+footer article.redes h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+
+footer article.redes div a i {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+footer article.lista {
+    display: none;
+}
+
+footer article.redes h3 {
+    color: rgb(196, 196, 196);
+    padding: 10px 0;
+}
+
+footer article.redes div a {
+    color: rgb(196, 196, 196);
+    margin: 0 5px;
+}
+
+footer article.redes p {
+    color: rgb(196, 196, 196);
+    font-size: 15px;
+}
+
+footer article div.ayuda {
+    padding-bottom: 10px;
+}
