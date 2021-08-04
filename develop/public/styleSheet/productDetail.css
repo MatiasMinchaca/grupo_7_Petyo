@@ -1,0 +1,83 @@
+/* Header */
+.carbody {
+    background-color: green;
+}
+
+.log2 {
+    display: flex;
+    background-position: left;
+    width: 35%;
+}
+
+/* Main */
+.pruebacar {
+    background-color: white;
+    display: flex;
+    width: 100%;
+    top: 75%
+}
+
+.dogcar {
+    padding: 25px;
+    display: inline-block;
+    width: 70%;
+    top: 70%;
+}
+
+/*.descripcar {
+    display: flex;
+    background-position: center;
+    margin: 25px;
+}*/
+
+.bot1 {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px 0px 5px 0px;
+}
+
+.bot1:hover {
+    background: teal;
+}
+
+.cardca {
+    display: flex;
+    width: 10%;
+}
+
+.descricar {
+    background-color: rosybrown;
+    border: 3px;
+    color: black;
+    padding: 15px 32px;
+    text-align: justify;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.domo1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.precar {
+    font-size: 50px;
+}
+
+/* Footer */
+.carfooter {
+    background-color: grey;
+    display: flex;
+    width: 100%;
+    top: 75%;
+}
