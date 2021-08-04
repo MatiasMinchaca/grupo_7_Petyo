@@ -156,28 +156,51 @@ header.header-agus div.banner div.lupa a i {
   position: relative;
 }
 
+/* Breakpoint */
+
 .home main div.comunidad div.comunidad-comunidad,
 .home main div.comunidad div.comunidad-quienes-somos {
     width: 280px;
     position: relative;
-    display: none;
+     display: none; 
   }
 
-  .home main div.comunidad div.comunidad-alimentacion h2 {
+  .home main div.comunidad div.comunidad-comunidad h2 {
     color: white;
     position: absolute;
-    left: 25px;
+    left: 50px;
     top: 25px;
     text-shadow: 0px 5px 10px rgb(37, 37, 37);;
 }
 
+.home main div.comunidad div.comunidad-quienes-somos h2 {
+    color: white;
+    position: absolute;
+    left: 13px;
+    top: 25px;
+    text-shadow: 0px 5px 10px rgb(37, 37, 37);;
+}
+
+
+
+  .home main div.comunidad div.comunidad-alimentacion h2 {
+    color: white;
+    position: absolute;
+    left: 38px;
+    top: 25px;
+    text-shadow: 0px 5px 10px rgb(37, 37, 37);;
+}
+
+
 /* Productos destacados */
+
+/* Producto 1 */
 
 .home main div.productos {
     display: flex;
     width: 100%;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 
 }
 
@@ -187,8 +210,6 @@ header.header-agus div.banner div.lupa a i {
     margin: 10px 0 ;
     border-radius: 3%;
 }
-
-
 
 .home main div.productos article.producto-uno div.img {
     width: 100%;
@@ -223,7 +244,140 @@ header.header-agus div.banner div.lupa a i {
     font-size: 15px;
     font-weight: 500;
 }
+ 
+/* Brakpoint */
 
+/* Producto 2 */
+
+.home main div.productos article.producto-dos{
+    width: 275px;
+    box-shadow: 0px 5px 10px rgb(100, 100, 100);
+    margin: 10px 0 ;
+    border-radius: 3%;
+    display: none;
+}
+
+.home main div.productos article.producto-dos div.img {
+    width: 100%;
+}
+
+.home main div.productos article.producto-dos div.img img {
+    border-radius: 10%;
+}
+
+.home main div.productos article.producto-dos div.descripcion {
+    padding: 5px 15px 10px;
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.home main div.productos article.producto-dos div.descripcion p {
+   font-size: 25px;
+   margin: 0;
+   padding: 0;    
+   font-weight:400;
+}
+
+.home main div.productos article.producto-dos div.descripcion p.nombre {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;    
+    font-weight:400;
+    opacity: 0.9;
+ }
+
+.home main div.productos article.producto-dos div.descripcion small{
+    color: rgb(0, 184, 55);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Producto 3 */
+
+.home main div.productos article.producto-tres{
+    width: 275px;
+    box-shadow: 0px 5px 10px rgb(100, 100, 100);
+    margin: 10px 0 ;
+    border-radius: 3%;
+    display: none;
+}
+
+.home main div.productos article.producto-tres div.img {
+    width: 100%;
+}
+
+.home main div.productos article.producto-tres div.img img {
+    border-radius: 10%;
+}
+
+.home main div.productos article.producto-tres div.descripcion {
+    padding: 5px 15px 10px;
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.home main div.productos article.producto-tres div.descripcion p {
+   font-size: 25px;
+   margin: 0;
+   padding: 0;    
+   font-weight:400;
+}
+
+.home main div.productos article.producto-tres div.descripcion p.nombre {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;    
+    font-weight:400;
+    opacity: 0.9;
+ }
+
+.home main div.productos article.producto-tres div.descripcion small{
+    color: rgb(0, 184, 55);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Producto 4 */
+
+.home main div.productos article.producto-cuatro{
+    width: 275px;
+    box-shadow: 0px 5px 10px rgb(100, 100, 100);
+    margin: 10px 0 ;
+    border-radius: 3%;
+    display: none;
+}
+
+.home main div.productos article.producto-cuatro div.img {
+    width: 100%;
+}
+
+.home main div.productos article.producto-cuatro div.img img {
+    border-radius: 10%;
+}
+
+.home main div.productos article.producto-cuatro div.descripcion {
+    padding: 5px 15px 10px;
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.home main div.productos article.producto-cuatro div.descripcion p {
+   font-size: 25px;
+   margin: 0;
+   padding: 0;    
+   font-weight:400;
+}
+
+.home main div.productos article.producto-cuatro div.descripcion p.nombre {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;    
+    font-weight:400;
+    opacity: 0.9;
+ }
+
+.home main div.productos article.producto-cuatro div.descripcion small{
+    color: rgb(0, 184, 55);
+    font-size: 15px;
+    font-weight: 500;
+}
 
 
 /* FOOTER */
@@ -269,3 +423,18 @@ footer article.redes p {
 footer article div.ayuda {
     padding-bottom: 10px;
 }
+
+/* TABLET */
+
+@media (min-width: 481px) {
+    .home main section.body div.slider div.circulo-gato {
+    display: inline-block;
+}
+
+.home main div.comunidad div.comunidad-comunidad {
+    display: inline-block;
+  }
+
+
+}
+
