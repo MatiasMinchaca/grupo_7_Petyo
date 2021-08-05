@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8a6b29c899.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header class="header-agus">
         <div class="banner">
@@ -32,59 +34,80 @@
         <section class="productocar">
             <section class="pruebacar">
                 <img class="dogcar" src="/images/prodcarOldprince.png" alt="">
-            <section class="descripcarro">
-                <div class="descripcar">
-                    <h1>Alimento Old Prince Novel Cordero y Arroz Perro Adulto Mediano Y Grande - 15 Kg</h3>
-                </div>
-                <div class="codprocar">
-                    <p>Old Prince | codigo del producto: #1526</p>
-                    <div>
-                        <p class="precar"> $4420 </p>
-                        <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</p>
+                <section class="descripcarro">
+                    <div class="descripcar">
+                        <h1>Alimento Old Prince Novel Cordero y Arroz Perro Adulto Mediano Y Grande - 15 Kg</h3>
                     </div>
-                    <br>
-                    <div>
-                        <p>Seleccion peso Alimento: </p>
-                        <button class="bot1">10</button>
-                        <button class="bot1">15</button>
-                    </div> 
-                    <div>
-                        <p>Seleccion cantidad: </p>
-                        <button class="bot1">10</button>
-                        <button class="bot1">15</button>
-                    </div>
-                </div>
-                <div class="productAddtocart">
-                    <div class="buy-in-page-button">Agregar al Carrito</div>
-                </div>
-            </section>
-        </section>
-        <section class="domo1">
-            <article class="descricar">
-                <p>Alimento Old Prince Novel Cordero y Arroz Perro Adulto Mediano Y Grande,</p>
-                <p>Hecho con proteínas de origen no convencional que minimizan las probabilidades de alergias
-                    alimentarias y cutáneas.</p>
-                <div>
-                    <br>
-                    <p>
-                        Beneficios:
-                    </p>
-                    <br>
-                    <ul>
-                        <li>
-                            Mejora la piel y el pelo
-                        </li>
-                        <li>
-                            Reduce la intolerancia alimentaria
-                        </li>
-                        <li>
-                            Refuerza el sistema inmunológico intestinal
-                        </li>
+                    <div class="codprocar">
+                        <p>Old Prince | codigo del producto: #1526</p>
+                        <div>
+                            <p class="precar"> $4420 </p>
+                            <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</p>
+                        </div>
                         <br>
-                    </ul>
-                </div>
-            </article>
-        </section>
+                        <div>
+                            <p>Seleccion peso Alimento: </p>
+                            <button class="bot1">10</button>
+                            <button class="bot1">15</button>
+                        </div>
+                        <p>Seleccione cantidad</p>
+                        <br>
+                        <section class="quantity">
+                            <div class="counter">
+                                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                                <input type="text" value="1">
+                                <span class="up" onClick='increaseCount(event, this)'>+</span>
+                                <script>
+                                    function increaseCount(a, b) {
+                                        var input = b.previousElementSibling;
+                                        var value = parseInt(input.value, 10);
+                                        value = isNaN(value) ? 0 : value;
+                                        value++;
+                                        input.value = value;
+                                    }
+
+                                    function decreaseCount(a, b) {
+                                        var input = b.nextElementSibling;
+                                        var value = parseInt(input.value, 10);
+                                        if (value > 1) {
+                                            value = isNaN(value) ? 0 : value;
+                                            value--;
+                                            input.value = value;
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </section>
+
+                    </div>
+                </section>
+            </section>
+            <section class="domo1">
+                <article class="descricar">
+                    <p>Alimento Old Prince Novel Cordero y Arroz Perro Adulto Mediano Y Grande,</p>
+                    <p>Hecho con proteínas de origen no convencional que minimizan las probabilidades de alergias
+                        alimentarias y cutáneas.</p>
+                    <div>
+                        <br>
+                        <p>
+                            Beneficios:
+                        </p>
+                        <br>
+                        <ul>
+                            <li>
+                                Mejora la piel y el pelo
+                            </li>
+                            <li>
+                                Reduce la intolerancia alimentaria
+                            </li>
+                            <li>
+                                Refuerza el sistema inmunológico intestinal
+                            </li>
+                            <br>
+                        </ul>
+                    </div>
+                </article>
+            </section>
         </section>
     </main>
     <footer>
@@ -120,4 +143,5 @@
         </article>
     </footer>
 </body>
+
 </html>

@@ -53,13 +53,51 @@ header.header-agus div.banner div.lupa a i {
 }
 
 /* Main */
+
+
+/* quantity selector */
+.quantity {
+    display: flex;
+    background-color: burlywood;
+    margin-right: 70%;
+    margin-bottom: 15%;
+    image-resolution: 100%;
+}
+
+.counter {
+    width: 150px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.counter input {
+    width: 50px;
+    border: 0;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    background: #0052cc;
+    color: #fff;
+    appearance: none;
+    outline: 0;
+}
+.counter span {
+    display: block;
+    font-size: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #0052cc;
+    user-select: none;
+}
+
+/* otro */
 .productocompleto {
     margin-top: 4%;
     margin-left: 5%;
 }
 
 .productocar {
-    display: inline-block;
     background-position: left;
     padding: 0 0 0 17%;
 }
@@ -67,37 +105,37 @@ header.header-agus div.banner div.lupa a i {
 .pruebacar {
     background-color: white;
     display: flex;
-    width: 70%;
-    top: 50%;
     box-shadow: 0px 5px 10px rgb(100, 100, 100);
     border-radius: 3%;
+    width: 96%;
+    max-width: 960px;
+    min-width: 350px;
+    margin: 0 auto;
 }
 
 .dogcar {
     padding: 25px 0px 25px 25px;
-    display: inline-block;
-    width: 70%;
-    top: 70%;
+    width: 100%;
+    height: auto;
 }
 
 .descripcar {
     display: flex;
     background-position: left;
-    padding: 20px 0px 0px 0px;
-    font-size: 25px;
+    padding: 10px 0px 0px 0px;
+    font-size: 20px;
 }
 
 .codprocar {
     padding: 0px;
+    font-size: 10px;
 }
-
-
 
 .bot1 {
     background-color: blue;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 8px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -137,7 +175,7 @@ header.header-agus div.banner div.lupa a i {
 }
 
 .precar {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 /* FOOTER */
