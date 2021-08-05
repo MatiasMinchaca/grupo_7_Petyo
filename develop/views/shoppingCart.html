@@ -13,37 +13,92 @@
     <script src="https://kit.fontawesome.com/8a6b29c899.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="cart-container">
-        <nav>
-            <button>
+    <header class="header-agus">
 
-            </button>
-            <button>
+        <div class="banner">
 
-            </button>
-        </nav>
-        <section class="product-cart">
-            <img src="/images/prodcarDispenser.png" alt="">
-            
-            <h3>Producto <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, natus. Ad nisi quae sequi harum, repudiandae explicabo delectus saepe repellat.</h3>
-            <div class="amount">
-                <h2>Cantidad</h2>
+            <div class="logo">
+                <a href="/"><img src="/images/logotipo.png" alt=""></a>
             </div>
-        </section>
-        <sectio class="product-cart"n>
-            <img src="" alt="">
-           
-            <h3>Producto
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, natus. Ad nisi quae sequi harum, repudiandae explicabo delectus saepe repellat.</h3>
-            <div class="amount">
-                <h2>Cantidad</h2>
+
+
+            <div class="lupa-menu">
+                <div class="lupa">
+                    <a href=""><i class="fas fa-search"></i></a>
+                </div>
+
+                <div class="menu">
+                    <a href=""><i class="fas fa-bars"></i></a>
+                </div>
             </div>
-        </section>
-        
-        <div>
 
         </div>
+
+    </header>
+    <nav class="nav-cart-favourite">
+        <a href="#">Carrito de Compras</a>
+        <a href="#">Favoritos</a>
+    </nav>
+    <div class="cart-container">
+        <div class="products-cart-container">
+            <nav class="button-cart">
+                <button>
+                    Filtrar
+                </button>
+                <button>
+                    Vaciar carrito
+                </button>
+            </nav>
+            <article class="product-cart">
+                <picture>
+                    <img src="/images/prodcarDispenser.png" alt="">
+                </picture>
+                <div class="cart-detail">
+                    <h2>Producto</h2> 
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h3 class="price-product-cart">Precio: $0,00</h3>
+                </div>
+                <div class="amount">
+                    <label for="tentacles">Cantidad</label>
+                    <input type="number" id="tentacles" name="tentacles" min="1" max="99" value="1">
+                </div>
+            </article>
+            <article class="product-cart">
+                <picture> 
+                    <img src="/images/prodcarCollar.png" alt="">
+                </picture>
+                <div class="cart-detail">
+                    <h2>Producto</h2> 
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h3 class="price-product-cart">Precio: $0,00</h3>
+                </div>
+                <div class="amount">
+                    <label for="tentacles">Cantidad</label>
+                    <input type="number" id="tentacles" name="tentacles" min="1" max="99" value="1">
+                </div>
+            </article>
+        </div>
+        <div class="buy-cart-container">
+
+            <h2 class="subTotal">
+                Subtotal: <p class="subTotal-price">$0,00</p>
+            </h2>
+            <h2 class="shipping-cost">
+                Costo de envio <p class="shipping-cost-price">$0,00</p>
+            </h2>
+            <div class="line-and-cart">
+                <div class="cart-line"></div>
+                <img src="/svg/icon-shopping-cart.svg" alt="">
+                <div class="cart-line"></div>
+            </div>
+            <div class="total-and-price-cart">
+                <h2 class="total-cart">Total</h2>
+                <h2 class="total-price-cart">$0,00</h2>
+            </div>
+            <button class="buy-cart"><a href="#">Comprar</a></button>
+            <div class="buy-details-cart"></div>
+        </div>
     </div>
+    
 </body>
 </html>
