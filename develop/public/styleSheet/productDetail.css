@@ -173,7 +173,7 @@ header.header-agus div.banner div.lupa a i {
 }
 
 .productocar {
-    background-position: left;
+    background-position: center;
 }
 
 .pruebacar {
@@ -227,12 +227,25 @@ footer article div.ayuda {
 }
 
 @media (min-width: 730px) {
-    .dogcar {
-        display: flex;
-        width: 100%;
+    .bot1 {
+        padding: 8px 15px;
+        box-shadow: 0px 5px 10px rgb(100, 100, 100);
+        border-radius: 1%;
+        border: 3%;
     }
 
-    .pruebacar {
+    .bot1:hover {
+        background: rgb(102, 165, 75);
+    }
+    
+    .dogcar {
+        display: flex;
+        padding-bottom: 3%;
+    }
+
+    .domo1 {
+        margin-right: 20%;
+        margin-left: 5%;
         display: flex;
     }
 
@@ -240,9 +253,22 @@ footer article div.ayuda {
         font-size: 20;
     }
 
+    .precar {
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .pruebacar {
+        display: flex;
+    }
+
     .productocar {
         box-shadow: 0px 5px 10px rgb(100, 100, 100);
-        border-radius: 3%;
-        background-position: right;
+        border-radius: 1%;
+        margin-right: 10%;
+    }
+
+    .quantity {
+        padding-right: 0%;
     }
 }
