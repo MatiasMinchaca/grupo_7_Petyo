@@ -120,11 +120,23 @@ header.header-agus div.banner div.lupa a i {
 .codprocar {
     padding: 0px;
     font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cla1 {
+    padding-bottom: 4px;
+    padding-top: 8px;
+}
+
+.cla2 {
+    padding-bottom: 6px;
+    padding-top: 8px;
 }
 
 .dato {
     text-align: left;
     padding: auto;
+    font-family: 'Roboto', sans-serif;
 }
 
 .descricar {
@@ -137,6 +149,7 @@ header.header-agus div.banner div.lupa a i {
     display: inline-block;
     font-size: 10px;
     border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .dogcar {
@@ -151,6 +164,7 @@ header.header-agus div.banner div.lupa a i {
     padding: 10px 0px 0px 0px;
     font-size: 14px;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
 .domo1 {
@@ -165,6 +179,7 @@ header.header-agus div.banner div.lupa a i {
 .precar {
     font-size: 20px;
     margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .productocompleto {
@@ -255,7 +270,6 @@ footer article div.ayuda {
 
     .precar {
         font-size: 20px;
-        font-family: 'Roboto', sans-serif;
     }
 
     .pruebacar {
@@ -270,5 +284,32 @@ footer article div.ayuda {
 
     .quantity {
         padding-right: 0%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .descripcar {
+        font-size: 23px;
+    }
+
+    .descricar {
+        font-size: 20px;
+    }
+
+    .dato {
+        font-weight: normal;
+    }
+
+    .codprocar {
+        padding: 2px 5px 5px 5px;
+    }
+
+    .precar {
+        font-size: 40px;
+        padding: ;
+    }
+
+    .quantity {
+        margin-right: 70%;
     }
 }
