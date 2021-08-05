@@ -79,6 +79,15 @@ header.header-agus div.banner div.lupa a i {
     color: var(--kombuGreen)
 }
 
+/* CARRUSEL */
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-height: 400px !important;
+}
+
 /* MAIN */
 
 .home main section.body h3 {
@@ -119,25 +128,25 @@ header.header-agus div.banner div.lupa a i {
 
 
 
-.home main section.body div.slider div.circulo img {
+.home main section.body div.slider div img {
     width: 128px;
 }
 
-.home main section.body div.slider div.circulo img.perro {
+.home main section.body div.slider div.circulo-perro img.perro {
     width: 128px;
     position: relative;
     bottom: 3px;
     left: 2px;
 }
 
-.home main section.body div.slider div.circulo img.gato {
+.home main section.body div.slider div.circulo-gato img.gato {
     width: 128px;
     position: relative;
     bottom: 2px;
     right: 5px;
 }
  
-.home main section.body div.slider div.circulo img.reptil {
+.home main section.body div.slider div.circulo-reptil img.reptil {
     width: 128px;
     position: relative;
     bottom: 4px;
@@ -427,14 +436,58 @@ footer article div.ayuda {
 /* TABLET */
 
 @media (min-width: 481px) {
+    
+    .home main section.body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .home main section.body div.slider {
+        width: 100%;
+    }
+
     .home main section.body div.slider div.circulo-gato {
     display: inline-block;
-}
+    }
 
-.home main div.comunidad div.comunidad-comunidad {
+    .home main div.comunidad {
+        width: 90%;
+    }
+
+   .home main div.comunidad div.comunidad-comunidad {
     display: inline-block;
   }
+ 
+  .home main div.comunidad div.comunidad-comunidad h2,
+  .home main div.comunidad div.comunidad-alimentacion h2 {
+      top: 25px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 30px;
+  }
+  .home main div.productos article.producto-dos {
+      display: inline-block;
+      width: 225px;
+  }
+  
+  .home main div.productos article.producto-uno {
+    width: 225px;
+}
+}
 
+@media (min-width: 730px) {
+   
+    .home main section.body div.slider div.circulo-reptil {
+        display: inline-block;
+        }
 
+    .home main div.productos article.producto-tres {
+        display: inline-block;
+        width: 225px;
+    }
 }
 
