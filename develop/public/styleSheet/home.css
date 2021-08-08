@@ -28,7 +28,6 @@ a {
 /* HEADER */
 
 header.header-agus {
-    /* background-color: rgb(49, 133, 0) ;  */
     background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
     padding: 5px 10px;
     height: 60px;
@@ -205,9 +204,9 @@ header.header-agus div.banner div.user a i {
     border-radius: 50%;
     box-shadow: 0px 5px 10px rgb(100, 100, 100);
 }
+/* FIN CARRUSEL */
 
-/* Breakpoints */
-
+/*Breakpoint */
 .home main section.body div.slider div.circulo-gato, 
 .home main section.body div.slider div.circulo-reptil {
     background-color: rgb(98, 211, 32);
@@ -217,7 +216,7 @@ header.header-agus div.banner div.user a i {
     box-shadow: 0px 5px 10px rgb(100, 100, 100);
     display: none;
 }
-
+/* Fín Breakpoint */
 
 
 .home main section.body div.slider div img {
@@ -258,14 +257,15 @@ header.header-agus div.banner div.user a i {
   position: relative;
 }
 
-/* Breakpoint */
 
+/* Breakpoint */
 .home main div.comunidad div.comunidad-comunidad,
 .home main div.comunidad div.comunidad-quienes-somos {
     width: 280px;
     position: relative;
      display: none; 
   }
+/* Fín Breakpoint */
 
   .home main div.comunidad div.comunidad-comunidad h2 {
     color: white;
@@ -294,7 +294,7 @@ header.header-agus div.banner div.user a i {
 }
 
 
-/* Productos destacados */
+/* PRODUCTOS */
 
 /* Producto 1 */
 
@@ -534,6 +534,8 @@ footer article div.ayuda {
     padding-bottom: 10px;
 }
 
+
+
 /* TABLET */
 
 @media (min-width: 481px) {
@@ -630,6 +632,8 @@ header.header-agus div.banner div.menu a i {
         display: none;
     }
 }
+
+/* DESCKTOP */
 
 @media (min-width: 1100px) {
     
