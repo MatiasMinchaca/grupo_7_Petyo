@@ -65,11 +65,45 @@ header.header-agus div.banner div.menu {
     display: block;
 }
 
-header.header-agus div.banner div.menu a i {
-    font-size: 30px;
+/* MENU HAMBURGUESA */
+
+header.header-agus div.banner div.menu label i {
+    font-size: 32px;
     color: var(--kombuGreen);
     opacity: 0.8;
     margin-left: 15px;
+    margin-top: 5px;
+}
+
+header.header-agus div.banner div.menu input {
+    display: none;
+}
+
+header.header-agus div.banner div.menu ul {
+    display: none;
+    background-color: rgb(133, 224, 80) ;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+header.header-agus div.banner div.menu ul li{
+   
+    width: 100%;
+}
+header.header-agus div.banner div.menu ul li a {
+    color: var(--kombuGreen);
+    font-size: 27px;
+    font-weight: 500;
+    padding: 10px;
+    opacity: 0.8;
+}
+
+header.header-agus div.banner div.menu input:checked~ul{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    z-index: 1;
 }
 
 header.header-agus div.banner div.lupa a i {
@@ -540,6 +574,7 @@ footer article div.ayuda {
 
 @media (min-width: 481px) {
     
+   
     .home main section.body {
         display: flex;
         flex-direction: column;
@@ -588,7 +623,7 @@ header.header-agus div.banner div.user a i {
     display: inline-block;
 }
 
-header.header-agus div.banner div.menu a i {
+header.header-agus div.banner div.menu label i {
     display: none
 }
 
