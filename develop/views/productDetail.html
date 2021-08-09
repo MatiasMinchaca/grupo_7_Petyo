@@ -12,62 +12,136 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8a6b29c899.js" crossorigin="anonymous"></script>
+    <link href="/images/isotipo.png" type="image/x-icon" rel="shortcut icon" />
 </head>
 
 <body>
-    <header>
-        <div class="carbody">
-            <img src="/images/logo.png" alt="">
+    <header class="header-agus">
+        <div class="banner">
+            <div class="logo">
+                <a href="/"><img src="/images/logotipo.png" alt=""></a>
+            </div>
+            <div class="lupa-menu">
+                <div class="lupa">
+                    <a href=""><i class="fas fa-search"></i></a>
+                </div>
+                <div class="menu">
+                    <a href=""><i class="fas fa-bars"></i></a>
+                </div>
+            </div>
         </div>
     </header>
-    <main>
-        <section class="pruebacar">
-            <div>
-                <div class="carcos">
-                    <p></p>
-                </div>
-                <div>
-                    <div>
-                        <img class="dogcar" src="/images/prodcarOldprince.png" alt="">
+    <main class="productocompleto">
+        <section class="productocar">
+            <section class="pruebacar">
+                <img class="dogcar" src="/images/prodcarOldprince.png" alt="">
+                <section">
+                    <div class="descripcar">
+                        <h1>Alimento Old Prince Novel Cordero y Arroz Perro Adulto Mediano Y Grande - 15 Kg</h3>
                     </div>
-                </div>
-            </div>
-            <div>
-                <div class="descripcar">
-                    <h1>Alimento Old Prince Novel Cordero y Arroz Perro Adulto Mediano Y Grande - 15 Kg</h3>
-                </div>
-                <br>
-                <div>
-                    <p>Old Prince | codigo del producto</p>
-                </div>
-                <br>
-                <div>
-                    <div>
-                        <p> $4420 </p>
-                        <p><img class="cardca" src="/images/cardca.svg" alt="">ver medio de pago</p> 
+                    <div class="codprocar">
+                        <p>Old Prince | codigo del producto: #1526</p>
+                        <div>
+                            <p class="precar"> $4420 </p>
+                            <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</p>
+                        </div>
+                        <div>
+                            <p class="cla1">Seleccion peso Alimento: </p>
+                            <button class="bot1">10</button>
+                            <button class="bot1">15</button>
+                        </div>
+                        <p class="cla2">Seleccione cantidad</p>
+                        <div>
+                            <section class="quantity">
+                                <div class="counter">
+                                    <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                                    <input type="text" value="1">
+                                    <span class="up" onClick='increaseCount(event, this)'>+</span>
+                                    <script>
+                                        function increaseCount(a, b) {
+                                            var input = b.previousElementSibling;
+                                            var value = parseInt(input.value, 10);
+                                            value = isNaN(value) ? 0 : value;
+                                            value++;
+                                            input.value = value;
+                                        }
+
+                                        function decreaseCount(a, b) {
+                                            var input = b.nextElementSibling;
+                                            var value = parseInt(input.value, 10);
+                                            if (value > 1) {
+                                                value = isNaN(value) ? 0 : value;
+                                                value--;
+                                                input.value = value;
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </section>
+                        </div>
+                        <button class="bot1"> comprar </button>
                     </div>
-                </div>
-                <br>
+            </section>
+        </section>
+        <section class="domo1">
+            <article class="descricar">
+                <p>Alimento Old Prince Novel Cordero y Arroz Perro Adulto Mediano Y Grande,</p>
+                <p>Hecho con proteínas de origen no convencional que minimizan las probabilidades de alergias
+                    alimentarias y cutáneas.</p>
                 <div>
-                    <div>
-                        <p>Seleccion peso Alimento: </p>
-                        <button class="bot1">10</button>
-                        <button class="bot1">15</button>
-                    </div>
+                    <br>
+                    <p>
+                        Beneficios:
+                    </p>
+                    <br>
+                    <ul class="dato">
+                        <li>
+                            Mejora la piel y el pelo
+                        </li>
+                        <li>
+                            Reduce la intolerancia alimentaria
+                        </li>
+                        <li>
+                            Refuerza el sistema inmunológico intestinal
+                        </li>
+                        <br>
+                    </ul>
                 </div>
-            </div>
+            </article>
+        </section>
         </section>
     </main>
-    <footer class="carfooter">
-        <div>
-            <p> hola </p>
-            <br>
-            <p>
-                hfdg jkflg sadasd
-                sadsa gdsgf
-                sadasd
-            </p>
-        </div>
+    <footer style="display: block;">
+        <article class="lista">
+            <nav>
+                <h4>Categorías</h4>
+                <ul>
+                    <li>Perros</li>
+                    <li>Gatos</li>
+                    <li>Aver</li>
+                    <li>Reptiles</li>
+                </ul>
+                <h4>Servicios</h4>
+                <ul>
+                    <li>Consejos para tu mascota</li>
+                    <li>Venta mayotista</li>
+                    <li>Mi cuenta</li>
+                </ul>
+            </nav>
+        </article>
+        <article class="redes">
+            <h3>Seguinos en nuestras redes</h3>
+            <div>
+                <a href=""><i class="fab fa-whatsapp"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="ayuda">
+                <p>Ayuda</p>
+                <p>Política de privacidad</p>
+                <p>Términos y condiciones</p>
+            </div>
+        </article>
     </footer>
 </body>
 

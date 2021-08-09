@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .carbody {
     background-color: green;
     display: flex;
@@ -49,3 +50,333 @@
     width: 10%;
 }
 
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* HEADER */
+
+header.header-agus {
+    /* background-color: rgb(49, 133, 0) ;  */
+    background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
+    padding: 5px 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header.header-agus div.banner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+header.header-agus div.banner div.logo {
+    width: 130px;
+}
+
+header.header-agus div.banner div.logo a img {
+    width: 100%;
+}
+
+header.header-agus div.banner div.lupa-menu {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+header.header-agus div.banner div.menu {
+    display: block;
+}
+
+header.header-agus div.banner div.menu a i {
+    font-size: 30px;
+    color: var(--kombuGreen);
+    opacity: 0.8;
+    margin-left: 15px;
+}
+
+header.header-agus div.banner div.lupa a i {
+    font-size: 30px;
+    opacity: 0.8;
+    color: var(--kombuGreen)
+}
+
+/* Main */
+
+
+/* quantity selector */
+.quantity {
+    display: flex;
+    background-color: rgb(113, 208, 73);
+    margin-right: 55%;
+    margin-bottom: 8%;
+    padding-right: 20%;
+    image-resolution: 100%;
+    box-shadow: 0px 5px 10px rgb(100, 100, 100);
+    border-radius: 3%;
+}
+
+.counter {
+    width: 150px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.counter input {
+    width: 50px;
+    border: 0;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    background: rgb(113, 208, 73);
+    color: #fff;
+    appearance: none;
+    outline: 0;
+}
+.counter span {
+    display: block;
+    font-size: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: white;
+    user-select: none;
+}
+
+/* otro */
+.bot1 {
+    background-color: rgb(113, 208, 73);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px 0px 5px 5px;
+}
+
+.bot1:hover {
+    background: rgb(109, 181, 79);
+}
+
+.cardca {
+    display: flex;
+    width: 10%;
+    
+}
+
+.codprocar {
+    padding: 0px;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cla1 {
+    padding-bottom: 4px;
+    padding-top: 8px;
+}
+
+.cla2 {
+    padding-bottom: 6px;
+    padding-top: 8px;
+}
+
+.dato {
+    text-align: left;
+    padding: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.descricar {
+    background-color: #C7F1C2;
+    border: 3px;
+    color: black;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dogcar {
+    /*padding: 25px 0px 25px 25px;*/
+    display: inline-block;
+    width: 80%;
+}
+
+.descripcar {
+    display: flex;
+    background-position: left;
+    padding: 10px 0px 0px 0px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.domo1 {
+    text-align: justify;
+    margin-top:5%;
+    margin-bottom: 5%;
+    margin-right: 27%;
+    box-shadow: 0px 5px 10px rgb(100, 100, 100);
+    /*border-radius: 3%;*/
+}
+
+.precar {
+    font-size: 20px;
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.productocompleto {
+    margin-top: 4%;
+    margin-left: 5%;
+}
+
+.productocar {
+    background-position: center;
+}
+
+.pruebacar {
+    background-color: white;
+    display: inline-block;
+   /* box-shadow: 0px 5px 10px rgb(100, 100, 100);
+    border-radius: 3%;*/
+}
+
+/* FOOTER */
+
+footer {
+    background-color: var(--davysGray);
+    text-align: center;
+    padding-top: 15px;
+    display: flex;
+}
+
+
+footer article.redes h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+
+footer article.redes div a i {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+footer article.lista {
+    display: none;
+}
+
+footer article.redes h3 {
+    color: rgb(196, 196, 196);
+    padding: 10px 0;
+}
+
+footer article.redes div a {
+    color: rgb(196, 196, 196);
+    margin: 0 5px;
+}
+
+footer article.redes p {
+    color: rgb(196, 196, 196);
+    font-size: 15px;
+}
+
+footer article div.ayuda {
+    padding-bottom: 10px;
+}
+
+@media (min-width: 730px) {
+    .bot1 {
+        padding: 8px 15px;
+        box-shadow: 0px 5px 10px rgb(100, 100, 100);
+        border-radius: 1%;
+        border: 3%;
+    }
+
+    .bot1:hover {
+        background: rgb(102, 165, 75);
+    }
+    
+    .dogcar {
+        display: inline-block;
+        padding-bottom: 3%;
+    }
+
+    .domo1 {
+        margin-right: 20%;
+        margin-left: 5%;
+        display: flex;
+    }
+
+    .descripcar {
+        font-size: 20;
+    }
+
+    .precar {
+        font-size: 20px;
+    }
+
+    .pruebacar {
+        display: flex;
+    }
+
+    .productocar {
+        box-shadow: 0px 5px 10px rgb(100, 100, 100);
+        border-radius: 1%;
+        margin-right: 10%;
+    }
+
+    .quantity {
+        padding-right: 0%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .descripcar {
+        font-size: 23px;
+    }
+
+    .descricar {
+        font-size: 20px;
+    }
+
+    .dato {
+        font-weight: normal;
+    }
+
+    .codprocar {
+        padding: 2px 5px 5px 5px;
+    }
+
+    .precar {
+        font-size: 40px;
+    }
+
+    .quantity {
+        margin-right: 70%;
+    }
+
+    footer article.lista{
+        display: block;
+    }
+}
+>>>>>>> origin/develop

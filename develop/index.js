@@ -25,5 +25,5 @@ app.get('/shoppingCart', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Puerto corriendo en ${port}\n http://localhost:${port}`)
+    console.log(`Servidor funcionando en puerto ${port}\n http://localhost:${port}`)
 })

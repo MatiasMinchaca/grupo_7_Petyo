@@ -4,46 +4,226 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fav icon -->
+    <link href="/images/isotipo.png" type="image/x-icon" rel="shortcut icon" />
     <title>Shopping Cart</title>
+    <!-- StyleSheet -->
     <link rel="stylesheet" href="styleSheet/style.css">
-    <link rel="stylesheet" href="styleSheet/style.css">
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8a6b29c899.js" crossorigin="anonymous"></script>
+    <!-- Script -->
+    <script src="/js/shoppingCart.js" defer></script>
 </head>
 <body>
-    <div class="cart-container">
-        <nav>
-            <button>
+    <header class="header-agus">
 
-            </button>
-            <button>
+        <div class="banner">
 
-            </button>
-        </nav>
-        <section class="product-cart">
-            <img src="/images/prodcarDispenser.png" alt="">
-            
-            <h3>Producto <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, natus. Ad nisi quae sequi harum, repudiandae explicabo delectus saepe repellat.</h3>
-            <div class="amount">
-                <h2>Cantidad</h2>
+            <!-- LOGO -->
+            <div class="logo">
+                <a href="/"><img src="/images/logotipo.png" alt=""></a>
             </div>
-        </section>
-        <sectio class="product-cart"n>
-            <img src="" alt="">
-           
-            <h3>Producto
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, natus. Ad nisi quae sequi harum, repudiandae explicabo delectus saepe repellat.</h3>
-            <div class="amount">
-                <h2>Cantidad</h2>
+            <!-- FIN LOGO -->
+
+            <!-- ICONOS -->
+            <div class="lupa-menu">
+                <div class="lupa">
+                    <a href=""><i class="fas fa-search"></i></a>
+                </div>
+
+                <div class="user">
+                    <a href="/login"><i class="fas fa-user"></i></a>
+                </div>
+
+                <div class="carrito">
+                    <a href="/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+
+                <div class="menu">
+                    <label for="menu"><i class="fas fa-bars"></i></label>
+                    <input type="checkbox" id="menu">
+                    <ul>
+                        <li><a href="/"> Inicio</a></li>
+                        <li><a href="/login"> Iniciar sesión</a></li>
+                        <li><a href="/register">Registrarse</a></li>
+                        <li><a href="/shoppingCart">Carrito</a></li>
+                        <li><a href="/productDetail">Productos</a></li>
+                    </ul>
+                </div>
             </div>
-        </section>
-        
-        <div>
+            <!-- FIN ICONOS -->
 
         </div>
+
+    </header>
+    <nav class="nav-cart-favourite">
+        <a href="#">Carrito de Compras</a>
+        <a href="#">Favoritos</a>
+    </nav>
+    <div class="cart-container">
+        <div class="products-cart-container">
+            <nav class="button-cart">
+                <button>
+                    Filtrar
+                </button>
+                <button>
+                    Vaciar carrito
+                </button>
+            </nav>
+            <article class="product-cart">
+                <picture>
+                    <img src="/images/prodcarDispenser.png" alt="">
+                </picture>
+                <div class="cart-detail">
+                    <h2>Producto</h2> 
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h3 class="price-product-cart">Precio: $0,00</h3>
+                </div>
+                <div class="amount">
+                    <label for="tentacles">Cantidad</label>
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                </div>
+            </article>
+            <article class="product-cart">
+                <picture> 
+                    <img src="/images/prodcarCollar.png" alt="">
+                </picture>
+                <div class="cart-detail">
+                    <h2>Producto</h2> 
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h3 class="price-product-cart">Precio: $0,00</h3>
+                </div>
+                <div class="amount">
+                    <label for="tentacles">Cantidad</label>
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                </div>
+            </article>
+            <article class="product-cart">
+                <picture> 
+                    <img src="/images/prodcarDispenser.png" alt="">
+                </picture>
+                <div class="cart-detail">
+                    <h2>Producto</h2> 
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h3 class="price-product-cart">Precio: $0,00</h3>
+                </div>
+                <div class="amount">
+                    <label for="tentacles">Cantidad</label>
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                </div>
+            </article>
+            <article class="product-cart">
+                <picture> 
+                    <img src="/images/prodcarProplangato.png" alt="">
+                </picture>
+                <div class="cart-detail">
+                    <h2>Producto</h2> 
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h3 class="price-product-cart">Precio: $0,00</h3>
+                </div>
+                <div class="amount">
+                    <label for="tentacles">Cantidad</label>
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                </div>
+            </article>
+            <article class="product-cart">
+                <picture> 
+                    <img src="/images/prodcarTransportador.png" alt="">
+                </picture>
+                <div class="cart-detail">
+                    <h2>Producto</h2> 
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <h3 class="price-product-cart">Precio: $0,00</h3>
+                </div>
+                <div class="amount">
+                    <label for="tentacles">Cantidad</label>
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="buy-cart-container">
+            <div class="paws">
+                <img src="/svg/paw.svg" alt="">
+                <img src="/svg/paw.svg" alt="">
+                <img src="/svg/paw.svg" alt="">
+            </div>
+            <h2 class="subTotal">
+                Subtotal: <p class="subTotal-price">$0,00</p>
+            </h2>
+            <h2 class="shipping-cost">
+                Costo de envio <p class="shipping-cost-price">$0,00</p>
+            </h2>
+            <div class="line-and-cart">
+                <div class="cart-line"></div>
+                <img src="/svg/icon-shopping-cart.svg" alt="">
+                <div class="cart-line"></div>
+            </div>
+            <div class="total-and-price-cart">
+                <h2 class="total-cart">Total</h2>
+                <h2 class="total-price-cart">$0,00</h2>
+            </div>
+            <button class="buy-cart"><a href="#">Comprar</a></button>
+            <div class="buy-details-cart"></div>
+        </div>
     </div>
+    <footer style="display: block;">
+
+        <article class="lista">
+            <nav>
+                <h4>Categorías</h4>
+                <ul>
+                    <li>Perros</li>
+                    <li>Gatos</li>
+                    <li>Aver</li>
+                    <li>Reptiles</li>
+                </ul>
+                <h4>Servicios</h4>
+                <ul>
+                    <li>Consejos para tu mascota</li>
+                    <li>Venta mayotista</li>
+                    <li>Mi cuenta</li>
+                </ul>
+            </nav>
+        </article>
+
+        <article class="redes">
+            <h3>Seguinos en nuestras redes</h3>
+            <div>
+                <a href=""><i class="fab fa-whatsapp"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+            </div>    
+            <div class="ayuda">
+                <p>Ayuda</p>
+                <p>Política de privacidad</p>
+                <p>Términos y condiciones</p>
+            </div>
+        </article>
+
+    </footer>
+    
 </body>
 </html>
