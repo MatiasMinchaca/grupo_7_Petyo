@@ -87,21 +87,22 @@
     background-color: #62d320;
     transition: all 1s;
 }
+.cart-container .amount div{
+    width: 50px;
+    font-size: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .cart-container .amount input{
     border: 0;
     outline: none;
-    width: 6px;
+    width: 20px;
     background: none;
+    font-size: 18px;
+    text-align: center;
 }
-.cart-container .amount input::-webkit-outer-spin-button,
-.cart-container .amount input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-/* Firefox input number hide*/
-.cart-container .amount input[type=number] {
-    -moz-appearance: textfield;
-  }
+
 .cart-container .amount label{
     font-weight: 400;
     font-size: 13px;
@@ -291,6 +292,9 @@
         width: 345px;
         margin: 0;
         
+    }
+    footer article.lista{
+        display: block;
     }
 }
 

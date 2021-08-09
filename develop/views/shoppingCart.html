@@ -4,33 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fav icon -->
+    <link href="/images/isotipo.png" type="image/x-icon" rel="shortcut icon" />
     <title>Shopping Cart</title>
+    <!-- StyleSheet -->
     <link rel="stylesheet" href="styleSheet/style.css">
-    <link rel="stylesheet" href="styleSheet/style.css">
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8a6b29c899.js" crossorigin="anonymous"></script>
+    <!-- Script -->
+    <script src="/js/shoppingCart.js" defer></script>
 </head>
 <body>
     <header class="header-agus">
 
         <div class="banner">
 
+            <!-- LOGO -->
             <div class="logo">
                 <a href="/"><img src="/images/logotipo.png" alt=""></a>
             </div>
+            <!-- FIN LOGO -->
 
-
+            <!-- ICONOS -->
             <div class="lupa-menu">
                 <div class="lupa">
                     <a href=""><i class="fas fa-search"></i></a>
                 </div>
 
+                <div class="user">
+                    <a href="/login"><i class="fas fa-user"></i></a>
+                </div>
+
+                <div class="carrito">
+                    <a href="/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+
                 <div class="menu">
-                    <a href=""><i class="fas fa-bars"></i></a>
+                    <label for="menu"><i class="fas fa-bars"></i></label>
+                    <input type="checkbox" id="menu">
+                    <ul>
+                        <li><a href="/"> Inicio</a></li>
+                        <li><a href="/login"> Iniciar sesión</a></li>
+                        <li><a href="/register">Registrarse</a></li>
+                        <li><a href="/shoppingCart">Carrito</a></li>
+                        <li><a href="/productDetail">Productos</a></li>
+                    </ul>
                 </div>
             </div>
+            <!-- FIN ICONOS -->
 
         </div>
 
@@ -60,7 +84,11 @@
                 </div>
                 <div class="amount">
                     <label for="tentacles">Cantidad</label>
-                    <input type="number" id="tentacles" name="tentacles" min="1" max="99" value="1">
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
                 </div>
             </article>
             <article class="product-cart">
@@ -74,7 +102,11 @@
                 </div>
                 <div class="amount">
                     <label for="tentacles">Cantidad</label>
-                    <input type="number" id="tentacles" name="tentacles" min="1" max="99" value="1">
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
                 </div>
             </article>
             <article class="product-cart">
@@ -88,7 +120,11 @@
                 </div>
                 <div class="amount">
                     <label for="tentacles">Cantidad</label>
-                    <input type="number" id="tentacles" name="tentacles" min="1" max="99" value="1">
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
                 </div>
             </article>
             <article class="product-cart">
@@ -102,7 +138,11 @@
                 </div>
                 <div class="amount">
                     <label for="tentacles">Cantidad</label>
-                    <input type="number" id="tentacles" name="tentacles" min="1" max="99" value="1">
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
                 </div>
             </article>
             <article class="product-cart">
@@ -116,7 +156,11 @@
                 </div>
                 <div class="amount">
                     <label for="tentacles">Cantidad</label>
-                    <input type="number" id="tentacles" name="tentacles" min="1" max="99" value="1">
+                    <div>
+                        <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                        <input type="text" value="1">
+                        <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    </div>
                 </div>
             </article>
         </div>
@@ -145,7 +189,7 @@
             <div class="buy-details-cart"></div>
         </div>
     </div>
-    <footer>
+    <footer style="display: block;">
 
         <article class="lista">
             <nav>
@@ -171,7 +215,7 @@
                 <a href=""><i class="fab fa-whatsapp"></i></a>
                 <a href=""><i class="fab fa-instagram"></i></a>
                 <a href=""><i class="fab fa-facebook-f"></i></a>
-            </div>
+            </div>    
             <div class="ayuda">
                 <p>Ayuda</p>
                 <p>Política de privacidad</p>
