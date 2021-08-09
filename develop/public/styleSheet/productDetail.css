@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 /* HEADER */
 
 header.header-agus {
@@ -156,7 +163,7 @@ header.header-agus div.banner div.lupa a i {
 .dogcar {
     /*padding: 25px 0px 25px 25px;*/
     display: inline-block;
-    width: 100%;
+    width: 80%;
 }
 
 .descripcar {
@@ -198,12 +205,14 @@ header.header-agus div.banner div.lupa a i {
    /* box-shadow: 0px 5px 10px rgb(100, 100, 100);
     border-radius: 3%;*/
 }
+
 /* FOOTER */
 
 footer {
     background-color: var(--davysGray);
     text-align: center;
     padding-top: 15px;
+    display: flex;
 }
 
 
@@ -311,5 +320,9 @@ footer article div.ayuda {
 
     .quantity {
         margin-right: 70%;
+    }
+
+    footer article.lista{
+        display: block;
     }
 }
