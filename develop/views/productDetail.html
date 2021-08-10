@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8a6b29c899.js" crossorigin="anonymous"></script>
     <link href="/images/isotipo.png" type="image/x-icon" rel="shortcut icon" />
+    <script src="/js/quantity.js" defer></script>
 </head>
 
 <body>
@@ -57,25 +58,6 @@
                                     <span class="down" onClick='decreaseCount(event, this)'>-</span>
                                     <input type="text" value="1">
                                     <span class="up" onClick='increaseCount(event, this)'>+</span>
-                                    <script>
-                                        function increaseCount(a, b) {
-                                            var input = b.previousElementSibling;
-                                            var value = parseInt(input.value, 10);
-                                            value = isNaN(value) ? 0 : value;
-                                            value++;
-                                            input.value = value;
-                                        }
-
-                                        function decreaseCount(a, b) {
-                                            var input = b.nextElementSibling;
-                                            var value = parseInt(input.value, 10);
-                                            if (value > 1) {
-                                                value = isNaN(value) ? 0 : value;
-                                                value--;
-                                                input.value = value;
-                                            }
-                                        }
-                                    </script>
                                 </div>
                             </section>
                         </div>
@@ -111,7 +93,7 @@
         </section>
         </section>
     </main>
-    <footer style="display: block;">
+    <footer>
         <article class="lista">
             <nav>
                 <h4>Categorías</h4>
