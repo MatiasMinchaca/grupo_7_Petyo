@@ -1,56 +1,3 @@
-<<<<<<< HEAD
-.carbody {
-    background-color: green;
-    display: flex;
-    width: 100%;
-    top: 75%;
-}
-
-.pruebacar {
-    background-color: greenyellow;
-    display: flex;
-    width: 100%;
-    top: 75%
-}
-
-.carfooter {
-    background-color: grey;
-    display: flex;
-    width: 100%;
-    top: 75%;
-}
-
-.dogcar {
-    padding: 25px;
-    display: flex;
-    width: 70%;
-    top: 70%;
-}
-
-.descripcar {
-    /*display: flex;
-    background-position: center;
-    margin: 25px;*/
-}
-.bot1 {
-    background-color: blue;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-    margin: 5px 0px 5px 0px;
-}
-
-.cardca {
-    display: flex;
-    width: 10%;
-}
-
-=======
 * {
     margin: 0;
     padding: 0;
@@ -379,4 +326,3 @@ footer article div.ayuda {
         display: block;
     }
 }
->>>>>>> origin/develop
