@@ -1,0 +1,29 @@
+.btn-flotante i{
+	font-size: 25px; /* Cambiar el tamaño de la tipografia */
+	color: #ffffff; /* Color del texto */
+	border-radius: 60%; /* Borde del boton */
+	background-color: rgb(61, 141, 15); /* Color de fondo */
+	padding: 9px 10px; /* Relleno del boton */
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 999;
+}
+.btn-flotante i:hover {
+	background-color: rgb(98, 211, 32); /* Color de fondo al pasar el cursor */
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+}
+@media screen and (min-width:480px) {
+    .btn-flotante i{
+        font-size: 30px;
+    }
+}
+@media screen and (min-width:1024px) {
+    .btn-flotante i{
+        bottom: 10px;
+        right: 10px;
+    }
+}
