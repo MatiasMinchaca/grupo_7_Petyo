@@ -593,7 +593,8 @@ footer {
     background-color: var(--davysGray);
     text-align: center;
     padding-top: 15px;
-    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 
 
@@ -774,10 +775,12 @@ header.header-agus div.banner div.menu label i {
         display: inline-block;
         width: 225px;
       }
-
+      
       footer section {
           display: flex;
+          width: 100%;
           justify-content:space-around ;
+          
       }
 
       footer article.redes h3 {
