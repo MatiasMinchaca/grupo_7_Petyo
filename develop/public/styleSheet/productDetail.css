@@ -108,7 +108,7 @@
 .dogcar {
     /*padding: 25px 0px 25px 25px;*/
     display: inline-block;
-    width: 80%;
+    width: 50%;
 }
 
 .descripcar {
@@ -166,6 +166,7 @@
     .dogcar {
         display: inline-block;
         padding-bottom: 3%;
+        width: 65%;
     }
 
     .domo1 {
@@ -208,6 +209,10 @@
 
     .dato {
         font-weight: normal;
+    }
+
+    .dogcar {
+        width: 75%;
     }
 
     .codprocar {
