@@ -45,8 +45,14 @@ header.header-agus div.banner {
     
 }
 
+header.header-agus div.banner div.logo-menu {
+    display: flex;
+    align-items: center;
+}
+
 header.header-agus div.banner div.logo {
     width: 130px;
+    margin-right: 15px;
 }
 
 header.header-agus div.banner div.logo a img {
@@ -105,6 +111,64 @@ header.header-agus div.banner div.menu input:checked~ul{
     top: 60px;
     z-index: 1;
 }
+
+/* MENU TABLET Y DESKTOP */
+
+header.header-agus div.banner div.menu-tablet-desktop {
+    display: none;
+}
+
+header.header-agus div.banner div.menu-tablet-desktop label {
+    font-size: 30px;
+    font-weight:bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--kombuGreen);
+    opacity: 0.8;
+}
+
+header.header-agus div.banner div.menu-tablet-desktop label i {
+    font-size: 32px;
+    color: var(--kombuGreen);
+    opacity: 0.8;
+    margin-left: 15px;
+    margin-top: 5px;
+    position: relative;
+    left: -9px;
+    top: 4px;
+}
+
+header.header-agus div.banner div.menu-tablet-desktop input {
+    display: none;
+}
+
+header.header-agus div.banner div.menu-tablet-desktop ul {
+    display: none;
+    background-color: rgb(133, 224, 80) ;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+header.header-agus div.banner div.menu-tablet-desktop ul li{
+   
+    width: 100%;
+}
+header.header-agus div.banner div.menu-tablet-desktop ul li a {
+    color: var(--kombuGreen);
+    font-size: 27px;
+    font-weight: 500;
+    padding: 10px;
+    opacity: 0.8;
+}
+
+header.header-agus div.banner div.menu-tablet-desktop input:checked~ul{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    z-index: 1;
+}
+
+
 
 header.header-agus div.banner div.lupa a i {
     font-size: 30px;
@@ -194,18 +258,18 @@ header.header-agus div.banner div.user a i {
 /* Fading animation */
 .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
+    -webkit-animation-duration: 7s;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 7s;
 }
 
 @-webkit-keyframes fade {
-    from {opacity: .4}
+    from {opacity: 0.8}
     to {opacity: 1}
 }
 
 @keyframes fade {
-    from {opacity: .4}
+    from {opacity: 0.8}
     to {opacity: 1}
 }
 
@@ -547,6 +611,31 @@ footer article.redes div a i {
 
 footer article.lista {
     display: none;
+    padding-top: 10px;
+}
+
+footer article.lista nav {
+    display: flex;
+    
+}
+
+footer article.lista nav ul h4,
+footer article.lista nav ul li {
+   
+    color: rgb(196, 196, 196);
+    text-align: initial;
+}
+
+footer article.servicios {
+    display: none;
+    padding-top: 10px;
+}
+
+footer article.servicios nav ul h4,
+footer article.servicios nav ul li {
+   
+    color: rgb(196, 196, 196);
+    text-align: initial;
 }
 
 footer article.redes h3 {
@@ -573,7 +662,10 @@ footer article div.ayuda {
 /* TABLET */
 
 @media (min-width: 481px) {
-    
+
+    header.header-agus div.banner div.menu-tablet-desktop {
+        display: inline-block;
+    }
    
     .home main section.body {
         display: flex;
@@ -670,7 +762,7 @@ header.header-agus div.banner div.menu label i {
 
 /* DESCKTOP */
 
-@media (min-width: 1100px) {
+@media (min-width: 1024px) {
     
 
 
@@ -683,7 +775,20 @@ header.header-agus div.banner div.menu label i {
         width: 225px;
       }
 
+      footer section {
+          display: flex;
+          justify-content:space-around ;
+      }
+
+      footer article.redes h3 {
+          font-size: 25px;
+      }
+
     footer article.lista{
+        display: block;
+    }
+
+    footer article.servicios {
         display: block;
     }
 }

@@ -13,9 +13,9 @@
 }
 .form-container .floating-image-form{
     max-width: 250px;
-    height: 226px;
+    height: 245px;
     position: absolute;
-    top: -145px;
+    top: -157px;
     left: 40px;
     transition: all 1s;
 }
