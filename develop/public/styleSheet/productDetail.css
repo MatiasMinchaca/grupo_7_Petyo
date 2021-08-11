@@ -108,7 +108,7 @@
 .dogcar {
     /*padding: 25px 0px 25px 25px;*/
     display: inline-block;
-    width: 50%;
+    width: 70%;
 }
 
 .descripcar {
@@ -163,11 +163,11 @@
         background: rgb(102, 165, 75);
     }
     
-    .dogcar {
+    /*.dogcar {
         display: inline-block;
         padding-bottom: 3%;
         width: 65%;
-    }
+    }*/
 
     .domo1 {
         margin-right: 20%;
@@ -211,9 +211,9 @@
         font-weight: normal;
     }
 
-    .dogcar {
+    /*.dogcar {
         width: 75%;
-    }
+    }*/
 
     .codprocar {
         padding: 2px 5px 5px 5px;
