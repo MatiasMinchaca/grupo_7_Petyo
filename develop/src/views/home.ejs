@@ -1,92 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link href="/images/isotipo.png" type="image/x-icon" rel="shortcut icon" />
-    <title>Home</title>
-   
-    <!-- FUENTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styleSheet/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <script src="https://kit.fontawesome.com/8a6b29c899.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"crossorigin="anonymous"></script>
-    
-    <!-- SCRIPTS LOCALES -->
-    <script src="/js/carousel.js" defer></script>
-    
-    
-
-</head>
+    <!-- HEAD -->
+    <%- include('./partials/head') %> 
 
 <body class="home">
 
-    <header class="header-agus">
-
-        <div class="banner">
-
-            <!-- LOGO -->
-            
-        <div class="logo-menu">
-            <div class="logo">
-                <a href="/"><img src="/images/logotipo.png" alt=""></a>
-            </div>
-            <!-- FIN LOGO -->
-
-            <!-- MENU TABLET Y DESKTOP -->
-
-            <div class="menu-tablet-desktop">
-                <label for="menu">Menú<i class="fas fa-angle-down"></i></label>
-                <input type="checkbox" id="menu">
-                <ul>
-                    <li><a href="/"> Inicio</a></li>
-                    <li><a href="/login"> Iniciar sesión</a></li>
-                    <li><a href="/register">Registrarse</a></li>
-                    <li><a href="/shoppingCart">Carrito</a></li>
-                    <li><a href="/productDetail">Productos</a></li>
-                </ul>
-            </div>
-        </div>
-            <!-- ICONOS -->
-            <div class="lupa-menu">
-                <div class="lupa">
-                    <a href=""><i class="fas fa-search"></i></a>
-                </div>
-
-                <div class="user">
-                    <a href="/login"><i class="fas fa-user"></i></a>
-                </div>
-
-                <div class="carrito">
-                    <a href="/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-
-                <div class="menu">
-                    <label for="menu"><i class="fas fa-bars"></i></label>
-                    <input type="checkbox" id="menu">
-                    <ul>
-                        <li><a href="/"> Inicio</a></li>
-                        <li><a href="/login"> Iniciar sesión</a></li>
-                        <li><a href="/register">Registrarse</a></li>
-                        <li><a href="/shoppingCart">Carrito</a></li>
-                        <li><a href="/productDetail">Productos</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- FIN ICONOS -->
-
-        </div>
-
-    </header>
+<!-- HEADER -->
+<%- include('./partials/header') %> 
 
     <main>
 
@@ -192,7 +113,7 @@
 
                 <article class="producto-uno">
                     <div class="img">
-                        <a href="/productDetail"><img src="/images/prodcarTransportador.png" alt=""></a>
+                        <a href="/products/detail"><img src="/images/prodcarTransportador.png" alt=""></a>
                     </div>
                     <div class="descripcion">
                         <p>$1.649</p>
@@ -203,7 +124,7 @@
 
                 <article class="producto-dos">
                     <div class="img">
-                        <a href="/productDetail"><img src="/images/prodcarDispenser.png" alt=""></a>
+                        <a href="/products/detail"><img src="/images/prodcarDispenser.png" alt=""></a>
                     </div>
                     <div class="descripcion">
                         <p>$980</p>
@@ -214,7 +135,7 @@
 
                 <article class="producto-tres">
                     <div class="img">
-                        <a href="/productDetail"><img src="/images/producto-hueso.jpg" alt=""></a>
+                        <a href="/products/detail"><img src="/images/producto-hueso.jpg" alt=""></a>
                     </div>
                     <div class="descripcion">
                         <p>$350</p>
@@ -226,7 +147,7 @@
 
                 <article class="producto-cuatro">
                     <div class="img">
-                        <a href="/productDetail"><img src="/images/producto-arnes.jpg" alt=""></a>
+                        <a href="/products/detail"><img src="/images/producto-arnes.jpg" alt=""></a>
                     </div>
                     <div class="descripcion">
                         <p>$1.450</p>
@@ -283,54 +204,8 @@
         </section>
 
     </main>
-
-    <footer>
-
-      <section>
-        <article class="lista">
-            <nav>
-                <ul>
-                    <h4>Categorías</h4>
-                    <li>Perros</li>
-                    <li>Gatos</li>
-                    <li>Aver</li>
-                    <li>Reptiles</li>
-                </ul>
-              
-            </nav>
-      
-        </article>
-
-        <article class="redes">
-            <h3>Seguinos en nuestras redes</h3>
-            <div>
-                <a href=""><i class="fab fa-whatsapp"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-            </div>    
-            <div class="ayuda">
-                <p>Ayuda</p>
-                <p>Política de privacidad</p>
-                <p>Términos y condiciones</p>
-            </div>
-        </article>
-
-        <article class="servicios">
-            <nav>
-                  
-                <ul>
-                    <h4>Servicios</h4>
-                    <li>Consejos para tu mascota</li>
-                    <li>Venta mayotista</li>
-                    <li>Mi cuenta</li>
-                </ul>
-    
-            </nav>
-    
-        </article>
-    
-    </section>
-    </footer>
+<!-- FOOTER -->
+<%- include('./partials/footer') %> 
 
 </body>
 

@@ -1,28 +1,30 @@
+/* REQUIRES */
 const express = require('express');
 const app = express();
 const path = require('path');
+
+/* PORT */
 const port = 3000;
 
-app.use(express.static('public'))
+/* ROUTERS */
+let homeRouter = require('./routers/homeRouter'); 
+let productsRouter = require('./routers/productsRouter');
+let usersRouter = require('./routers/usersRouter');
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/home.html'))
-})
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/login.html'))
-})
-app.get('/loginConfirmation', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/loginConfirmation.html'))
-})
-app.get('/productDetail', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/productDetail.html'))
-})
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/register.html'))
-})
-app.get('/shoppingCart', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/shoppingCart.html'))
-})
+/* VIEWS */
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+
+/* MIDDLEWARES */
+app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.urlencoded({ extended : false })); /* Configurando el metodo POST */
+app.use(express.json()) 
+
+/* ROUTES */
+app.use('/', homeRouter);
+app.use('/products', productsRouter);
+app.use('/users', usersRouter);
+
 
 app.listen(port, () => {
     console.log(`Servidor funcionando en puerto ${port}\n http://localhost:${port}`)

@@ -1,73 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail</title>
-    <link rel="stylesheet" href="styleSheet/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8a6b29c899.js" crossorigin="anonymous"></script>
-    <link href="/images/isotipo.png" type="image/x-icon" rel="shortcut icon" />
-    <script src="/js/quantity.js" defer></script>
-</head>
+ <!-- HEAD -->
+ <%- include('./partials/head') %> 
 
 <body>
-    <header class="header-agus">
+   
+    <!-- HEADER -->
+<%- include('./partials/header') %> 
 
-        <div class="banner">
-
-            <!-- LOGO -->
-            
-        <div class="logo-menu">
-            <div class="logo">
-                <a href="/"><img src="/images/logotipo.png" alt=""></a>
-            </div>
-            <!-- FIN LOGO -->
-
-            <!-- MENU TABLET Y DESKTOP -->
-
-            <div class="menu-tablet-desktop">
-                <label for="menu">Menú<i class="fas fa-angle-down"></i></label>
-                <input type="checkbox" id="menu">
-                <ul>
-                    <li><a href="/"> Inicio</a></li>
-                    <li><a href="/login"> Iniciar sesión</a></li>
-                    <li><a href="/register">Registrarse</a></li>
-                    <li><a href="/shoppingCart">Carrito</a></li>
-                    <li><a href="/productDetail">Productos</a></li>
-                </ul>
-            </div>
-        </div>
-            <!-- ICONOS -->
-            <div class="lupa-menu">
-                <div class="lupa">
-                    <a href=""><i class="fas fa-search"></i></a>
-                </div>
-                <div class="user">
-                    <a href="/login"><i class="fas fa-user"></i></a>
-                </div>
-                <div class="carrito">
-                    <a href="/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="menu">
-                    <label for="menu"><i class="fas fa-bars"></i></label>
-                    <input type="checkbox" id="menu">
-                    <ul>
-                        <li><a href="/"> Inicio</a></li>
-                        <li><a href="/login"> Iniciar sesión</a></li>
-                        <li><a href="/register">Registrarse</a></li>
-                        <li><a href="/shoppingCart">Carrito</a></li>
-                        <li><a href="/productDetail">Productos</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- FIN ICONOS -->
-        </div>
-    </header>
     <main class="productocompleto">
         <section class="productocar">
             <section class="pruebacar">
@@ -129,52 +70,10 @@
         </section>
         </section>
     </main>
-    <footer>
-        <section>
-            <article class="lista">
-                <nav>
-                    <ul>
-                        <h4>Categorías</h4>
-                        <li>Perros</li>
-                        <li>Gatos</li>
-                        <li>Aver</li>
-                        <li>Reptiles</li>
-                    </ul>
-                  
-                </nav>
-          
-            </article>
-    
-            <article class="redes">
-                <h3>Seguinos en nuestras redes</h3>
-                <div>
-                    <a href=""><i class="fab fa-whatsapp"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                </div>    
-                <div class="ayuda">
-                    <p>Ayuda</p>
-                    <p>Política de privacidad</p>
-                    <p>Términos y condiciones</p>
-                </div>
-            </article>
-    
-            <article class="servicios">
-                <nav>
-                      
-                    <ul>
-                        <h4>Servicios</h4>
-                        <li>Consejos para tu mascota</li>
-                        <li>Venta mayotista</li>
-                        <li>Mi cuenta</li>
-                    </ul>
-        
-                </nav>
-        
-            </article>
-        
-        </section>
-    </footer>
+  
+    <!-- FOOTER -->  
+<%- include('./partials/footer') %> 
+
 </body>
 
 </html>
