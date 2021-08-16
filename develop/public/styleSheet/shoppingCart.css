@@ -36,6 +36,7 @@
     border: solid 1px rgb(43 86 19/ 65%);
     color: white;
     text-shadow: 0 0 6px black;
+    font-size: 11px;
 }
 .cart-container .button-cart button:hover{
     background: linear-gradient(45deg, rgba(98, 211, 32, 0.652) , rgba(61, 141, 15, 0.686));
@@ -239,6 +240,7 @@
         width: 100px;
         height: 35px;
         box-shadow: 0 0 3px rgb(0 0 0 / 20%);
+        font-size: 12px;
     }
     .cart-container .product-cart picture{
         width: 100px;
