@@ -1,16 +1,16 @@
 module.exports = {
     login : (req, res) => {
-        res.render('login', {
+        res.render('user/login', {
             title : 'Iniciar sesión'
         })
     },
     confirmation : (req, res)=> {
-        res.render('loginConfirmation', {
+        res.render('user/loginConfirmation', {
             title : 'Confirmar cuenta'
         })
     },
     register : (req, res) => {
-        res.render('register', {
+        res.render('user/register', {
             title: 'Registrarse'
         })
     }
