@@ -10,6 +10,7 @@ const port = 3000;
 let homeRouter = require('./routers/homeRouter'); 
 let productsRouter = require('./routers/productsRouter');
 let usersRouter = require('./routers/usersRouter');
+let adminRouter = require('./routers/adminRouter');
 
 /* VIEWS */
 app.set('views', path.join(__dirname, 'views'))
@@ -24,6 +25,7 @@ app.use(express.json())
 app.use('/', homeRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 
 app.listen(port, () => {

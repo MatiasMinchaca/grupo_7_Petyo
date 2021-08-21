@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+ <!-- HEAD -->
+ <%- include('../partials/head') %> 
+
+<body>
+    
+   <!-- HEADER -->
+<%- include('../partials/header') %> 
+    <!-- Admin Index -->
+    <h1 class="welcome-admin">Bienvenido Administrador</h1>
+    <main class="admin-index-container">
+        <div class="list-of-products">
+            <a href="/admin/products">Lista de productos</a>
+        </div>
+        <div class="load-product">
+            <a href="/admin/loadProduct">Agregar producto</a>
+        </div>
+    </main>
+    
+    <!-- FOOTER -->  
+    <%- include('../partials/footer') %> 
+
+    <a href="/admin" class="btn-flotante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script src="../../../public/js/admin.js"></script>
+</body>
+</html>

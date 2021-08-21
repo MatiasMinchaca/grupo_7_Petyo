@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+ <!-- HEAD -->
+ <%- include('../partials/head') %> 
+
+<body>
+    
+   <!-- HEADER -->
+<%- include('../partials/header') %> 
+
+    <main class="product-load-container">
+        <form class="form-load">
+            <select type="text" name="" id="" placeholder="Tipo" class="select-type-product" required>
+                <option value="" selected hidden>Tipo de producto</option>
+                <option value="alimento">Alimento</option>
+                <option value="juguetes">Juguetes</option>
+                <option value="ropa">Ropa</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
+            <div class="preview-image-container">
+                <label class="btn-load-image-admin" for="imgInp">Seleccione una imagen</label>
+                <input type='file' id="imgInp" name="imgInp" hidden="hidden" required/>
+                <img class="preview-image" id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" />
+            </div>
+            <input type="text" class="name-product-load" placeholder="Nombre del producto" required>
+            <section class="price-section-load">
+                <h2 class="sing-price-load">$</h2>
+                <input type="number" class="price-input-load" placeholder="Precio" required>
+            </section>
+            <section class="id-section-load">
+                <h2 class="sing-id-load">#</h2>
+                <input type="number" name="" id="" placeholder="Código del producto" class="id-load-product" required>
+            </section>
+            <textarea cols="10" rows="10" class="description-product-load" placeholder="Descripción del producto" required></textarea>
+            <input type="submit" value="Cargar producto" class="btn-load-product" required>
+        </form> 
+    </main>
+    
+    <!-- FOOTER -->  
+    <%- include('../partials/footer') %> 
+
+    <a href="/admin" class="btn-flotante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script src="../../../public/js/adminLoad.js"></script>
+</body>
+</html>
