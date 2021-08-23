@@ -10,7 +10,7 @@
     border: none;
     height: 40px;
     outline: none;
-    background-color: rgba(93, 223, 17, 0.8);
+    background-color: rgba(93, 223, 17);
     color: white;
     text-shadow: 0 0 10px rgb(0, 0, 0);
     margin-top: 20px;
@@ -18,7 +18,7 @@
     border-radius: 10px;
 }
 .product-load-container .form-load .select-type-product:hover{
-    background-color: rgba(112, 201, 60, 0.8);
+    background-color: rgba(112, 201, 60);
 }
 .product-load-container .form-load .preview-image-container{
     display: flex;
@@ -136,6 +136,13 @@
 }
 /* Tablet */
 @media screen and (min-width:475px) {
+    .body-product-load{
+        background-image: url('/images/backgroundPew.jpg');
+        background-size: cover;
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
     .product-load-container{
         display: flex;
         justify-content: center;
@@ -145,6 +152,8 @@
         width: 400px;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.282);
         margin: 20px 0;
+        background-color: rgba(255, 255, 255, 0.939);
+        border-radius: 25px;
     }
     .product-load-container .form-load .select-type-product{
         margin-top: 10px;
@@ -162,6 +171,7 @@
         width: 600px;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.282);
         margin: 20px 0;
+        border-radius: 50px;
     }
     .product-load-container .form-load .select-type-product{
         width: 200px;
@@ -176,7 +186,9 @@
         width: 250px;
     }
     .product-load-container .form-load .name-product-load{
-        width: 200px;
+        width: 250px;
+        height: 50px;
+        font-size: 18px;
     }
     .product-load-container .form-load .description-product-load{
         width: 400px;

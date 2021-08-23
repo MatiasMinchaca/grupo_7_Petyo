@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+ <!-- HEAD -->
+ <%- include('../partials/head') %> 
+
+<body>
+       <!-- HEADER -->
+<%- include('../partials/header') %> 
+
+    <div class="editProfile-container">
+        <form action="" class="editProfile-form">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <select type="text" placeholder="Especie" class="select-species-pet" required>
+                <option value="" selected hidden>Especie de tu mascota</option>
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+                <option value="reptil">Reptil</option>
+                <option value="ave">Ave</option>
+            </select>
+            <input type="text">
+        </form>
+    </div>
+    <!-- FOOTER -->  
+    <%- include('../partials/footer') %> 
+</body>
+</html>

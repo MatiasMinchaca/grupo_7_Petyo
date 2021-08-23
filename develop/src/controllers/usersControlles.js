@@ -13,5 +13,10 @@ module.exports = {
         res.render('user/register', {
             title: 'Registrarse'
         })
+    },
+    editProfile : (req, res) => {
+        res.render('user/editProfile', {
+            title: 'Editar Perfil'
+        })
     }
 }

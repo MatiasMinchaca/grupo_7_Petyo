@@ -1,0 +1,9 @@
+.editProfile-container{
+    max-width: 300px;
+    margin: 0 auto;
+}
+.editProfile-container .editProfile-form{
+    display: flex;
+    flex-direction: column;
+}
+
