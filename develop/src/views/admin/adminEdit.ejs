@@ -12,25 +12,35 @@
     <main class="product-load-container">
         <form class="form-load">
             <select type="text" placeholder="Tipo" class="select-type-product" required>
-                <option value="" selected hidden>Tipo de producto</option>
+                <option value="" selected hidden>Categorias</option>
                 <option value="alimento">Alimento</option>
                 <option value="juguetes">Juguetes</option>
                 <option value="ropa">Ropa</option>
                 <option value="accesorios">Accesorios</option>
+            </select>
+            <select type="text" placeholder="Tipo" class="select-type-product" required>
+                <option value="" selected hidden>Subcategorias</option>
+                <option value="perros">Perros</option>
+                <option value="gatos">Gatos</option>
+                <option value="aves">Aves</option>
+                <option value="reptiles">Reptiles</option>
             </select>
             <div class="preview-image-container">
                 <label class="btn-load-image-admin" for="imgInp">Seleccione una imagen</label>
                 <input type='file' id="imgInp" name="imgInp" hidden="hidden" required/>
                 <img class="preview-image" id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" />
             </div>
-            <input type="text" class="name-product-load" placeholder="Nombre del producto" required>
+            <label for="name-product-load" class="name-product-load-label">Nombre del producto</label>
+            <input type="text" class="name-product-load" id="name-product-load" name="name-product-load" required>
+            <label for="price-load-product">Precio</label>
             <section class="price-section-load">
                 <h2 class="sing-price-load">$</h2>
-                <input type="number" class="price-input-load" placeholder="Precio" required>
+                <input type="number" class="price-input-load" id="price-load-product" name="price-load-product" required>
             </section>
+            <label for="id-load-product">ID</label>
             <section class="id-section-load">
                 <h2 class="sing-id-load">#</h2>
-                <input type="number" name="" id="" placeholder="Código del producto" class="id-load-product" required>
+                <input type="number" name="id-load-product" id="id-load-product" class="id-load-product" required>
             </section>
             <textarea cols="10" rows="10" class="description-product-load" placeholder="Descripción del producto" required></textarea>
             <div style="display: flex;">

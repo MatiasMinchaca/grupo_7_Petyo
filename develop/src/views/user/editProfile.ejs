@@ -4,27 +4,49 @@
  <!-- HEAD -->
  <%- include('../partials/head') %> 
 
-<body>
+<body class="body-profile">
        <!-- HEADER -->
 <%- include('../partials/header') %> 
 
     <div class="editProfile-container">
         <form action="" class="editProfile-form">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <select type="text" placeholder="Especie" class="select-species-pet" required>
-                <option value="" selected hidden>Especie de tu mascota</option>
-                <option value="perro">Perro</option>
-                <option value="gato">Gato</option>
-                <option value="reptil">Reptil</option>
-                <option value="ave">Ave</option>
-            </select>
-            <input type="text">
+            <div class="profile-image-container">
+                <input type='file' id="imgInp" name="imgInp" hidden="hidden" required/>
+                <img class="profile-image" id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" />
+                <label class="btn-load-image-profile" for="imgInp">Seleccione una imagen</label>
+            </div>
+            <div class="inputs-edit-profile">
+                <label for="name-edit">Nombre</label>
+                <input type="tex" id="name-edit" name="name-edit" class="name-edit" required>
+                <label for="surname-edit">Apellido</label>
+                <input type="text" id="surname-edit" name="surname-edit" class="surname-edit" required>
+                <label for="email-edit">Correo elctronico</label>
+                <input type="email" id="email-edit" name="email-edit" class="email-edit" required>
+                <label for="tel-edit">Telefono</label>
+                <input type="tel" id="tel-edit" name="tel-edit" class="tel-edit" required>
+                <label for="name-pet-edit">Nombre de tu mascota</label>
+                <input type="text" id="name-pet-edit" name="name-pet-edit" class="name-pet-edit" required>
+                <select type="text"  class="select-species-pet" required>
+                    <option value="" selected hidden>Especie de tu mascota</option>
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                    <option value="reptil">Reptil</option>
+                    <option value="ave">Ave</option>
+                </select>
+                <label for="biography-edit">Biografia</label>
+                <textarea type="text" cols="10" rows="10"  id="biography-edit" name="biography-edit" class="biography-edit" required></textarea>
+                <label for="password-edit">Cambiar contraseña</label>
+                <input type="password" id="password-edit" name="password-edit" class="password-edit" required>
+                <label for="confirm-password-edit">Confirmar contraseña</label>
+                <input type="password" id="confirm-password-edit" name="confirm-password-edit" class="confirm-password-edit" required>
+                <input type="submit" value="Guardar" class="save-profile">
+            </div>
         </form>
     </div>
     <!-- FOOTER -->  
-    <%- include('../partials/footer') %> 
+    <%- include('../partials/footer') %>
+    
+    <!-- JavaScript -->
+    <script src="/js/users.js"></script>
 </body>
 </html>

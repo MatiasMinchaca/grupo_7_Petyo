@@ -1,9 +1,147 @@
 .editProfile-container{
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 400px;
+    margin: 10px auto;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease-in-out;
 }
 .editProfile-container .editProfile-form{
     display: flex;
     flex-direction: column;
+    margin: 10px;
 }
+.editProfile-container .editProfile-form .profile-image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.editProfile-container .editProfile-form .profile-image-container .profile-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+    transition: all 0.5s ease-in-out;
+    margin: 10px 0;
+    cursor: zoom-in;
+}
+.editProfile-container .editProfile-form .profile-image-container .profile-image:hover{
+    transform: scale(1.1);
+}
+.editProfile-container .editProfile-form .profile-image-container .btn-load-image-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 200px;
+    background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 0 3px 7px black;
+    border-radius: 10px;
+    box-shadow: 0 0 6px black;
+    cursor: pointer;
+    margin: 10px 0;
+}
+.editProfile-container .editProfile-form .profile-image-container .btn-load-image-profile:hover{
+    background: linear-gradient(0deg, rgb(98, 211, 32),rgb(61, 141, 15));
+}
+.editProfile-container .editProfile-form .inputs-edit-profile{
+    display: flex;
+    flex-direction: column;
+}
+.editProfile-container .editProfile-form .inputs-edit-profile label{
+    margin: 0;
+    color: rgb(10, 10, 10);
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+.editProfile-container .editProfile-form .inputs-edit-profile label:hover{
+    text-shadow: 0 2px 3px green;
+}
+.editProfile-container .editProfile-form .inputs-edit-profile input{
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px black;
+    margin: 5px 0;
+    transition: all 0.5s ease-in-out;
+}
+.editProfile-container .editProfile-form .inputs-edit-profile input:hover{
+    transform: scale(1.01);
+}
+.editProfile-container .editProfile-form .inputs-edit-profile .select-species-pet{
+    height: 30px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px black;
+    margin: 5px 0;
+}
+.editProfile-container .editProfile-form .inputs-edit-profile .biography-edit{
+    width: 100%;
+    height: 100px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px black;
+    margin: 5px 0;
+}
+.editProfile-container .editProfile-form .inputs-edit-profile .save-profile{
+    margin: 10px 0 5px;
+}
+@media screen and (min-width:475px) {
+    .body-profile{
+        background-image: url('/images/backgroundPew.jpg');
+    }
+    .editProfile-container{
+        max-width: 550px;
+        margin: 20px auto;
+        box-shadow: 0 0 6px black;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.871);
+    }
+    .editProfile-container .editProfile-form{
+        margin: 20px;
+    }
+    .editProfile-container .editProfile-form .inputs-edit-profile input{
+        height: 30px;
+    }
+    .editProfile-container .editProfile-form .inputs-edit-profile .save-profile{
+        margin-bottom: 10px;
+    }
+}
+@media screen and (min-width:1024px) {
 
+    .editProfile-container{
+        max-width: 1000px;
+        margin: 20px auto;
+        box-shadow: 0 0 6px black;
+        border-radius: 10px;
+
+    }
+    .editProfile-container .editProfile-form{
+       flex-direction: row;
+       align-items: flex-start;
+       justify-content: space-around;
+    }
+    .editProfile-container .editProfile-form .profile-image-container{
+        margin-top: 100px;
+        width: 200px;
+    }
+    .editProfile-container .editProfile-form .profile-image-container .profile-image{
+        width: 250px;
+        height: 250px;
+    }
+    .editProfile-container .editProfile-form .profile-image-container .btn-load-image-profile{
+        width: 250px;
+        margin: 20px 0;
+    }
+    .editProfile-container .editProfile-form .inputs-edit-profile{
+        width: 400px;
+        margin: 20px 0;
+    }
+    .editProfile-container .editProfile-form .inputs-edit-profile input{
+        height: 30px;
+    }
+    .editProfile-container .editProfile-form .inputs-edit-profile .save-profile{
+        margin-bottom: 0;
+    }
+}

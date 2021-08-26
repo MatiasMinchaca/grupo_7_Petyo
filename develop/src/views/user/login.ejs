@@ -5,17 +5,21 @@
  <%- include('../partials/head') %> 
 
 <body>
-    <div class="form-container">
-        <img src="/images/floatingImage.png" alt="" class="floating-image-form">
-        <img src="/images/logo.png" alt="" class="logo-form">
-        <a href="#" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
-        <form action="" class="email-form"><input type="email" placeholder="Correo electronico o teléfono"></form>
-        <h6 class="error-message">No hay ninguna cuenta asociada a ese correo electronico</h6>
-        <h6 class="create-account">¿No tienes una cuenta?<a href="/users/register">Cree una.</a></h6>
-        <button class="button-forms"><a href="/users/login/confirmation">Siguiente</a></button>
-    </div>
-    <a href="/users/register" class="recovery-options">
-        <i class="fas fa-key"></i><p>Opciones de recuperacion de tu cuenta</p>
-    </a>
+    <form action="" class="body-login-register">
+        <div class="form-container">
+            <img src="/images/floatingImage.png" alt="" class="floating-image-form">
+            <img src="/images/logotipo.png" alt="" class="logo-form">
+            <a href="#" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
+            <input type="email" placeholder="Correo electronico o teléfono" required>
+            <h6 class="error-message">No hay ninguna cuenta asociada a ese correo electronico</h6>
+            <input type="password" placeholder="Contraseña" required>
+            <h6 class="error-message">Contraseña incorrecta</h6>
+            <h6 class="create-account">¿No tienes una cuenta?<a href="/users/register">Cree una.</a></h6>
+            <input type="submit" value="iniciar sesión" class="button-forms login-button">
+        </div>
+        <a href="/users/register" class="recovery-options">
+            <i class="fas fa-key"></i><p>Opciones de recuperacion de tu cuenta</p>
+        </a>
+    </form>
 </body>
 </html>

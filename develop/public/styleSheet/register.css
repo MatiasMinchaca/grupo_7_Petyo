@@ -1,27 +1,27 @@
 .form-container-register{
-    height: 400px;
+    height: 420px;
     width: 300px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    background-color: #ffffffad;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.337);
     position: relative;
-    margin-top: 100px;
+    margin-top: 60px;
     font-family: 'Roboto', sans-serif;
     transition: all 1s;
 }
 .form-container-register .floating-image-form{
-    max-width: 250px;
-    height: 226px;
+    max-width: 180px;
+    height: 150px;
     position: absolute;
-    top: -145px;
-    left: 40px;
+    top: -122px;
+    left: 60px;
     transition: all 1s;
 }
 .form-container-register .logo-form{
     max-width: 100px;
-    margin-left: 6px;
-    transition: all 1s;
+    margin-left: 21px;
+    margin-top: 10px;
 }
 .form-container-register .close img{
     color: #a70e0e;
@@ -31,7 +31,8 @@
     right: 5px;
     transition: all 1s;
 }
-.form-container-register .form-register input{
+.form-container-register input{
+    background-color: #ffffff00;
     margin-top: 5px;
     margin-left: 21px;
     width: 258px;
@@ -44,10 +45,10 @@
     align-items: center;
     transition: all 1s;
 }
-.form-container-register .form-register input:hover{
+.form-container-register input:hover{
     border-bottom: solid 1px var(--mantis);
 }
-.form-container-register .form-register input:focus{
+.form-container-register input:focus{
     outline: none;
 }
 .form-container-register .error-message{
@@ -63,6 +64,7 @@
     font-weight: 400;
     margin-left: 21px;
     margin-top: 5px;
+    font-size: 12px;
 }
 .form-container-register .have-account a{
     color: #0067b8;
@@ -74,8 +76,19 @@
     margin-left: 21px;
     margin-top: 5px;
     font-weight: 400;
+    font-size: 12px;
 }
 .form-container-register .terms-and-conditions input{
+    background-color: #ffffff00;
+    margin-top: 0;
+    margin-left: 0;
+    width: 13px;
+    height: 13px;
+    border-bottom: solid 1px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    align-items: center;
     position: relative;
     top: 2px;
 }
@@ -95,26 +108,27 @@
     right: 5px;
     font-size: 14px;
     transition: all 1s;
+    color: white;
 }
 .form-container-register .button-form-create-account:hover{
     text-shadow: 0 0 2px black;
     background-color: var(--mantis);
 }
-.form-container-register .button-form-create-account a{
-    color: white;
-}
+
 /* Tablet */
 @media screen and (min-width: 475px){
     .form-container-register{
-        height: 420px;
+        height: 430px;
         width: 350px;
+        margin-top: 85px;
     }
     .form-container-register .floating-image-form{
-        height: 245px;
-        top: -157px;
-        left: 55px;
+        height: 170px;
+        top: -138px;
+        left: 75px;
+        max-width: 200px;
     }
-    .form-container-register .form-register input{
+    .form-container-register input{
         width: 280px;
         font-size: 15px;
     }
@@ -142,11 +156,10 @@
         width: 400px;
     }
     .form-container-register .floating-image-form{
-        height: 260px;
-        top: -166px;
-        left: 74px
+        max-width: 210px;
+        left: 94px;
     }
-    .form-container-register .form-register input{
+    .form-container-register input{
         width: 330px;
         font-size: 16px;
     }

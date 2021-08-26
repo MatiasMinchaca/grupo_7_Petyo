@@ -1,27 +1,38 @@
-.form-container{
-    height: 200px;
-    width: 300px;
-    max-width: 300px;
-    margin: 0 auto;
+.body-login-register{
     display: flex;
     flex-direction: column;
-    
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(150deg, #d5f9d3 0%, #d3f9d4 50%, #a4f1a0 50%, #a0f1a3 100%);
+}
+.form-container{
+    height: 210px;
+    width: 300px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffad;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.337);
     position: relative;
-    margin-top: 130px;
+    margin-top: 20px;
     font-family: 'Roboto', sans-serif;
     transition: all 1s;
 }
 .form-container .floating-image-form{
-    max-width: 250px;
-    height: 245px;
+    max-width: 180px;
+    height: 150px;
     position: absolute;
-    top: -157px;
-    left: 40px;
+    top: -122px;
+    left: 60px;
     transition: all 1s;
 }
 .form-container .logo-form{
     max-width: 100px;
-    margin-left: 6px;
+    margin-left: 21px;
+    margin-top: 10px;
 }
 .form-container .close img{
     color: #a70e0e;
@@ -31,14 +42,11 @@
     right: 5px;
     transition: all 1s;
 }
-.form-container .email-form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 1s;
-}
-.form-container .email-form input{
-    margin-top: 15px;
+
+.form-container input{
+    background-color: #ffffff00;
+    margin-left: 21px;
+    margin-top: 10px;
     width: 258px;
     height: 28px;
     font-size: 14px;
@@ -46,23 +54,23 @@
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    align-items: center;
     transition: all 1s;
 }
-.form-container .email-form input:hover{
+.form-container input:hover{
     border-bottom: solid 1px var(--mantis);
 }
-.form-container .email-form input:focus{
+.form-container input:focus{
     outline: none;
 }
+
 .form-container .error-message{
     margin-left: 21px;
     color: red;
     margin-top: 5px;
     font-size: 10px;
 }
-
 .form-container .create-account{
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     margin-left: 21px;
@@ -91,8 +99,9 @@
     position: absolute;
     bottom: 5px;
     right: 5px;
-    font-size: 16px;
+    font-size: 14px;
     transition: all 1s;
+    color: white;
 }
 .form-container .button-forms:hover{
     text-shadow: 0 0 2px black;
@@ -100,27 +109,23 @@
 .form-container .button-forms:hover{
     background-color: var(--mantis);
 }
-.form-container .button-forms a{
-    color: white;
-}
 .recovery-options{
     width: 300px;
     max-width: 300px;
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.337);
     height: 40px;
     margin-top: 20px;
     transition: all 1s;
+    text-decoration: none;
 }
 .recovery-options{
     font-family: 'Roboto', sans-serif;
-    background-color: white;
-    
-
+    background-color: #ffffffad;
+    text-decoration: none;
 }
 .recovery-options:hover{
     background-color: rgb(214, 208, 208);
@@ -131,43 +136,41 @@
     text-shadow: 0 0 6px rgb(0, 0, 0);
 }
 .recovery-options p{
+    margin: 0;
     color: black;
     font-weight: 599;
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
     margin-left: 8px;
-}
-
-/* Login Confirmation */
-.form-container .write-password{
-    font-size: 17px;
-    position: absolute;
-    top: 60px;
-    left: 21px;
-}
-.form-container .login-button a{
-    font-size: 14px;
+    text-decoration: none;
 }
 
 /* Tablet */
 @media screen and (min-width: 475px) {
     .form-container{
-        height: 225px;
+        height: 235px;
         width: 350px;
         max-width: 350px;
     }
     .form-container .floating-image-form{
-        height: 245px;
-        top: -157px;
-        left: 44px;
+        height: 170px;
+        top: -138px;
+        left: 75px;
+        max-width: 200px;
     }
-    .form-container .email-form input{
+    .form-container .logo-form{
+        margin-left: 25px;
+        margin-top: 14px;
+        margin-bottom: 17px;
+    }
+    .form-container input{
+        margin-top: 0;
         width: 300px;
         font-size: 15px;
     }
     .form-container .error-message{
         margin-left: 25px;
-        font-size: 11px;
+        font-size: 10px;
     }
     .form-container .create-account{
         margin-left: 25px;
@@ -189,24 +192,7 @@
         height: 30px;
         bottom: 10px;
         right: 10px;
-        font-size: 17px;
-    }
-    /* Login Confirmation */
-    .form-container .logo-form{
-        margin-left: 10px;
-    }
-    .form-container .write-password{
-        font-size: 17px;
-        position: absolute;
-        top: 60px;
-        left: 25px;
-    }
-    .form-container .keep-sesion{
-        margin-left: 25px;
-        margin-top: 6px;
-    }
-    .form-container .login-button a{
-        font-size: 15px;
+        font-size: 14px;
     }
 }
 /* Desktop */
@@ -217,17 +203,17 @@
         max-width: 400px;
     }
     .form-container .floating-image-form{
-        height: 260px;
-        top: -166px;
-        left: 74px;
+        max-width: 210px;
+        left: 94px;
     }
     .form-container .logo-form{
-        margin-left: 10px;
+        margin-top: 15px;
+        margin-bottom: 22px;
     }
-    .form-container .email-form input{
+    .form-container input{
         width: 350px;
         font-size: 16px;
-        margin-top: 30px;
+        margin-top: 0px;
     }
     .form-container .error-message{
         margin-left: 25px;
@@ -253,6 +239,6 @@
         height: 33px;
         bottom: 11px;
         right: 13px;
-        font-size: 19px;
+        font-size: 15px;
     }
 }

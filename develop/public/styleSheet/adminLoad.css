@@ -13,12 +13,16 @@
     background-color: rgba(93, 223, 17);
     color: white;
     text-shadow: 0 0 10px rgb(0, 0, 0);
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     border-radius: 10px;
 }
 .product-load-container .form-load .select-type-product:hover{
     background-color: rgba(112, 201, 60);
+}
+.product-load-container .form-load label{
+    font-weight: bold;
+    margin: 0;
 }
 .product-load-container .form-load .preview-image-container{
     display: flex;
@@ -50,13 +54,19 @@
     width: 170px;
     box-shadow: 0 0 2px black;
     margin-bottom: 10px;
+    cursor: zoom-in;
+    transition: all 0.5s ease-in-out;
 }
+.product-load-container .form-load .preview-image-container .preview-image:hover{
+    transform: scale(1.2);
+}
+
 .product-load-container .form-load .name-product-load{
     border: none;
     outline: none;
-    height: 40px;
-    border-bottom: 1px solid;
-    margin: 10px 0;
+    height: 30px;
+    box-shadow: 0 0 2px black;
+    margin: 0 0 10px;
 }
 .product-load-container .form-load .name-product-load:hover{
     border-bottom: solid 1px var(--mantis);
@@ -66,8 +76,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    margin: 10px 0;
+    margin: 0px 0 10px;
 }
 .product-load-container .form-load .price-section-load .sing-price-load{
     font-weight: 400;
@@ -78,8 +87,9 @@
 .product-load-container .form-load .price-section-load .price-input-load{
     border: none;
     outline: none;
-    width: 80px;
-    border-bottom: 1px solid;
+    height: 25px;
+    box-shadow: 0 0 2px black;
+    width: 100px;
 }
 .product-load-container .form-load .price-section-load .price-input-load:hover{
     border-bottom: solid 1px var(--mantis);
@@ -89,8 +99,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 10px 0;
     margin-bottom: 20px;
+
 }
 .product-load-container .form-load .id-section-load .sing-id-load{
     font-weight: 400;
@@ -101,7 +111,9 @@
 .product-load-container .form-load .id-section-load .id-load-product{
     border: none;
     outline: none;
-    border-bottom: 1px solid;
+    height: 25px;
+    box-shadow: 0 0 2px black;
+    width: 150px;
 }
 .product-load-container .form-load .id-section-load .id-load-product:hover{
     border-bottom: solid 1px var(--mantis);
@@ -111,7 +123,7 @@
     outline: none;
     width: 300px;
     height: 100px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.282);
+    box-shadow: 0 0 2px black;
 }
 .product-load-container .form-load .btn-load-product{
     display: flex;
@@ -124,7 +136,7 @@
     border:none;
     border-radius: 5px;
     height: 30px;
-    width: 170px;
+    width: 150px;
     outline: none;
     box-shadow: 0 0 2px black;
     font-size: 15px;
@@ -173,6 +185,9 @@
         margin: 20px 0;
         border-radius: 50px;
     }
+    .product-load-container .form-load label{
+        font-size: 17px;
+    }
     .product-load-container .form-load .select-type-product{
         width: 200px;
     }
@@ -180,14 +195,13 @@
         width: 300px;
     }
     .product-load-container .form-load .preview-image-container .btn-load-image-admin{
-        width: 250px;
+        width: 200px;
     }
     .product-load-container .form-load .preview-image-container .preview-image{
-        width: 250px;
+        width: 200px;
     }
     .product-load-container .form-load .name-product-load{
         width: 250px;
-        height: 50px;
         font-size: 18px;
     }
     .product-load-container .form-load .description-product-load{
