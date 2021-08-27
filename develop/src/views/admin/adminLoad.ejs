@@ -10,20 +10,20 @@
 <%- include('../partials/header') %> 
 
     <main class="product-load-container">
-        <form class="form-load">
-            <select type="text" placeholder="Tipo" class="select-type-product" required>
-                <option value="" selected hidden>Categorias</option>
-                <option value="alimento">Alimento</option>
-                <option value="juguetes">Juguetes</option>
-                <option value="ropa">Ropa</option>
-                <option value="accesorios">Accesorios</option>
-            </select>
+        <form class="form-load" >
             <select type="text" placeholder="Tipo" class="select-type-product" required>
                 <option value="" selected hidden>Subcategorias</option>
                 <option value="perros">Perros</option>
                 <option value="gatos">Gatos</option>
                 <option value="aves">Aves</option>
                 <option value="reptiles">Reptiles</option>
+            </select>
+            <select type="text" placeholder="Tipo" class="select-type-product" required>
+                <option value="" selected hidden>Categorias</option>
+                <option value="alimento">Alimento</option>
+                <option value="juguetes">Juguetes</option>
+                <option value="ropa">Ropa</option>
+                <option value="accesorios">Accesorios</option>
             </select>
             <div class="preview-image-container">
                 <label class="btn-load-image-admin" for="imgInp">Seleccione una imagen</label>

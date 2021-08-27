@@ -10,14 +10,7 @@
 <%- include('../partials/header') %> 
 
     <main class="product-load-container">
-        <form class="form-load">
-            <select type="text" placeholder="Tipo" class="select-type-product" required>
-                <option value="" selected hidden>Categorias</option>
-                <option value="alimento">Alimento</option>
-                <option value="juguetes">Juguetes</option>
-                <option value="ropa">Ropa</option>
-                <option value="accesorios">Accesorios</option>
-            </select>
+        <form class="form-load" action="/admin/products/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
             <select type="text" placeholder="Tipo" class="select-type-product" required>
                 <option value="" selected hidden>Subcategorias</option>
                 <option value="perros">Perros</option>
@@ -25,13 +18,20 @@
                 <option value="aves">Aves</option>
                 <option value="reptiles">Reptiles</option>
             </select>
+            <select type="text" placeholder="Tipo" class="select-type-product" required>
+                <option value="" selected hidden>Categorias</option>
+                <option value="alimento">Alimento</option>
+                <option value="juguetes">Juguetes</option>
+                <option value="ropa">Ropa</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
             <div class="preview-image-container">
                 <label class="btn-load-image-admin" for="imgInp">Seleccione una imagen</label>
                 <input type='file' id="imgInp" name="imgInp" hidden="hidden" required/>
                 <img class="preview-image" id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" />
             </div>
             <label for="name-product-load" class="name-product-load-label">Nombre del producto</label>
-            <input type="text" class="name-product-load" id="name-product-load" name="name-product-load" required>
+            <input type="text" class="name-product-load" id="name-product-load" name="name" value="<%= product.name %>" required>
             <label for="price-load-product">Precio</label>
             <section class="price-section-load">
                 <h2 class="sing-price-load">$</h2>
