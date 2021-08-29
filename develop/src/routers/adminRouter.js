@@ -14,8 +14,8 @@ router.get('/', admin);
 /* GET - muestra todos los productos de la base de datos*/
 router.get('/products', products);
 /* GET - muestra la vista para agregar un producto*/
-router.get('/products/loadProduct', load);
-router.post('/products/loadProduct', loadProductFile.single("image"),store);
+router.get('/products/load', load);
+router.post('/products/load', loadProductFile.single("image"),store);
 /* GET - Muestra la vista de editar productos */
 router.get('/products/edit/:id', edit);
 router.put('/products/edit/:id', loadProductFile.single("image"), update);

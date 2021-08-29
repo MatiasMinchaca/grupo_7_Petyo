@@ -1,0 +1,106 @@
+.admin-products-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.admin-products-container .div-product-add{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.admin-products-container .div-product-add h1{
+    color: black;
+    margin: 8px 0;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.admin-products-container .table-products-admin-container{
+    margin: 0 10px;
+}
+.admin-products-container .table-products-admin-container .table-products-admin thead tr th{
+    box-shadow: 0 0 2px black;
+    text-align: center;
+    width: 100px;
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody{
+    background-color: rgb(93 250 106 / 49%);
+    color: black;
+    font-weight: bold;
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody tr td{
+    border: 1px solid black;
+    text-align: center;
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody tr .id-products-admin{
+    text-align: center;
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody tr .price-td{
+    text-align: center;
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody tr .category-td{
+    text-align: center;
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody tr .options-admin{
+    text-align: center;
+    background: white;
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody tr td .btn-edit-product{
+   margin: 2px;
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody tr td a svg{
+    height: 30px;
+    width: 30px;
+    margin: 10px 0 5px;
+    transition: all 0.5s ease-in-out;
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody tr td .btn-edit-product:hover{
+    transform: scale(1.01);
+}
+.admin-products-container .table-products-admin-container .table-products-admin tbody tr td form .btn-remove-product{
+    border: none;
+    background-color: none;
+    margin: 5px 0 10px;
+}
+.admin-products-container .table-products-admin-container .table-products-admin .sub-category-th{
+    display: none;
+}
+.admin-products-container .table-products-admin-container .table-products-admin .sub-category-td{
+    display: none;
+}
+.admin-products-container .table-products-admin-container .table-products-admin .discount-th{
+    display: none;
+}
+.admin-products-container .table-products-admin-container .table-products-admin .discount-td{
+    display: none;
+}
+@media screen and (min-width:480px) {
+    .admin-products-container .table-products-admin-container .table-products-admin .sub-category-th{
+        display: block;
+    }
+    .admin-products-container .table-products-admin-container .table-products-admin .sub-category-td{
+        text-align: center;
+        display: block;
+    }
+    .admin-products-container .table-products-admin-container .table-products-admin .discount-th{
+        display: block;
+    }
+    .admin-products-container .table-products-admin-container .table-products-admin .discount-td{
+        text-align: center;
+        display: block;
+    }
+}
+@media screen and (min-width:1024px) {
+    .admin-products-container .div-product-add h1{
+        margin-left: 30px;
+        font-size: 35px;
+    }
+    .admin-products-container .table-products-admin-container .table-products-admin {
+        font-size: 18px;
+    }
+    .admin-products-container .table-products-admin-container .table-products-admin thead tr th{
+        width: 120px;
+    }
+}

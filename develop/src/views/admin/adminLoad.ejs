@@ -10,39 +10,38 @@
 <%- include('../partials/header') %> 
 
     <main class="product-load-container">
-        <form class="form-load" >
-            <select type="text" placeholder="Tipo" class="select-type-product" required>
-                <option value="" selected hidden>Subcategorias</option>
-                <option value="perros">Perros</option>
-                <option value="gatos">Gatos</option>
-                <option value="aves">Aves</option>
-                <option value="reptiles">Reptiles</option>
+        <form class="form-load" action="/admin/products/load" method="POST" enctype="multipart/form-data">
+            <select type="text" placeholder="Tipo" name="category" class="select-type-product" required>
+                <option selected hidden value="">Categorias</option>
+                <% categories.forEach(category => { %>
+                    <option value="<%- category.id %>"><%- category.name %></option>
+                 <% }) %>
+                </select>
             </select>
-            <select type="text" placeholder="Tipo" class="select-type-product" required>
-                <option value="" selected hidden>Categorias</option>
-                <option value="alimento">Alimento</option>
-                <option value="juguetes">Juguetes</option>
-                <option value="ropa">Ropa</option>
-                <option value="accesorios">Accesorios</option>
+            <select type="text" placeholder="Tipo" name="subcategory" class="select-type-product" required>
+                <option selected hidden value="">Subcategorias</option>
+                 <% subcategories.forEach(subcategory => { %>
+                    <option value="<%- subcategory%>"><%- subcategory %></option>
+                 <% }) %>
             </select>
             <div class="preview-image-container">
                 <label class="btn-load-image-admin" for="imgInp">Seleccione una imagen</label>
-                <input type='file' id="imgInp" name="imgInp" hidden="hidden" required/>
-                <img class="preview-image" id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" />
+                <input type='file' id="imgInp" name="image" aria-label="file example" hidden="hidden" >
+                <img class="preview-image" id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" >
             </div>
             <label for="name-product-load" class="name-product-load-label">Nombre del producto</label>
-            <input type="text" class="name-product-load" id="name-product-load" name="name-product-load" required>
+            <input type="text" class="name-product-load" id="name-product-load" name="name" required>
             <label for="price-load-product">Precio</label>
             <section class="price-section-load">
                 <h2 class="sing-price-load">$</h2>
-                <input type="number" class="price-input-load" id="price-load-product" name="price-load-product" required>
+                <input type="number" class="price-input-load" id="price-load-product" name="price" required>
             </section>
-            <label for="id-load-product">ID</label>
+            <label for="id-load-product">Descuento</label>
             <section class="id-section-load">
-                <h2 class="sing-id-load">#</h2>
-                <input type="number" name="id-load-product" id="id-load-product" class="id-load-product" required>
+                <h2 class="sing-id-load">%</h2>
+                <input type="number" id="id-load-product" name="discount" class="id-load-product" required>
             </section>
-            <textarea cols="10" rows="10" class="description-product-load" placeholder="Descripción del producto" required></textarea>
+            <textarea cols="10" rows="10" class="description-product-load" name="description" placeholder="Descripción del producto" required></textarea>
             <input type="submit" value="Cargar producto" class="btn-load-product" required>
         </form> 
     </main>

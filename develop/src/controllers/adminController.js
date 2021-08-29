@@ -52,7 +52,7 @@ module.exports = {
             description,
             price,
             discount,
-            image: req.file ? [req.file.filename] : "default-image.png"
+            image: req.file ? "/products/"+req.file.filename : "default-image.png"
         };
 
         products.push(newProduct);
