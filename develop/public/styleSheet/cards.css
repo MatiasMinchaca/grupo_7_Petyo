@@ -1,0 +1,97 @@
+.categories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    height: -moz-fit-content;
+}
+.categories .banner-category{
+    background: green;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.categories .banner-category img{
+    width: fit-content;
+    width: -moz-fit-content;
+    height: 200px;
+}
+.categories .product-card-div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.categories .product-card-div .product-card {
+    width: 260px;
+    height: 380px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px black;
+    position: relative;
+    margin: 30px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.categories .product-card-div .product-card:hover{
+    transform: scale(1.03);
+}
+.categories .product-card-div .product-card .product-discount-card{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    background-color: rgb(61, 141, 15);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 10px;
+    text-shadow: 0 3px 6px black;
+}
+.categories .product-card-div .product-card .image-card{
+    margin: 0px 30px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.385);
+}
+.categories .product-card-div .product-card .image-card img{
+    margin-top: 10px;
+    width: 130px;
+    height: 130px;
+}
+.categories .product-card-div .product-card .name-price-card{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 10px 10px 15px;
+}
+.categories .product-card-div .product-card .name-price-card p{
+    margin: 0;   
+}
+.categories .product-card-div .product-card .name-price-card .subcategory-card{
+    font-size: 20px;
+    font-weight: 400;
+}
+.categories .product-card-div .product-card .name-price-card .name-card{
+    font-size: 24px;
+    font-weight: 600;
+}
+.categories .product-card-div .product-card .name-price-card .price-card{
+    font-size: 25px;
+    font-weight: 600;
+}
+.categories .product-card-div .product-card .name-price-card .shipping-card{
+    font-size: 18px;
+    font-weight: 600;
+    color: green;
+}
+.categories .product-card-div .product-card .name-price-card .description-card{
+    font-size: 20px;
+    font-weight: 400;
+}

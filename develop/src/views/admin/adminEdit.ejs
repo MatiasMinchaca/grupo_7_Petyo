@@ -13,10 +13,10 @@
         <form class="form-load" action="/admin/products/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
             <select type="text" placeholder="Tipo" name="category" class="select-type-product" required>
                 <option value=""hidden>Categorias</option>
-                <option value="perros"<%- product.category == 1 ? "selected" : "" %> >Perros</option>
-                <option value="gatos" <%- product.category == 2 ? "selected" : "" %>>Gatos</option>
-                <option value="aves" <%- product.category == 3 ? "selected" : "" %>>Aves</option>
-                <option value="reptiles" <%- product.category == 4 ? "selected" : "" %>>Reptiles</option>
+                <option value="1"<%- product.category == 1 ? "selected" : "" %> >Perros</option>
+                <option value="2"<%- product.category == 2 ? "selected" : "" %>>Gatos</option>
+                <option value="3" <%- product.category == 3 ? "selected" : "" %>>Aves</option>
+                <option value="4" <%- product.category == 4 ? "selected" : "" %>>Reptiles</option>
             </select>
             <select type="text" placeholder="Tipo" name="subcategory" class="select-type-product" required>
                 <option value="" hidden>Subategorias</option>

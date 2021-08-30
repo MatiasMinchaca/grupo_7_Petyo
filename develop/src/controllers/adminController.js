@@ -1,4 +1,4 @@
-const { products, categories, writeProductsJSON } = require('../data/dataBase');
+const { products, categories, ProductsJSON } = require('../data/dataBase');
 
 let subcategories = [];
 products.forEach(product => {
@@ -57,7 +57,7 @@ module.exports = {
 
         products.push(newProduct);
 
-        writeProductsJSON(products)
+        ProductsJSON(products)
 
         res.redirect('/admin/products')
     },
@@ -94,7 +94,7 @@ module.exports = {
             }
         })
 
-        writeProductsJSON(products)
+        ProductsJSON(products)
 
         res.redirect('/admin/products')
     },
@@ -106,8 +106,8 @@ module.exports = {
             }
         })
         
-        writeProductsJSON(products)
+        ProductsJSON(products)
 
         res.redirect('/admin/products')
     }
-  }
+}
