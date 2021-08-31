@@ -20,6 +20,10 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
+.nav-cart-favourite a:hover {
+    text-decoration: none;
+    color: white;
+}
 .cart-container .button-cart{
     display: flex;
     flex-direction: row;
@@ -37,6 +41,7 @@
     color: white;
     text-shadow: 0 0 6px black;
     font-size: 11px;
+    outline: none;
 }
 .cart-container .button-cart button:hover{
     background: linear-gradient(45deg, rgba(98, 211, 32, 0.652) , rgba(61, 141, 15, 0.686));
@@ -144,6 +149,7 @@
     font-weight: 400;
 }
 .cart-container .buy-cart-container .subTotal .subTotal-price{
+    margin: 0;
     margin-left: 4px;
 }
 .cart-container .buy-cart-container .shipping-cost{
@@ -155,6 +161,7 @@
     font-weight: 400;
 }
 .cart-container .buy-cart-container .shipping-cost .shipping-cost-price{
+    margin: 0;
     margin-left: 4px;
 }
 .cart-container .buy-cart-container .line-and-cart{

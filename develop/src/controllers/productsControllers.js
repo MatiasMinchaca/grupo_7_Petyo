@@ -1,10 +1,21 @@
 const { products, categories } = require('../data/dataBase')
 
+
+let subcategories = [];
+products.forEach(product => {
+    if(!subcategories.includes(product.subcategory)){
+        subcategories.push(product.subcategory)
+    }  
+});
+
 module.exports = {
-   
     detail : (req, res) => {
+        let productId = +req.params.id;
+        let product = products.find(product => product.id === productId)
         res.render('products/productDetail', {
-            title : 'Detalle de producto'
+            title : 'Detalle de producto',
+            product,
+            categories
         })
     },
     category : (req, res) => {

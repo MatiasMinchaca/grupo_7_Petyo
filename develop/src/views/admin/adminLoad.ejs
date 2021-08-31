@@ -38,8 +38,8 @@
             </section>
             <label for="id-load-product">Descuento</label>
             <section class="id-section-load">
-                <h2 class="sing-id-load">%</h2>
                 <input type="number" id="id-load-product" name="discount" class="id-load-product" required>
+                <h2 class="sing-id-load">%</h2>
             </section>
             <textarea cols="10" rows="10" class="description-product-load" name="description" placeholder="Descripción del producto" required></textarea>
             <input type="submit" value="Cargar producto" class="btn-load-product" required>
@@ -49,7 +49,7 @@
     <!-- FOOTER -->  
     <%- include('../partials/footer') %> 
 
-    <a href="/admin" class="btn-flotante">
+    <a href="javascript:history.back()" class="btn-flotante">
         <i class="fas fa-undo"></i>
     </a>
     <script src="../../../js/admin.js"></script>

@@ -32,7 +32,7 @@
     border-radius: 5px;
     box-shadow: 0 0 6px black;
     position: relative;
-    margin: 30px;
+    margin: 15px;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
 }
@@ -56,7 +56,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.385);
 }
 .categories .product-card-div .product-card .image-card img{
     margin-top: 10px;
@@ -70,6 +69,7 @@
     justify-content: space-around;
     font-family: 'Roboto', sans-serif;
     margin: 0 10px 10px 15px;
+    border-top: 1px solid rgb(221, 221, 221);
 }
 .categories .product-card-div .product-card .name-price-card p{
     margin: 0;   

@@ -10,17 +10,18 @@
 <%- include('../partials/header') %> 
 
     <main class="productocompleto">
+        <a href="javascript:history.back()"> Volver Atrás</a>
         <section class="productocar">
             <section class="pruebacar">
-                <img class="dogcar" src="/images/prodcarOldprince.png" alt="">
+                <img class="dogcar" src="/images/<%- product.image %>" alt="">
                 <section">
                     <div class="descripcar">
-                        <h1>Alimento Old Prince Novel Cordero y Arroz Perro Adulto Mediano Y Grande - 15 Kg</h3>
+                        <h1><%- product.name%></h3>
                     </div>
                     <div class="codprocar">
-                        <p>Old Prince | codigo del producto: #1526</p>
+                        <p><%- product.subcategory %>| codigo del producto: #<%- product.id %></p>
                         <div>
-                            <p class="precar"> $4420 </p>
+                            <p class="precar"> $<%- product.price%> </p>
                             <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</p>
                         </div>
                         <div>
@@ -44,31 +45,11 @@
         </section>
         <section class="domo1">
             <article class="descricar">
-                <p>Alimento Old Prince Novel Cordero y Arroz Perro Adulto Mediano Y Grande,</p>
-                <p>Hecho con proteínas de origen no convencional que minimizan las probabilidades de alergias
-                    alimentarias y cutáneas.</p>
-                <div>
-                    <br>
-                    <p>
-                        Beneficios:
-                    </p>
-                    <br>
-                    <ul class="dato">
-                        <li>
-                            Mejora la piel y el pelo
-                        </li>
-                        <li>
-                            Reduce la intolerancia alimentaria
-                        </li>
-                        <li>
-                            Refuerza el sistema inmunológico intestinal
-                        </li>
-                        <br>
-                    </ul>
-                </div>
+                <%- product.description %> 
             </article>
         </section>
         </section>
+        
     </main>
   
     <!-- FOOTER -->  

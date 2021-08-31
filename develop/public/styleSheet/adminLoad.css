@@ -100,7 +100,6 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-
 }
 .product-load-container .form-load .id-section-load .sing-id-load{
     font-weight: 400;
@@ -113,7 +112,7 @@
     outline: none;
     height: 25px;
     box-shadow: 0 0 2px black;
-    width: 150px;
+    width: 100px;
 }
 .product-load-container .form-load .id-section-load .id-load-product:hover{
     border-bottom: solid 1px var(--mantis);
