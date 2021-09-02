@@ -30,11 +30,12 @@
     width: 260px;
     height: 380px;
     border-radius: 5px;
-    box-shadow: 0 0 6px black;
+    box-shadow: 0 1px 10px black;
     position: relative;
     margin: 15px;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
+    background-color: rgb(255, 255, 255);
 }
 .categories .product-card-div .product-card:hover{
     transform: scale(1.03);
