@@ -51,6 +51,21 @@
     padding: 10px;
     text-shadow: 0 3px 6px black;
 }
+.categories .product-card-div .product-card .product-detail-card{
+    position: absolute;
+    top: 100px;
+    right: 1px;
+    background-color: rgb(64, 128, 27);
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    text-shadow: 0 3px 6px black;
+    text-decoration: none;
+    font-size: 17px;
+}
+.categories .product-card-div .product-card .product-detail-card:hover{
+    background-color: rgb(65, 158, 12);
+}
 .categories .product-card-div .product-card .image-card{
     margin: 0px 30px 5px;
     display: flex;

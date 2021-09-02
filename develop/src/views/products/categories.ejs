@@ -17,6 +17,7 @@
         <% products.forEach(product => { %>
         <section class="product-card">
             <a href="/products/detail/<%- product.id %>">
+                <a class="product-detail-card" href="/products/detail/<%- product.id %>">Detalles</a>
                 <h1 class="product-discount-card"><%- product.discount %>% OFF</h1>
                 <div class="image-card">
                     <a href="/products/detail/<%- product.id %>"><img src="/images<%- product.image %>" alt=""></a>

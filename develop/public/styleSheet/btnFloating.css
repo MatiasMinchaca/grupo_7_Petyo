@@ -68,7 +68,7 @@
     justify-content: center;
     align-items: center;
     font-size: 47px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 	box-shadow: 0px 8px 13px black;
 }
 @media screen and (min-width:480px) {
@@ -78,6 +78,9 @@
         width: 60px;
         height: 60px;
     }
+    .btn-floating-add-admin .div-btn-admin .icon-add{
+        margin-bottom: 9px;
+    }
 }
 @media screen and (min-width:1024px) {
     .btn-floating-add-admin{
@@ -85,5 +88,8 @@
         bottom: 10px;
         width: 70px;
         height: 70px;
+    }
+    .btn-floating-add-admin .div-btn-admin .icon-add{
+        margin-bottom: 10px;
     }
 }
