@@ -4,7 +4,7 @@ module.exports = [
     .notEmpty()
     .withMessage("El campo nombre no puede ir vacío")
     .isLength({ min: 5 })
-    .withMessage("Ingrese más de 3 carácteres"),
+    .withMessage("Ingrese más de 5 carácteres"),
 
     check('category')
     .notEmpty()

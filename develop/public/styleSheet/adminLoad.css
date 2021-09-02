@@ -148,7 +148,7 @@
 /* Tablet */
 @media screen and (min-width:475px) {
     .body-product-load{
-        background-image: url('/images/backgroundPew.jpg');
+        background-image: url('/images/background/background.jpg');
         background-size: cover;
         background-repeat: repeat;
         background-attachment: fixed;
