@@ -1,0 +1,65 @@
+.banners-container {
+    margin-top: 0 !important;
+    position: relative;
+    margin: 0 auto;
+}
+.slides {
+    display: none;
+    width: 100%;
+}
+.slides img{
+    width: 100%;
+    max-height: 400px;
+}
+.dots {
+    width: fit-content;
+    margin: 0 auto;
+}
+.banners-container .prev, .banners-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -50px;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.banners-container .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.dot-active, .dot:hover {
+    background-color: #717171;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 7s;
+    animation-name: fade;
+    animation-duration: 7s;
+}
+@-webkit-keyframes fade {
+    from {opacity: 0.8}
+    to {opacity: 1}
+}
+@keyframes fade {
+    from {opacity: 0.8}
+    to {opacity: 1}
+}

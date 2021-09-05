@@ -10,18 +10,18 @@ products.forEach(product => {
 
 module.exports = {
     admin : (req, res) => {
-        res.render('admin/adminIndex', {
+        res.render('admin/adminDashboard', {
             title : 'Administrador'
         })
     },
     products : (req, res) => {
-        res.render('admin/adminProducts', {
+        res.render('admin/adminListProducts', {
             title : 'Lista de productos',
             products
         })
     },
     load : (req, res) => {
-        res.render('admin/adminLoad', {
+        res.render('admin/adminLoadProduct', {
             title : 'Cargar Producto',
             categories,
             subcategories
@@ -64,7 +64,7 @@ module.exports = {
     
             res.redirect('/admin/products')
         } else {
-            res.render('admin/adminLoad', {
+            res.render('admin/adminLoadProduct', {
                 title : 'Cargar Producto',
                 categories,
                 subcategories,
@@ -76,7 +76,7 @@ module.exports = {
     },
     edit: (req, res) => {
         let product = products.find(product => product.id === +req.params.id)
-        res.render('admin/adminEdit', {
+        res.render('admin/adminEditProduct', {
             title : 'Editar Producto',
             categories, 
             subcategories,
@@ -113,7 +113,7 @@ module.exports = {
             res.redirect('/admin/products')
         } else {
         let product = products.find(product => product.id === +req.params.id)
-        res.render('admin/adminEdit', {
+        res.render('admin/adminEditProduct', {
             title : 'Editar Producto',
             categories, 
             subcategories,

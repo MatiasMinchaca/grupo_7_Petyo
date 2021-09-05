@@ -1,4 +1,5 @@
 @import url('home.css');
+@import url('banners.css');
 @import url('login.css');
 @import url('register.css');
 @import url('editProfile.css');
@@ -11,6 +12,13 @@
 @import url('adminProducts.css');
 @import url('cards.css');
 
+body{
+    background-image: url('/images/background/background.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
 
 *{
     margin: 0;

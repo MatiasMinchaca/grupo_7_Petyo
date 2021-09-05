@@ -10,5 +10,6 @@ module.exports = {
     users: JSON.parse(fs.readFileSync(path.join(__dirname, "/users.json"), "utf-8")),
     UsersJSON: (dataBase) => {
         fs.writeFileSync(path.join(__dirname, "../data/users.json"), JSON.stringify(dataBase), "utf-8")
-    }
+    },
+    banners: JSON.parse(fs.readFileSync(path.join(__dirname, "/banners.json"), "utf-8"))
 }

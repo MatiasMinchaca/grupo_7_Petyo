@@ -1,10 +1,26 @@
+.page-content .grid > .article-load-product {
+    display: flex;
+    background: #fff0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    justify-content: center;
+    height: fit-content;
+    height: -moz-fit-content;
+    box-shadow: none;
+}
 .product-load-container{
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .product-load-container .form-load{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.939);
+    width: 320px;
+    border-radius: 10px;
 }
 .product-load-container .form-load .select-type-product{
     border: none;
@@ -162,7 +178,6 @@
     .product-load-container .form-load{
         width: 400px;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.282);
-        margin: 20px 0;
         background-color: rgba(255, 255, 255, 0.939);
         border-radius: 25px;
     }
@@ -181,7 +196,6 @@
     .product-load-container .form-load{
         width: 600px;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.282);
-        margin: 20px 0;
         border-radius: 50px;
     }
     .product-load-container .form-load label{
