@@ -5,24 +5,52 @@
  <%- include('../partials/head') %> 
 
 <body >
-    <form action="" class="body-login-register">
+    <form action="/users/register" method="POST" enctype="multipart/form-data" class="body-login-register">
         <div class="form-container-register">
             <img src="/images/floatingImage.png" alt="" class="floating-image-form">
             <img src="/images/logotipo.png" alt="" class="logo-form">
             <a href="javascript:history.back()" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
-            <input type="name" placeholder="Nombre" required>
-            <h6 class="error-message">Campo vacío</h6>
-            <input type="text" placeholder="Apellido" required>
-            <h6 class="error-message">Campo vacío</h6>
-            <input type="text" placeholder="Nombre de tu mascota" required>
-            <h6 class="error-message">Campo vacío</h6>
-            <input type="email / tel" placeholder="Correo electronico o teléfono" required>
-            <h6 class="error-message">Campo vacío</h6>
-            <input type="password" placeholder="Contraseña" required>
-            <h6 class="error-message">Campo vacío</h6>
-            <h6 class="have-account">¿Ya tienes una cuenta?<a href="/login">Inicie sesión.</a></h6>
-            <h6 class="terms-and-conditions"><input type="checkbox" required>Acepto los <a href="#">Terminos y Condiciones.</a></h6>
-            <input type="submit" value="Crear cuenta"  class="button-form-create-account" required>
+            <div class="div-imputs-register">
+            <input type="name" placeholder="Nombre" name="name" value="<%= locals.old && old.name %>">
+            <% if (locals.errors && errors.name) { %>
+                <h6 class="error-message"><%= errors.name.msg %> </h6>
+            <% } %>
+            </div>
+            <div class="div-imputs-register">
+            <input type="text" placeholder="Apellido" name="last_name" value="<%= locals.old && old.last_name %>">
+            <% if (locals.errors && errors.last_name) { %>
+                <h6 class="error-message"><%= errors.last_name.msg %> </h6>
+            <% } %>
+            </div>
+            <div class="div-imputs-register">
+            <input type="text" placeholder="Nombre de tu mascota" name="namePet" value="<%= locals.old && old.namePet %>">
+            </div>
+            <div class="div-imputs-register">
+            <input type="email" placeholder="Correo electronico" name="email" value="<%= locals.old && old.email %>">
+            <% if (locals.errors && errors.email) { %>
+                <h6 class="error-message"><%= errors.email.msg %> </h6>
+            <% } %>
+            </div>
+            <div class="div-imputs-register">
+            <input type="password" placeholder="Contraseña" name="pass">
+            <% if (locals.errors && errors.pass) { %>
+                <h6 class="error-message"><%= errors.pass.msg %> </h6>
+            <% } %>
+            </div>
+            <div class="div-imputs-register">
+            <input type="password" placeholder="Confirmar Contraseña" name="passC">
+            <% if (locals.errors && errors.passC) { %>
+                <h6 class="error-message"><%= errors.passC.msg %> </h6>
+            <% } %>
+            </div>
+            <h6 class="have-account">¿Ya tienes una cuenta?<a href="/users/login">Inicie sesión.</a></h6>
+            <div class="div-imputs-register">
+            <h6 class="terms-and-conditions"><input type="checkbox" class="terms-imput" name="terms">Acepto los <a href="#">Terminos y Condiciones.</a></h6>
+            <% if (locals.errors && errors.terms) { %>
+                <h6 class="error-message"><%= errors.terms.msg %> </h6>
+            <% } %>
+            </div>
+            <input type="submit" value="Crear cuenta"  class="button-form-create-account">
         </div>
     </form>
 </body>

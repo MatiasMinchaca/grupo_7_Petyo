@@ -10,14 +10,13 @@
 }
 .form-container{
     height: 210px;
-    width: 300px;
-    max-width: 300px;
+    width: 350px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     background-color: #ffffffad;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.337);
     position: relative;
-    margin-top: 20px;
     font-family: 'Roboto', sans-serif;
     transition: all 1s;
 }
@@ -26,7 +25,7 @@
     height: 150px;
     position: absolute;
     top: -122px;
-    left: 60px;
+    left: 80px;
     transition: all 1s;
 }
 .form-container .logo-form{
@@ -42,12 +41,18 @@
     right: 5px;
     transition: all 1s;
 }
-
-.form-container input{
-    background-color: #ffffff00;
+.form-container .div-imputs-login{
+    margin: 5px 0;
+    width: 260px;
+    height: 40px;
+    position: relative;
     margin-left: 21px;
-    margin-top: 10px;
-    width: 258px;
+}
+.form-container .div-imputs-login input{
+    position: absolute;
+    top: 0;
+    background-color: #ffffff00;
+    width: 260px;
     height: 28px;
     font-size: 14px;
     border-bottom: solid 1px;
@@ -56,17 +61,17 @@
     border-right: 0;
     transition: all 1s;
 }
-.form-container input:hover{
+.form-container .div-imputs-login input:hover{
     border-bottom: solid 1px var(--mantis);
 }
-.form-container input:focus{
+.form-container .div-imputs-login input:focus{
     outline: none;
 }
 
-.form-container .error-message{
-    margin-left: 21px;
+.form-container .div-imputs-login .error-message{
+    position: absolute;
+    top: 31px;
     color: red;
-    margin-top: 5px;
     font-size: 10px;
 }
 .form-container .create-account{
@@ -110,8 +115,8 @@
     background-color: var(--mantis);
 }
 .recovery-options{
-    width: 300px;
-    max-width: 300px;
+    width: 350px;
+    max-width: 350px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -163,13 +168,14 @@
         margin-top: 14px;
         margin-bottom: 17px;
     }
-    .form-container input{
-        margin-top: 0;
+    .form-container .div-imputs-login{
+        width: 300px;
+    }
+    .form-container .div-imputs-login input{
         width: 300px;
         font-size: 15px;
     }
     .form-container .error-message{
-        margin-left: 25px;
         font-size: 10px;
     }
     .form-container .create-account{
@@ -210,13 +216,14 @@
         margin-top: 15px;
         margin-bottom: 22px;
     }
-    .form-container input{
+    .form-container .div-imputs-login {
+        width: 350px;
+    }
+    .form-container .div-imputs-login input{
         width: 350px;
         font-size: 16px;
-        margin-top: 0px;
     }
     .form-container .error-message{
-        margin-left: 25px;
         font-size: 12px;
     }
     .form-container .create-account{

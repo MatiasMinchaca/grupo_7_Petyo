@@ -9,7 +9,8 @@ module.exports = {
           title : 'Petyo petshop',
           productsSlider,
           categories,
-          banners
+          banners, 
+          session: req.session
       })
   }
 }

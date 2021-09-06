@@ -2,8 +2,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-let methodOverride = require('method-override')
-
+const cookieParser = require('cookie-parser');
+let methodOverride = require('method-override');
+const session = require('express-session');
 /* PORT */
 const port = 3000;
 
@@ -14,14 +15,21 @@ let usersRouter = require('./routers/usersRouter');
 let adminRouter = require('./routers/adminRouter');
 
 /* VIEWS */
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
 /* MIDDLEWARES */
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.urlencoded({ extended : false })); /* Configurando el metodo POST */
-app.use(express.json()) 
-app.use(methodOverride('_method'))
+app.use(express.json());
+app.use(methodOverride('_method'));
+app.use(cookieParser())
+app.use(session({
+    secret: "Petyo",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 40000 }
+}))
 
 /* ROUTES */
 app.use('/', homeRouter);

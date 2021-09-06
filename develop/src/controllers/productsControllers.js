@@ -15,7 +15,8 @@ module.exports = {
         res.render('products/productDetail', {
             title : 'Detalle de producto',
             product,
-            categories
+            categories,
+            session: req.session
         })
     },
     category : (req, res) => {
@@ -34,12 +35,14 @@ module.exports = {
             category,
             products: categoryProducts,
             subCategories,
-            categories
+            categories,
+            session: req.session
         })
     },
     cart : (req, res) => {
         res.render('products/shoppingCart', {
-            title : 'Carrito'
+            title : 'Carrito',
+            session: req.session
         })
     }
 }

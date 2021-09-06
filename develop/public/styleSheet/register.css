@@ -1,14 +1,14 @@
 .form-container-register{
-    height: 420px;
+    height: 440px;
     width: 300px;
     display: flex;
     flex-direction: column;
     background-color: #ffffffad;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.337);
     position: relative;
-    margin-top: 60px;
     font-family: 'Roboto', sans-serif;
     transition: all 1s;
+    justify-content: flex-start;
 }
 .form-container-register .floating-image-form{
     max-width: 180px;
@@ -31,10 +31,16 @@
     right: 5px;
     transition: all 1s;
 }
-.form-container-register input{
-    background-color: #ffffff00;
-    margin-top: 5px;
+.form-container-register .div-imputs-register{
     margin-left: 21px;
+    width: 258px;
+    height: 50px;
+    position: relative;
+}
+.form-container-register .div-imputs-register input{
+    position: absolute;
+    top: 0;
+    background-color: #ffffff00;
     width: 258px;
     height: 28px;
     font-size: 14px;
@@ -45,25 +51,26 @@
     align-items: center;
     transition: all 1s;
 }
-.form-container-register input:hover{
+.form-container-register .div-imputs-register input:hover{
     border-bottom: solid 1px var(--mantis);
 }
-.form-container-register input:focus{
+.form-container-register .div-imputs-register input:focus{
     outline: none;
 }
-.form-container-register .error-message{
-    margin-left: 21px;
+.form-container-register .div-imputs-register .error-message{
     font-weight: 400;
+    position: absolute;
+    top: 33px;
     color: red;
-    margin-top: 5px;
     font-size: 10px;
     transition: all 0.7s;
+    margin: 0;
 }
 .form-container-register .have-account{
     font-style: normal;
+    margin: 0;
     font-weight: 400;
     margin-left: 21px;
-    margin-top: 5px;
     font-size: 12px;
 }
 .form-container-register .have-account a{
@@ -73,8 +80,8 @@
     text-decoration: underline;
 }
 .form-container-register .terms-and-conditions{
-    margin-left: 21px;
-    margin-top: 5px;
+    position: absolute;
+    top: 10px;
     font-weight: 400;
     font-size: 12px;
 }
@@ -109,6 +116,7 @@
     font-size: 14px;
     transition: all 1s;
     color: white;
+    margin: 0;
 }
 .form-container-register .button-form-create-account:hover{
     text-shadow: 0 0 2px black;
@@ -118,9 +126,8 @@
 /* Tablet */
 @media screen and (min-width: 475px){
     .form-container-register{
-        height: 430px;
+        height: 480px;
         width: 350px;
-        margin-top: 85px;
     }
     .form-container-register .floating-image-form{
         height: 170px;
@@ -128,17 +135,24 @@
         left: 75px;
         max-width: 200px;
     }
-    .form-container-register input{
+    .form-container-register .logo-form{
+       margin-bottom: 20px;
+    }
+    .form-container-register .div-imputs-register{
+        width: 280px;
+        height: 52;
+    }
+    .form-container-register .div-imputs-register input{
         width: 280px;
         font-size: 15px;
     }
-    .form-container-register .error-message{
+    .form-container-register .div-imputs-register .terms-imput{
+        width: 13px;
+    }
+    .form-container-register .div-imputs-register .error-message{
         font-size: 11.5px;
     }
     .form-container-register .have-account{
-        font-size: 13px;
-    }
-    .form-container-register .terms-and-conditions{
         font-size: 13px;
     }
     .form-container-register .button-form-create-account{
@@ -152,14 +166,22 @@
 /* Desktop */
 @media screen and (min-width: 1024px) {
     .form-container-register{
-        height: 440px;
+        height: 490px;
         width: 400px;
+        margin-top: 80px;
     }
     .form-container-register .floating-image-form{
         max-width: 210px;
         left: 94px;
     }
-    .form-container-register input{
+    .form-container-register .logo-form{
+        margin-bottom: 25px;
+     }
+    .form-container-register .div-imputs-register{
+        width: 330px;
+        font-size: 16px;
+    }
+    .form-container-register .div-imputs-register input{
         width: 330px;
         font-size: 16px;
     }

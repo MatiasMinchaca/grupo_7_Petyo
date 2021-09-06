@@ -11,20 +11,23 @@ products.forEach(product => {
 module.exports = {
     admin : (req, res) => {
         res.render('admin/adminDashboard', {
-            title : 'Administrador'
+            title : 'Administrador',
+            session: req.session
         })
     },
     products : (req, res) => {
         res.render('admin/adminListProducts', {
             title : 'Lista de productos',
-            products
+            products,
+            session: req.session
         })
     },
     load : (req, res) => {
         res.render('admin/adminLoadProduct', {
             title : 'Cargar Producto',
             categories,
-            subcategories
+            subcategories,
+            session: req.session
         })
     },
     store: (req, res) => {
@@ -69,7 +72,8 @@ module.exports = {
                 categories,
                 subcategories,
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             })
         }
        
@@ -119,7 +123,8 @@ module.exports = {
             subcategories,
             product,
             errors: errors.mapped(),
-            old: req.body
+            old: req.body,
+            session: req.session
         })
         }
     
