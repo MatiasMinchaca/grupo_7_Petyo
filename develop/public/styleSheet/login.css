@@ -61,6 +61,13 @@
     border-right: 0;
     transition: all 1s;
 }
+.form-container .div-imputs-login .imput-checkbox{
+    background-color: #ffffff00;
+    position: relative;
+    width: 13px;
+    height: 13px;
+    transition: all 1s;
+}
 .form-container .div-imputs-login input:hover{
     border-bottom: solid 1px var(--mantis);
 }

@@ -4,17 +4,19 @@ let {login, procedureLogin, logout, register, procedureRegister, profile, editPr
 const loginValidator = require('../validations/loginValidator');
 const registerValidator = require('../validations/registerValidator');
 const uploadUserImage = require('../middlewares/uploadUserImage');
+const sessionUserCheck = require('../middlewares/sessionUserCheck');
+const sessionLoginCheck = require('../middlewares/sessionLoginCheck');
 /* GET - LOGIN  */
-router.get('/login', login);
+router.get('/login', sessionLoginCheck, login);
 router.post('/login', loginValidator, procedureLogin);
-router.get('/logout', logout);
+router.get('/logout', sessionUserCheck, logout);
 /* GET - LOGIN  */
-router.get('/register', register);
+router.get('/register', sessionLoginCheck, register);
 router.post('/register', uploadUserImage.single('image'), registerValidator, procedureRegister);
 /* GET - LOGIN  */
-router.get('/profile', profile)
-router.get('/profile/editProfile/:id', editProfile);
-router.get('/profile/editProfile/:id', uploadUserImage.single('image'), profileUpdate);
+router.get('/profile', sessionUserCheck, profile)
+router.get('/profile/editProfile/:id', sessionUserCheck, editProfile);
+router.put('/profile/editProfile/:id', uploadUserImage.single('image'), profileUpdate);
 
 module.exports = router;
 
