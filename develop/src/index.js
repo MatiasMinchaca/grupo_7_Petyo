@@ -28,7 +28,7 @@ app.use(session({
     secret: "Petyo",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 40000 }
+    cookie: { maxAge: 400000 }
 }))
 
 /* ROUTES */
