@@ -4,29 +4,32 @@ let bcrypt = require('bcryptjs')
 
 
 module.exports = {
-    login : (req, res) => {
+    login: (req, res) => {
         res.render('user/login', {
-            title : 'Iniciar sesión',
+            title: 'Iniciar sesión',
             session: req.session
         })
     },
-    register : (req, res) => {
+    register: (req, res) => {
         res.render('user/register', {
             title: 'Registrarse',
             session: req.session
         })
     },
-    profile: (req, res) =>{
+    profile: (req, res) => {
         let user = users.find(user => user.id === req.session.user.id)
-        
+
         res.render('user/profile', {
             user,
             session: req.session
         })
     },
-    editProfile : (req, res) => {
+    editProfile: (req, res) => {
+        let user = users.find(user => user.id === +req.params.id)
         res.render('user/editProfile', {
-            title: 'Editar Perfil'
+            title: 'Editar Perfil',
+            user,
+            session: req.session
         })
     },
     profileUpdate: (req, res) => {
@@ -66,11 +69,11 @@ module.exports = {
 
             res.redirect('/users/profile')
 
-        }else{
+        } else {
             res.render('user/editProfile', {
                 title: 'Editar Perfil',
                 errors: errors.mapped(),
-                old:req.body,
+                old: req.body,
                 session: req.session
             })
 
@@ -86,23 +89,23 @@ module.exports = {
             req.session.user = {
                 id: user.id,
                 name: user.name,
-                last_name : user.last_name,
-                namePet : user.namePet,
+                last_name: user.last_name,
+                namePet: user.namePet,
                 email: user.email,
                 image: user.image,
                 role: user.role
-            }  
-
-            if(req.body.remember){
-                res.cookie("Petyo", req.session.user, {expires: new Date(Date.now() + 900000), httpOnly : true})
             }
-            
+
+            if (req.body.remember) {
+                res.cookie("Petyo", req.session.user, { expires: new Date(Date.now() + 900000), httpOnly: true })
+            }
+
             res.locals.user = req.session.user
 
             res.redirect('/')
-        }else{
+        } else {
             res.render('user/login', {
-                title : 'Iniciar sesión',
+                title: 'Iniciar sesión',
                 errors: errors.mapped(),
                 session: req.session
             })
@@ -116,13 +119,13 @@ module.exports = {
             let lastId = 0;
 
             users.forEach(user => {
-                if(user.id > lastId){
+                if (user.id > lastId) {
                     lastId = user.id
                 }
-            }) 
+            })
 
             let {
-                name, 
+                name,
                 last_name,
                 email,
                 namePet,
@@ -130,20 +133,20 @@ module.exports = {
             } = req.body
 
             let newUser = {
-                id : lastId + 1,
+                id: lastId + 1,
                 name,
                 last_name,
                 email,
                 namePet,
-                pass : bcrypt.hashSync(pass, 12),
-                image : req.file ? req.file.filename : "autoImage.png",
+                pass: bcrypt.hashSync(pass, 12),
+                image: req.file ? req.file.filename : "autoImage.png",
                 biography: "",
                 role: "user",
                 tel: "",
                 address: "",
                 pc: "",
                 province: "",
-                city:""
+                city: ""
             }
 
             users.push(newUser)
@@ -156,15 +159,15 @@ module.exports = {
             res.render('user/register', {
                 title: 'Registrarse',
                 errors: errors.mapped(),
-                old : req.body,
+                old: req.body,
                 session: req.session
             })
         }
     },
     logout: (req, res) => {
         req.session.destroy()
-        if(req.cookies.userPetyo){
-            res.cookie('userPetyo', '', {maxAge: -1})
+        if (req.cookies.userPetyo) {
+            res.cookie('userPetyo', '', { maxAge: -1 })
         }
 
         res.redirect('/')
