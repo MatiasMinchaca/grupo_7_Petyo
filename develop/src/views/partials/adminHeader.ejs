@@ -309,8 +309,8 @@
   </header>
   <section class="page-content">
     <section class="search-and-user">
-      <form>
-        <input type="search" placeholder="Buscador...">
+      <form action="/admin/search" method="GET">
+        <input type="search" name="searchAdmin" placeholder="Buscador...">
         <button type="submit" aria-label="submit form">
           <svg aria-hidden="true">
             <use xlink:href="#search"></use>
@@ -318,10 +318,8 @@
         </button>
       </form>
       <div class="admin-profile">
-        <span class="greeting">Bienvenido <%- user.name %> </span>
+        <span class="greeting">Bienvenido <%- session.user.name  %>  </span>
         <div class="notifications">
-          <svg>
-            <use xlink:href="#users"></use>
-          </svg>
+          <img class="image-profile-admin" src="/images/userImageProfile/<%- session.user.image  %>" alt="">
         </div>
       </div>

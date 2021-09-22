@@ -1,4 +1,4 @@
-const { products, categories, ProductsJSON } = require('../data/dataBase');
+const { products, categories, ProductsJSON, users, UsersJSON } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
 
 let subcategories = [];
