@@ -1,7 +1,8 @@
 let express = require('express');
 let router = express.Router();
 let {admin,
-    products, 
+    products,
+    searchAdmin,
     load,
     store,  
     edit, 
@@ -14,6 +15,8 @@ let sessionAdminCheck = require('../middlewares/sessionAdminCheck')
 router.get('/', sessionAdminCheck, admin);
 /* GET - muestra todos los productos de la base de datos*/
 router.get('/products', sessionAdminCheck, products);
+/* GET - muestra la busqueda en el admin*/
+router.get('/search', sessionAdminCheck, searchAdmin);
 /* GET - muestra la vista para agregar un producto*/
 router.get('/products/load', sessionAdminCheck, load);
 router.post('/products/load', loadProductFile.single("image"),productValidator,store);

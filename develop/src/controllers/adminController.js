@@ -22,6 +22,19 @@ module.exports = {
             session: req.session
         })
     },
+    searchAdmin: (req, res) => {
+        let search = req.query.searchAdmin.toLowerCase()
+
+        let product = products.filter(product => 
+            product.name.toLowerCase() == search || product.subcategory.toLowerCase() == search || product.category == search || product.price == search|| product.id == search
+        );
+        res.render('admin/searchAdmin',{
+            title : `Tu busqueda;${search}`,
+            search,
+            product,
+            session: req.session
+        })
+    },
     load : (req, res) => {
         res.render('admin/adminLoadProduct', {
             title : 'Cargar Producto',
@@ -84,7 +97,8 @@ module.exports = {
             title : 'Editar Producto',
             categories, 
             subcategories,
-            product
+            product,
+            session: req.session
         })
     },
     update: (req, res) => {
