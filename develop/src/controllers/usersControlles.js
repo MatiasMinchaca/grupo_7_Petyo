@@ -20,6 +20,7 @@ module.exports = {
         let user = users.find(user => user.id === req.session.user.id)
 
         res.render('user/profile', {
+            title: 'Mi Perfil',
             user,
             session: req.session
         })
@@ -70,7 +71,7 @@ module.exports = {
             res.redirect('/users/profile')
 
         } else {
-            res.render('user/editProfile', {
+            res.render('users/editProfile', {
                 title: 'Editar Perfil',
                 errors: errors.mapped(),
                 old: req.body,

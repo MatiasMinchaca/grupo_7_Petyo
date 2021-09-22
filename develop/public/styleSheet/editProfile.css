@@ -88,9 +88,6 @@
     margin: 10px 0 5px;
 }
 @media screen and (min-width:475px) {
-    .body-profile{
-        background-image: url('/images/backgroundPew.jpg');
-    }
     .editProfile-container{
         max-width: 550px;
         margin: 20px auto;

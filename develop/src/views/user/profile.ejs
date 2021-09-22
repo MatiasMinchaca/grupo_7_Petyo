@@ -10,7 +10,7 @@
         <%- include('../partials/header') %>
             <main class="userProfile">
                 <div class="avatar">
-                    <img src="../../../public/images/userImageProfile/<%= user.avatar %>" alt="">
+                    <img src="../../../public/images/userImageProfile/<%= user.image %>" alt="">
                 </div>
                 <div class="userProfile-container">
                     <div class="userProfile_box">
@@ -39,7 +39,7 @@
                         <p class="userProfile_item">Localidad: <%= user.city ? user.city : " " %>
                         </p>
                     </div>
-                    <a href="/users/profile/edit/<%= user.id %>" class="btn btn-ad-primary">EDITAR DATOS</a>
+                    <a href="/users/profile/editProfile/<%= user.id %>" class="btn btn-ad-primary">EDITAR DATOS</a>
                 </div>
 
             </main>

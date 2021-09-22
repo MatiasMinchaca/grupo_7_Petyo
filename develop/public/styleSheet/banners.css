@@ -13,7 +13,9 @@
 }
 .dots {
     width: fit-content;
+    width: -moz-fit-content;
     margin: 0 auto;
+    text-align: center;
 }
 .banners-container .prev, .banners-container .next {
     cursor: pointer;
