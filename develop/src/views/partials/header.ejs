@@ -3,27 +3,27 @@
     <div class="banner">
 
         <!-- LOGO -->
-        
-    <div class="logo-menu">
-        <div class="logo">
-            <a href="/"><img src="/images/logotipo.png" alt=""></a>
-        </div>
-        <!-- FIN LOGO -->
 
-        <!-- MENU TABLET Y DESKTOP -->
+        <div class="logo-menu">
+            <div class="logo">
+                <a href="/"><img src="/images/logotipo.png" alt=""></a>
+            </div>
+            <!-- FIN LOGO -->
 
-        <div class="menu-tablet-desktop">
-            <label for="menu">Menú<i class="fas fa-angle-down"></i></label>
-            <input type="checkbox" id="menu">
-            <ul>
-                <li><a href="/"> Inicio</a></li>
-                <li><a href="/users/login"> Iniciar sesión</a></li>
-                <li><a href="/users/register">Registrarse</a></li>
-                <li><a href="/products/cart">Carrito</a></li>
-                <li><a href="/products/detail">Productos</a></li>
-            </ul>
+            <!-- MENU TABLET Y DESKTOP -->
+
+            <div class="menu-tablet-desktop">
+                <label for="menu">Menú<i class="fas fa-angle-down"></i></label>
+                <input type="checkbox" id="menu">
+                <ul>
+                    <li><a href="/"> Inicio</a></li>
+                    <li><a href="/users/login"> Iniciar sesión</a></li>
+                    <li><a href="/users/register">Registrarse</a></li>
+                    <li><a href="/products/cart">Carrito</a></li>
+                    <li><a href="/products/detail/1">Productos</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
         <!-- ICONOS -->
         <div class="lupa-menu">
             <div class="lupa">
@@ -32,6 +32,15 @@
 
             <div class="user">
                 <a href="/users/login"><i class="fas fa-user"></i></a>
+                <% if (typeof session.user !="undefined" ) { %>
+                    <a href="/users/profile">Mis datos</a>
+                    <a href="/users/logout">Cerrar sesión</a>
+                    <% if (session.user.role==="admin" ) { %>
+                        <a href="/admin">admin</a>
+                        <% } %>
+                            <% } else {%>
+                                <a href="/users/login"></a>
+                                <% } %>
             </div>
 
             <div class="carrito">
@@ -46,7 +55,7 @@
                     <li><a href="/users/login"> Iniciar sesión</a></li>
                     <li><a href="/users/register">Registrarse</a></li>
                     <li><a href="/products/cart">Carrito</a></li>
-                    <li><a href="/products/detail">Productos</a></li>
+                    <li><a href="/products/detail/">Productos</a></li>
                 </ul>
             </div>
         </div>

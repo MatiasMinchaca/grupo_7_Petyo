@@ -17,15 +17,15 @@
             </div>
             <div class="inputs-edit-profile">
                 <label for="name-edit">Nombre</label>
-                <input type="tex" id="name-edit" name="name-edit" value="<%- user.name %> " class="name-edit">
+                <input type="tex" id="name-edit" name="name" value="<%- user.name %> " class="name-edit">
                 <label for="surname-edit">Apellido</label>
-                <input type="text" id="surname-edit" name="surname-edit" class="surname-edit">
+                <input type="text" id="surname-edit" name="last_name" value="<%- user.last_name %> " class="surname-edit">
                 <label for="email-edit">Correo elctronico</label>
-                <input type="email" id="email-edit" name="email-edit" class="email-edit">
+                <input type="email" id="email-edit" name="email" value="<%- user.email %> " class="email-edit">
                 <label for="tel-edit">Telefono</label>
-                <input type="tel" id="tel-edit" name="tel-edit" class="tel-edit">
+                <input type="tel" id="tel-edit" name="tel" value="<%- user.tel %> " class="tel-edit">
                 <label for="name-pet-edit">Nombre de tu mascota</label>
-                <input type="text" id="name-pet-edit" name="name-pet-edit" class="name-pet-edit">
+                <input type="text" id="name-pet-edit" name="namePet" value=" <%- user.namePet %> " class="name-pet-edit">
                 <select type="text"  class="select-species-pet">
                     <option value="" selected hidden>Especie de tu mascota</option>
                     <option value="perro">Perro</option>
@@ -33,8 +33,16 @@
                     <option value="reptil">Reptil</option>
                     <option value="ave">Ave</option>
                 </select>
+                <label for="surname-edit">Direccion</label>
+                <input type="text" id="address-edit" name="address" value="<%- user.address %> " class="surname-edit">
+                <label for="surname-edit">Codigo postal</label>
+                <input type="text" id="pc-edit" name="pc" value="<%- user.pc %> " class="surname-edit">
+                <label for="surname-edit">Provincia</label>
+                <input type="text" id="province-edit" name="province" value="<%- user.province %> " class="surname-edit">
+                <label for="surname-edit">Localidad</label>
+                <input type="text" id="city-edit" name="city" value="<%- user.city %> " class="surname-edit">
                 <label for="biography-edit">Biografia</label>
-                <textarea type="text" cols="10" rows="10"  id="biography-edit" name="biography-edit" class="biography-edit"><%- user.biography %> </textarea>
+                <textarea type="text" cols="10" rows="10"  id="biography-edit" name="biography" class="biography-edit"> <%- user.biography %> </textarea>
                 <label for="password-edit">Cambiar contraseña</label>
                 <input type="password" id="password-edit" name="password-edit" class="password-edit">
                 <label for="confirm-password-edit">Confirmar contraseña</label>
