@@ -98,7 +98,7 @@ module.exports = {
             }
 
             if(req.body.remember){
-                res.cookie("Petyo", req.session.user, {maxAge:1000*60*30})
+                res.cookie("userPetyo", req.session.user, {expires: new Date(Date.now() + 900000), httpOnly : true})
             }
 
             res.locals.user = req.session.user

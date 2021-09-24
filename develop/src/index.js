@@ -5,6 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 let methodOverride = require('method-override');
 const session = require('express-session');
+const localsCheck = require('./middlewares/localsCheck')
 /* PORT */
 const port = 3000;
 
@@ -23,13 +24,13 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.urlencoded({ extended : false })); /* Configurando el metodo POST */
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(session({
     secret: "Petyo",
     resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 400000 }
-}))
+    saveUninitialized: true
+}));
+app.use(localsCheck);
 
 /* ROUTES */
 app.use('/', homeRouter);

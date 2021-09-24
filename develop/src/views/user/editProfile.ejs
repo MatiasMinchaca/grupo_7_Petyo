@@ -12,8 +12,8 @@
         <form action="/users/profile/editProfile/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="editProfile-form">
             <div class="profile-image-container">
                 <input type='file' id="imgInp" name="image" hidden="hidden"/>
-                <img class="profile-image" id="blah" src="/images/userImageProfile/autoImage.png" />
-                <label class="btn-load-image-profile" for="imgInp">Seleccione una imagen</label>
+                <img class="profile-image" id="blah" src="/images/userImageProfile/<%= user.image %>" />
+                <label class="btn-load-image-profile" for="imgInp">Cambiar foto de Perfil</label>
             </div>
             <div class="inputs-edit-profile">
                 <label for="name-edit">Nombre</label>
@@ -21,11 +21,11 @@
                 <label for="surname-edit">Apellido</label>
                 <input type="text" id="surname-edit" name="last_name" value="<%- user.last_name %> " class="surname-edit">
                 <label for="email-edit">Correo elctronico</label>
-                <input type="email" id="email-edit" name="email" value="<%- user.email %> " class="email-edit">
+                <input type="email" id="email-edit" name="email" readonly value="<%- user.email %> " class="email-edit">
                 <label for="tel-edit">Telefono</label>
-                <input type="tel" id="tel-edit" name="tel" value="<%- user.tel %> " class="tel-edit">
+                <input type="tel" id="tel-edit" name="tel" value="<%= user.tel ? user.tel : "" %>" class="tel-edit">
                 <label for="name-pet-edit">Nombre de tu mascota</label>
-                <input type="text" id="name-pet-edit" name="namePet" value=" <%- user.namePet %> " class="name-pet-edit">
+                <input type="text" id="name-pet-edit" name="namePet" value="<%- user.namePet ? user.namePet : "" %>" class="name-pet-edit">
                 <select type="text"  class="select-species-pet">
                     <option value="" selected hidden>Especie de tu mascota</option>
                     <option value="perro">Perro</option>
@@ -34,19 +34,23 @@
                     <option value="ave">Ave</option>
                 </select>
                 <label for="surname-edit">Direccion</label>
-                <input type="text" id="address-edit" name="address" value="<%- user.address %> " class="surname-edit">
+                <input type="text" id="address-edit" name="address" value="<%= user.address ? user.address : "" %>" class="surname-edit">
                 <label for="surname-edit">Codigo postal</label>
-                <input type="text" id="pc-edit" name="pc" value="<%- user.pc %> " class="surname-edit">
+                <input type="text" id="pc-edit" name="pc" value="<%= user.pc ? user.pc : "" %>" class="surname-edit">
                 <label for="surname-edit">Provincia</label>
-                <input type="text" id="province-edit" name="province" value="<%- user.province %> " class="surname-edit">
-                <label for="surname-edit">Localidad</label>
-                <input type="text" id="city-edit" name="city" value="<%- user.city %> " class="surname-edit">
+                <select type="text" name="province" class="select-species-pet">
+                    <option value="" selected hidden>Provincia</option>
+                </select>
+                <label for="surname-edit">Ciudad</label>
+                <select type="text" name="city" class="select-species-pet">
+                    <option value="" selected hidden>Ciudad</option>
+                </select>
                 <label for="biography-edit">Biografia</label>
-                <textarea type="text" cols="10" rows="10"  id="biography-edit" name="biography" class="biography-edit"> <%- user.biography %> </textarea>
-                <label for="password-edit">Cambiar contraseña</label>
-                <input type="password" id="password-edit" name="password-edit" class="password-edit">
+                <textarea type="text" cols="10" rows="10"  id="biography-edit" name="biography" class="biography-edit"><%- user.biography ? user.biography : "" %></textarea>
+                <!-- <label for="password-edit">Cambiar contraseña</label>
+                <input type="password" id="password-edit" name="pass" value="" class="password-edit">
                 <label for="confirm-password-edit">Confirmar contraseña</label>
-                <input type="password" id="confirm-password-edit" name="confirm-password-edit" class="confirm-password-edit">
+                <input type="password" id="confirm-password-edit" name="confirm-pass" class="confirm-password-edit"> -->
                 <input type="submit" value="Guardar" class="save-profile">
             </div>
         </form>

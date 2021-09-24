@@ -1,13 +1,14 @@
 .editProfile-container{
     max-width: 400px;
-    margin: 10px auto;
+    margin: 0 auto;
     font-family: 'Roboto', sans-serif;
     transition: all 0.5s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.871);
 }
 .editProfile-container .editProfile-form{
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 0 10px;
 }
 .editProfile-container .editProfile-form .profile-image-container{
     display: flex;
