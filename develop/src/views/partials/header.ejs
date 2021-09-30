@@ -1,17 +1,104 @@
-<header class="header-agus">
-
-    <div class="banner">
-
-        <!-- LOGO -->
-
+<script src="/js/headerMobile.js" defer></script>
+<header class="header">
+    <button class="menu" >
+        <i class="fas fa-bars" id="menu-mobile"></i>
+    </button>
+    <div class="menu-lateral" id="menu-lateral" style="left: -100%;">
+        <div class="div-close-lateral" id='div-close-lateral' style="left: -100%;">
+            <section class="section-menu-lateral">
+                <button class="button-close-lateral">
+                    <i class="fas fa-times" id="close-menu-lateral"></i>
+                </button>
+                <% if (typeof session.user != "undefined") { %>
+                    <a href="/users/profile" class="anchor-user-lateral">
+                    <div class="div-user-lateral">
+                        <img class="img-user-lateral" src="/images/userImageProfile/<%- session.user.image %> " alt="">
+                        <h3 class="h3-user-lateral">Bienvenido <%- session.user.name %></h3>
+                    </div>
+                    </a>
+                    <hr class="hr-lateral">
+                <% } %>
+                <div class="div-home-and-categories-lateral" <%- typeof session.user  != "undefined" ? "" : "style='margin-top: 20px;'"%> >
+                    <div class="home-lateral">
+                        <i class="fas fa-home"></i>
+                        <a href="/">Inicio</a>
+                    </div>
+                    <div class="categories-lateral">
+                        Categorias
+                        <% categories.forEach(category => { %>
+                            <div class="category-lateral">
+                                <i class="fas fa-<%-category.name == 'Perros' ? 'dog' : "" || category.name == 'Gatos' ? 'cat' : "" || category.name == 'Aves' ? 'crow' : "" || category.name == 'Reptiles' ? 'paw' : ""%>"></i>
+                                <a href="/products/category/<%= category.id %>"><%= category.name %></a>
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+                <hr class="hr-lateral">
+                <div class="div-login-lateral" <%- typeof session.user  != "undefined" ? "" : "style='justify-content: center;'"%>>
+                    <% if (typeof session.user != "undefined") { %>
+                        <div class="div2-login-lateral">
+                            <a href="/users/profile">Mi Perfil</a>
+                            <a href="/products/cart">Mi carrito</a>
+                            <a href="/products/cart">Mis compras</a>
+                            <a href="/users/logout">Cerrar sesión</a>
+                            <% if (session.user.role === "admin") { %>
+                                <a href="/admin">Panel de administrador</a>
+                            <% } %>
+                        </div>
+                    <% } else {%>
+                        <div class="div3-login-lateral">
+                            <a href="/users/login">Iniciar Sesión</i></a>
+                            <a href="/users/register">Registrarse</i></a>
+                        </div>
+                    <% } %>
+                </div>
+                <hr class="hr-lateral">
+                <div class="div-contact">
+                    <a href="#">Contactanos</a>
+                    <a href="#">Comunidad</a>
+                    <a href="#">¿Quienes somos?</a>
+                    <a href="#">Terminos y condiciones</a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="logo">
+        <a href="/"><img src="/images/logotipo.png" alt=""></a>
+    </div>
+    <button type="button"  class="btn-search-mobile">
+        <i id="i-header" class='fas fa-search'></i>
+    </button>
+    <div id="search-header" style="right: -208px;" class="search-header">
+        <form action="">
+            <input type="search" name="searchb" id="search-bar" class="search-bar" placeholder="Buscar">
+            <button class="search-logo" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+</header>
+<div class="block-header"></div>
+<!--  <div class="banner">
+        <div class="menu">
+            <label for="menu"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu">
+            <ul>
+                <li><a href="/"> Inicio</a></li>
+                <li><a href="/users/login"> Iniciar sesión</a></li>
+                <li><a href="/users/register">Registrarse</a></li>
+                <li><a href="/products/cart">Carrito</a></li>
+                <li><a href="/products/detail/">Productos</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <a href="/"><img src="/images/logotipo.png" alt=""></a>
+        </div>
+        <button type="button"  class="btn-search-mobile"><i id="i-header" class="fas fa-search"></i></button>
+        <div id="search-header" class="lupa">
+            <form action="">
+                <input type="search" name="busqueda" id="search-bar" placeholder="Buscar">
+                <button class="search-logo" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
         <div class="logo-menu">
-            <div class="logo">
-                <a href="/"><img src="/images/logotipo.png" alt=""></a>
-            </div>
-            <!-- FIN LOGO -->
-
-            <!-- MENU TABLET Y DESKTOP -->
-
             <div class="menu-tablet-desktop">
                 <label for="menu">Menú<i class="fas fa-angle-down"></i></label>
                 <input type="checkbox" id="menu">
@@ -24,45 +111,13 @@
                 </ul>
             </div>
         </div>
-        <!-- ICONOS -->
         <div class="lupa-menu">
-            <div class="lupa">
-                <input type="search" name="busqueda" id="" placeholder="Buscar">
-                <button type="submit"></button>
-                <a href=""><i class="fas fa-search"></i></a>
-            </div>
-
             <div class="user">
                 <a href="/users/login"><i class="fas fa-user"></i></a>
-                <% if (typeof session.user !="undefined" ) { %>
-                    <a href="/users/profile">Mis datos</a>
-                    <a href="/users/logout">Cerrar sesión</a>
-                    <% if (session.user.role==="admin" ) { %>
-                        <a href="/admin">admin</a>
-                        <% } %>
-                            <% } else {%>
-                                <a href="/users/login"></a>
-                                <% } %>
+                
             </div>
-
             <div class="carrito">
                 <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
             </div>
-
-            <div class="menu">
-                <label for="menu"><i class="fas fa-bars"></i></label>
-                <input type="checkbox" id="menu">
-                <ul>
-                    <li><a href="/"> Inicio</a></li>
-                    <li><a href="/users/login"> Iniciar sesión</a></li>
-                    <li><a href="/users/register">Registrarse</a></li>
-                    <li><a href="/products/cart">Carrito</a></li>
-                    <li><a href="/products/detail/">Productos</a></li>
-                </ul>
-            </div>
         </div>
-        <!-- FIN ICONOS -->
-
-    </div>
-
-</header>
+    </div> -->

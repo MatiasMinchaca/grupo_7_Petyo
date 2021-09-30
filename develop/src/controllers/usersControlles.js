@@ -7,12 +7,14 @@ module.exports = {
     login: (req, res) => {
         res.render('user/login', {
             title: 'Iniciar sesión',
+            categories,
             session: req.session
         })
     },
     register: (req, res) => {
         res.render('user/register', {
             title: 'Registrarse',
+            categories,
             session: req.session
         })
     },
@@ -22,6 +24,7 @@ module.exports = {
         res.render('user/profile', {
             title: 'Mi Perfil',
             user,
+            categories,
             session: req.session
         })
     },
@@ -30,6 +33,7 @@ module.exports = {
         res.render('user/editProfile', {
             title: 'Editar Perfil',
             user,
+            categories,
             session: req.session
         })
     },
@@ -73,6 +77,7 @@ module.exports = {
         } else {
             res.render('users/editProfile', {
                 title: 'Editar Perfil',
+                categories,
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
@@ -107,6 +112,7 @@ module.exports = {
         } else {
             res.render('user/login', {
                 title: 'Iniciar sesión',
+                categories,
                 errors: errors.mapped(),
                 session: req.session
             })
@@ -159,6 +165,7 @@ module.exports = {
         } else {
             res.render('user/register', {
                 title: 'Registrarse',
+                categories,
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
