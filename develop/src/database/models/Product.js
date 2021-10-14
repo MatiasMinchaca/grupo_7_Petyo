@@ -29,6 +29,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull: false
         }
     }
+    
     let config = {
         tableName: "products",
         timestamps: true

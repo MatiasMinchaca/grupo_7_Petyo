@@ -16,6 +16,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull: false
         }
     }
+    
     let config = {
         tableName: "Categories",
         timestamps: true
@@ -25,7 +26,7 @@ module.exports = function(sequelize, dataTypes){
 
     Category.associate = models => {
         Category.hasMany(models.Subcategory, {
-            as: "Subcategory",
+            as: "subcategories",
             foreignKey: "categorId"
         })
     }

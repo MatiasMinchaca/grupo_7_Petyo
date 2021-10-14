@@ -1,4 +1,6 @@
-const { products, categories, banners } = require('../data/dataBase')
+const { products, categories, banners } = require('../data/dataBase');
+const db = require('../database/models');
+const { Op } = require('sequelize')
 
 
 
