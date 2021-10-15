@@ -1,14 +1,14 @@
 module.exports = function(sequelize, dataTypes){
     let alias = "Product";
     let cols = {
-        productId: {
+        id: {
             type: dataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
         name: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         price: {
@@ -19,10 +19,10 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(11)
         },
         description: {
-            type: dataTypes.VARCHAR(500)
+            type: dataTypes.STRING(500)
         },
         image: {
-            type: dataTypes.VARCHAR(150)
+            type: dataTypes.STRING(150)
         },
         subcategoryId: {
             type: dataTypes.INTEGER(11),
@@ -42,6 +42,12 @@ module.exports = function(sequelize, dataTypes){
             as: "subcategory",
             foreignKey: "subcategoryId"
         })
+        Product.associate = models => {
+            Product.hasMany(models.ProductImage, {
+                as: "images",
+                foreignKey: "productId"
+            })
+        }
     }
 
     return Product

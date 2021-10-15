@@ -1,6 +1,6 @@
-const { products, categories, banners } = require('../data/dataBase');
-const db = require('../database/models');
-const { Op } = require('sequelize')
+const { products, banners } = require('../data/dataBase');
+/* const db = require('../database/models');
+const { Op } = require('sequelize'); */
 
 
 
@@ -10,7 +10,6 @@ module.exports = {
       res.render('home', {
           title : 'Petyo petshop',
           productsSlider,
-          categories,
           banners, 
           session: req.session
       })

@@ -1,4 +1,5 @@
 const { products, categories } = require('../data/dataBase')
+const db = require('../database/models')
 
 
 let subcategories = [];
@@ -10,17 +11,61 @@ products.forEach(product => {
 
 module.exports = {
     detail : (req, res) => {
-        let productId = +req.params.id;
+        db.Product.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [{
+                association: "images"
+            }]
+        })
+        .then(product => {
+            db.Product.findAll({
+                where: {
+                    subcategoryId: product.subcategoryId
+                },
+                include: [{
+                    association: "images"
+                }]
+            })
+            .then(products => {
+                res.render('products/productDetail', {
+                    title : 'Detalle de producto',
+                    product,
+                    session: req.session
+                })
+            })
+        })
+        .catch(err => console.log)
+        /*let productId = +req.params.id;
         let product = products.find(product => product.id === productId)
         res.render('products/productDetail', {
             title : 'Detalle de producto',
             product,
             categories,
             session: req.session
-        })
+        })*/
     },
     category : (req, res) => {
-        let category = categories.find(category => {
+        db.Category.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [{
+                association: "subcategory",
+                include: [{
+                    association: "products",
+                    include: [{
+                        association: "images",
+                    }]
+                }] 
+            }] 
+        })
+        .then(category => {
+            let subcategories = category.subcategories;
+            let products = []
+        })
+        /*let category = categories.find(category => {
             return category.id === +req.params.id
         })
         let categoryProducts = products.filter(product => +product.category === +req.params.id)
@@ -37,7 +82,7 @@ module.exports = {
             subCategories,
             categories,
             session: req.session
-        })
+        })*/
     },
     cart : (req, res) => {
         res.render('products/shoppingCart', {

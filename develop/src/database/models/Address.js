@@ -1,23 +1,23 @@
 module.exports = function(sequelize, dataTypes){
     let alias = "Address";
     let cols = {
-        addressId: {
+        id: {
             type: dataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
         street: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         number: {
             type: dataTypes.INTEGER(11),
         },
         province: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         city: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         postalCode: {
             type: dataTypes.INTEGER(11),

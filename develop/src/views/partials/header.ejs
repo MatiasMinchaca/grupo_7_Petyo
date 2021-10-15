@@ -25,12 +25,12 @@
                     </div>
                     <div class="categories-lateral">
                         Categorias
-                        <% categories.forEach(category => { %>
+                        <% locals.categories.forEach(category => { %>
                             <div class="category-lateral">
                                 <i class="fas fa-<%-category.name == 'Perros' ? 'dog' : "" || category.name == 'Gatos' ? 'cat' : "" || category.name == 'Aves' ? 'crow' : "" || category.name == 'Reptiles' ? 'paw' : ""%>"></i>
                                 <a href="/products/category/<%= category.id %>"><%= category.name %></a>
                             </div>
-                            <% }) %>
+                        <% }) %>
                     </div>
                 </div>
                 <hr class="hr-lateral">

@@ -22,7 +22,7 @@
                     <div class="block 1">
                         <div class="slider-box">
                             <div class="slider">
-                            <% categories.forEach(category => { %>
+                            <% locals.categories.forEach(category => { %>
                                 <div class="circulo slide">
                                     <a href="/products/category/<%= category.id %>"><img class="<%= category.name %>" src="/images/categories/<%= category.image %>" alt=""></a>
                                 </div>

@@ -1,18 +1,18 @@
 module.exports = function(sequelize, dataTypes){
     let alias = "Category";
     let cols = {
-        categorId: {
+        id: {
             type: dataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
         name: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         image: {
-            type: dataTypes.VARCHAR(150),
+            type: dataTypes.STRING(150),
             allowNull: false
         }
     }
@@ -27,7 +27,7 @@ module.exports = function(sequelize, dataTypes){
     Category.associate = models => {
         Category.hasMany(models.Subcategory, {
             as: "subcategories",
-            foreignKey: "categorId"
+            foreignKey: "categoryId"
         })
     }
 
