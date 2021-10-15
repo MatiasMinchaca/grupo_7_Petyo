@@ -1,20 +1,21 @@
-const { products, categories, ProductsJSON, users, UsersJSON } = require('../data/dataBase')
+/*const { products, categories, ProductsJSON, users, UsersJSON } = require('../data/dataBase')*/
 const { validationResult } = require('express-validator')
 let bcrypt = require('bcryptjs')
+const db = require('../database/models')
 
 
 module.exports = {
     login: (req, res) => {
         res.render('user/login', {
             title: 'Iniciar sesión',
-            categories,
+            /*categories,*/
             session: req.session
         })
     },
     register: (req, res) => {
         res.render('user/register', {
             title: 'Registrarse',
-            categories,
+            /*categories,*/
             session: req.session
         })
     },
@@ -24,7 +25,7 @@ module.exports = {
         res.render('user/profile', {
             title: 'Mi Perfil',
             user,
-            categories,
+            /*categories,*/
             session: req.session
         })
     },
@@ -33,7 +34,7 @@ module.exports = {
         res.render('user/editProfile', {
             title: 'Editar Perfil',
             user,
-            categories,
+            /*categories,*/
             session: req.session
         })
     },
@@ -77,7 +78,7 @@ module.exports = {
         } else {
             res.render('users/editProfile', {
                 title: 'Editar Perfil',
-                categories,
+                /*categories,*/
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
@@ -87,7 +88,33 @@ module.exports = {
     }
     ,
     procedureLogin: (req, res) => {
-        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            db.User.findOne({
+                where: {
+                    email: req.params.email
+                }
+            })
+                .then(user => {
+                    req.session.user = {
+                        id: user.id,
+                        name: user.name,
+                        last_name: user.last_name,
+                        namePet: user.namePet,
+                        email: user.email,
+                        image: user.image,
+                        role: user.role
+                    };
+
+                    if (req.body.remember) {
+                        res.cookie("userPetyo", req.session.user, { expires: new Date(Date.now() + 900000), httpOnly: true });
+                    }
+
+                    res.locals.user = req.session.user;
+
+                res.redirect('/');
+        })
+        /*let errors = validationResult(req)
 
         if (errors.isEmpty()) {
             let user = users.find(user => user.email === req.body.email)
@@ -108,22 +135,40 @@ module.exports = {
 
             res.locals.user = req.session.user
 
-            res.redirect('/')
+            res.redirect('/')*/
         } else {
             res.render('user/login', {
                 title: 'Iniciar sesión',
-                categories,
+                /*categories,*/
                 errors: errors.mapped(),
-                session: req.session
+                session: req.session,
             })
         }
     },
     procedureRegister: (req, res) => {
         let errors = validationResult(req)
+        if (req.fileValidatorError) {
+            let image = {
+                param: "image",
+                msg: req.fileValidatorError,
+            };
+            errors.push(image);
+        }
 
         if (errors.isEmpty()) {
+            let { name, last_name, email, namePet, pass} = req.body
 
-            let lastId = 0;
+            db.User.create({
+                name,
+                last_name,
+                email: bcrypt.hashSync(pass, 12),
+                image: req.file ? req.file.filename : "autoImage.png",
+                rol: 0,
+            }).then(() => {
+                res.redirect('/users/login')
+            }).catch(err => console.log(err))
+
+            /*let lastId = 0;
 
             users.forEach(user => {
                 if (user.id > lastId) {
@@ -160,12 +205,12 @@ module.exports = {
 
             UsersJSON(users)
 
-            res.redirect('/users/login')
+            res.redirect('/users/login')*/
 
         } else {
             res.render('user/register', {
                 title: 'Registrarse',
-                categories,
+                /*categories,*/
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
