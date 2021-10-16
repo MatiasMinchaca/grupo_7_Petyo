@@ -69,7 +69,7 @@ module.exports = {
 
             UsersJSON(users)
 
-            delete user.pass
+            delete user.password
 
             req.session.user = user
 
@@ -89,21 +89,22 @@ module.exports = {
     ,
     procedureLogin: (req, res) => {
 
+        let errors = validationResult(req)
         if (errors.isEmpty()) {
             db.User.findOne({
                 where: {
-                    email: req.params.email
+                    email: req.body.email
                 }
             })
                 .then(user => {
                     req.session.user = {
                         id: user.id,
                         name: user.name,
-                        last_name: user.last_name,
+                        lastName: user.lastName,
                         namePet: user.namePet,
                         email: user.email,
                         image: user.image,
-                        role: user.role
+                        rol: user.rol
                     };
 
                     if (req.body.remember) {
@@ -156,12 +157,16 @@ module.exports = {
         }
 
         if (errors.isEmpty()) {
-            let { name, last_name, email, namePet, pass} = req.body
+            let { name, lastName, email, namePet, password} = req.body
 
             db.User.create({
                 name,
-                last_name,
-                email: bcrypt.hashSync(pass, 12),
+                lastName,
+                email,
+                namePet,
+                telephone: "",
+                biography: "",
+                password: bcrypt.hashSync(password, 12),
                 image: req.file ? req.file.filename : "autoImage.png",
                 rol: 0,
             }).then(() => {

@@ -21,9 +21,6 @@ module.exports = function(sequelize, dataTypes){
         description: {
             type: dataTypes.STRING(500)
         },
-        image: {
-            type: dataTypes.STRING(150)
-        },
         subcategoryId: {
             type: dataTypes.INTEGER(11),
             allowNull: false
@@ -42,12 +39,10 @@ module.exports = function(sequelize, dataTypes){
             as: "subcategory",
             foreignKey: "subcategoryId"
         })
-        Product.associate = models => {
-            Product.hasMany(models.ProductImage, {
-                as: "images",
-                foreignKey: "productId"
-            })
-        }
+        Product.hasMany(models.ProductImage, {
+            as: "images",
+            foreignKey: "productId"
+        })
     }
 
     return Product

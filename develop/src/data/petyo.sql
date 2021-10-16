@@ -179,7 +179,7 @@ CREATE TABLE `users` (
   `biography` varchar(500) NOT NULL,
   `rol` int(2) NOT NULL,
   `createdAt` timestamp NULL DEFAULT NULL,
-  `updateAt` timestamp NULL DEFAULT NULL,
+  `updatedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -207,4 +207,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-15  1:01:00
+-- Dump completed on 2021-10-15 19:18:01

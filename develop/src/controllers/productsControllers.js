@@ -1,13 +1,13 @@
-const { products, categories } = require('../data/dataBase')
+/*const { products, categories } = require('../data/dataBase')*/
 const db = require('../database/models')
 
 
-let subcategories = [];
+/*let subcategories = [];
 products.forEach(product => {
     if(!subcategories.includes(product.subcategory)){
         subcategories.push(product.subcategory)
     }  
-});
+});*/
 
 module.exports = {
     detail : (req, res) => {
@@ -58,10 +58,11 @@ module.exports = {
                     include: [{
                         association: "images",
                     }]
-                }] 
+                }]
             }] 
         })
         .then(category => {
+            res.send(category)
             let subcategories = category.subcategories;
             let products = []
             subcategories.forEach(subcategory =>{

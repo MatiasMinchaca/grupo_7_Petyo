@@ -17,9 +17,9 @@
             <% } %>
             </div>
             <div class="div-imputs-login">
-            <input type="password" placeholder="Contraseña" name="pass">
-            <% if (locals.errors && errors.pass) { %>
-                <h6 class="error-message"><%= errors.pass.msg %> </h6>
+            <input type="password" placeholder="Contraseña" name="password">
+            <% if (locals.errors && errors.password) { %>
+                <h6 class="error-message"><%= errors.password.msg %> </h6>
             <% } %>
             </div>
             <h6 class="create-account">¿No tienes una cuenta?<a href="/users/register">Cree una.</a></h6>

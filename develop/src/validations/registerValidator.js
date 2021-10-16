@@ -7,7 +7,7 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes escribir tu/s Nombre/s'),
 
-    check('last_name')
+    check('lastName')
     .notEmpty()
     .withMessage('Debes escribir tu/s Apellido/s'),
 
@@ -39,7 +39,7 @@ module.exports = [
     }),
     /*.withMessage("Correo Electronico ya registrado"),*/
 
-    check('pass')
+    check('password')
     .notEmpty()
     .withMessage('Debes escribir una contraseña')
     .isLength({
@@ -48,7 +48,7 @@ module.exports = [
     .withMessage('La contraseña debe tener como mínimo 8 caracteres'),
 
     body('passC')
-    .custom((value, {req}) => value !== req.body.pass ? false : true)
+    .custom((value, {req}) => value !== req.body.password ? false : true)
     .withMessage('Las contraseñas no coinciden'),
 
     check('terms')
