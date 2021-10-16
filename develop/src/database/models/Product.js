@@ -24,7 +24,11 @@ module.exports = function(sequelize, dataTypes){
         subcategoryId: {
             type: dataTypes.INTEGER(11),
             allowNull: false
-        }
+        },
+        image: {
+            type: dataTypes.STRING(150),
+            allowNull: false
+        },
     }
     
     let config = {
@@ -38,10 +42,6 @@ module.exports = function(sequelize, dataTypes){
         Product.belongsTo(models.Subcategory, {
             as: "subcategory",
             foreignKey: "subcategoryId"
-        })
-        Product.hasMany(models.ProductImage, {
-            as: "images",
-            foreignKey: "productId"
         })
     }
 

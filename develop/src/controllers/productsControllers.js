@@ -15,18 +15,12 @@ module.exports = {
             where: {
                 id: req.params.id
             },
-            include: [{
-                association: "images"
-            }]
         })
         .then(product => {
             db.Product.findAll({
                 where: {
                     subcategoryId: product.subcategoryId
                 },
-                include: [{
-                    association: "images"
-                }]
             })
             .then(products => {
                 res.render('products/productDetail', {
@@ -55,9 +49,6 @@ module.exports = {
                 association: "subcategories",
                 include: [{
                     association: "products",
-                    include: [{
-                        association: "images",
-                    }]
                 }]
             }] 
         })

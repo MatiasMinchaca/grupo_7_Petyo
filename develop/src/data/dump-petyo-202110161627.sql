@@ -89,6 +89,7 @@ CREATE TABLE `products` (
   `subcategoryId` int(11) NOT NULL,
   `createdAt` timestamp NULL DEFAULT NULL,
   `updatedAt` timestamp NULL DEFAULT NULL,
+  `image` varchar(150) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `products_FK` (`subcategoryId`),
   CONSTRAINT `products_FK` FOREIGN KEY (`subcategoryId`) REFERENCES `subcategories` (`id`)
@@ -101,35 +102,8 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Arnes',1330,5,'super arnes para perros',1,NULL,NULL);
+INSERT INTO `products` VALUES (1,'Arnes',1330,5,'super arnes para perros',1,NULL,NULL,'');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `products_images`
---
-
-DROP TABLE IF EXISTS `products_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image` varchar(150) DEFAULT NULL,
-  `productId` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `products_images_FK` (`productId`),
-  CONSTRAINT `products_images_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products_images`
---
-
-LOCK TABLES `products_images` WRITE;
-/*!40000 ALTER TABLE `products_images` DISABLE KEYS */;
-INSERT INTO `products_images` VALUES (1,'/products/producto-arnes.jpg',1);
-/*!40000 ALTER TABLE `products_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -207,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-15 19:18:01
+-- Dump completed on 2021-10-16 16:27:59
