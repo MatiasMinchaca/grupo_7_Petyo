@@ -53,12 +53,11 @@ module.exports = {
             }] 
         })
         .then(category => {
-            res.send(category)
             let subcategories = category.subcategories;
             let products = []
-            subcategories.forEach(subcategory =>{
-                subcategories.products.forEach(product => products.push(product))
-            });
+            subcategories.forEach(subcategory => {
+                subcategory.products.forEach(product => products.push(product))
+            })
             res.render('products/categories', {
                 title : `Categoria: ${category.name}`,
                 category,
