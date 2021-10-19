@@ -36,7 +36,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull: false
         },
         rol: {
-            type: dataTypes.INTEGER(2),
+            type: dataTypes.INTEGER(2).UNSIGNED,
             allowNull: false
         }
     }

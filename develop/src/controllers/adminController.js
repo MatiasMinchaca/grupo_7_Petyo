@@ -1,12 +1,6 @@
-const { products, categories, ProductsJSON, users, UsersJSON } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
-
-let subcategories = [];
-products.forEach(product => {
-    if(!subcategories.includes(product.subcategory)){
-        subcategories.push(product.subcategory)
-    }  
-});
+const fs = require('fs')
+const db = require('../database/models')
 
 module.exports = {
     admin : (req, res) => {
@@ -16,10 +10,13 @@ module.exports = {
         })
     },
     products : (req, res) => {
-        res.render('admin/adminListProducts', {
-            title : 'Lista de productos',
-            products,
-            session: req.session
+        db.Products.findAll()
+        .then(products => {
+            res.render('admin/adminListProducts', {
+                title : 'Lista de productos',
+                products,
+                session: req.session
+            })
         })
     },
     searchAdmin: (req, res) => {
@@ -95,8 +92,6 @@ module.exports = {
         let product = products.find(product => product.id === +req.params.id)
         res.render('admin/adminEditProduct', {
             title : 'Editar Producto',
-            categories, 
-            subcategories,
             product,
             session: req.session
         })
@@ -126,11 +121,13 @@ module.exports = {
                 }
             })
     
-            ProductsJSON(products)
+            writeProductsJSON(products);
     
-            res.redirect('/admin/products')
+        res.redirect('/admin/products')
+
         } else {
         let product = products.find(product => product.id === +req.params.id)
+
         res.render('admin/adminEditProduct', {
             title : 'Editar Producto',
             categories, 
@@ -144,14 +141,17 @@ module.exports = {
     
     },
     remove: (req, res) => {
-        products.forEach( product => {
-            if(product.id === +req.params.id){
-               let productRemove = products.indexOf(product);
-               products.splice(productRemove, 1)
+        products.forEach(product => {
+            if (product.id === +req.params.id) {
+                fs.existsSync("./public/images/productos/", product.image[0])
+                ? fs.unlinkSync("./public/images/productos/" + product.image[0])
+                : console.log("-- No se encontró")
+                let productRemove = products.indexOf(product);
+                products.splice(productRemove, 1)
             }
         })
         
-        ProductsJSON(products)
+        writeProductsJSON(products);
 
         res.redirect('/admin/products')
     }
