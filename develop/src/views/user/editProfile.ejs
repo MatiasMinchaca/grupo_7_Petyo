@@ -34,9 +34,9 @@
                     <option value="ave">Ave</option>
                 </select>
                 <label for="surname-edit">Direccion</label>
-                <input type="text" id="address-edit" name="address" value="<%= user.address ? user.address : "" %>" class="surname-edit">
+                <input type="text" id="address-edit" name="address" value="<%= address !== null && address.street ? address.street : "" %>" class="surname-edit">
                 <label for="surname-edit">Codigo postal</label>
-                <input type="text" id="pc-edit" name="pc" value="<%= user.pc ? user.pc : "" %>" class="surname-edit">
+                <input type="text" id="pc-edit" name="pc" value="<%= address !== null && address.postal_code ? address.postal_code : "" %>" class="surname-edit">
                 <label for="surname-edit">Provincia</label>
                 <select type="text" name="province" class="select-species-pet">
                     <option value="" selected hidden>Provincia</option>

@@ -10,9 +10,6 @@ module.exports = function(sequelize, dataTypes){
         street: {
             type: dataTypes.STRING(100),
         },
-        number: {
-            type: dataTypes.INTEGER(11),
-        },
         province: {
             type: dataTypes.STRING(100),
         },
@@ -24,12 +21,13 @@ module.exports = function(sequelize, dataTypes){
         },
         userId: {
             type: dataTypes.INTEGER(11),
-            allowNull: false
+            allowNull: true
         }
     }
 
     let config = {
         tableName: "address",
+        timestamps: false
     }
 
     const Address = sequelize.define(alias, cols, config)

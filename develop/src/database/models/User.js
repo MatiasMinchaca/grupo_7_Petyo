@@ -50,7 +50,7 @@ module.exports = function(sequelize, dataTypes){
 
     User.associate = models => {
         User.hasMany(models.Address, {
-            as: "addresses",
+            as: "address",
             foreignKey: "userId"
         })
     }

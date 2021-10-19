@@ -25,7 +25,6 @@ DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `street` varchar(100) DEFAULT NULL,
-  `number` int(11) DEFAULT NULL,
   `province` varchar(100) DEFAULT NULL,
   `city` varchar(100) DEFAULT NULL,
   `postalCode` int(11) DEFAULT NULL,
@@ -42,7 +41,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (1,'38 E/ 115 y 116',23,'Buenos Aires','La Plata',1900,1);
+INSERT INTO `address` VALUES (1,'38 E/ 115 y 116','Buenos Aires','La Plata',1900,1);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +154,7 @@ CREATE TABLE `users` (
   `createdAt` timestamp NULL DEFAULT NULL,
   `updatedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,7 +163,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Juan','Doce','4150689','juandoce@gmail.com','Hola12345','autoImage.png','hola',1,NULL,NULL);
+INSERT INTO `users` VALUES (1,'Juan','Doce','4150689','juandoce@gmail.com','Hola12345','autoImage.png','hola',1,NULL,NULL),(2,'ema','doce','','ema@mail.com','$2a$12$bZtz25njlPJkO3NHY2J61.fzXSL665mWiSoEwZNLRbJ8A34SLIChW','autoImage.png','',0,'2021-10-18 22:04:43','2021-10-19 00:13:58');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-16 16:27:59
+-- Dump completed on 2021-10-18 21:16:10

@@ -13,7 +13,7 @@ module.exports = function(sequelize, dataTypes){
         },
         image: {
             type: dataTypes.STRING(150),
-            allowNull: false
+            allowNull: true
         }
     }
     
