@@ -3,13 +3,13 @@ const fs = require('fs')
 const db = require('../database/models')
 
 module.exports = {
-    admin : (req, res) => {
+    admin: (req, res) => {
         res.render('admin/adminDashboard', {
             title : 'Administrador',
             session: req.session
         })
     },
-    products : (req, res) => {
+    products: (req, res) => {
         db.Products.findAll()
         .then(products => {
             res.render('admin/adminListProducts', {
@@ -45,7 +45,7 @@ module.exports = {
         if (errors.isEmpty()) {
             let lastId = 1;
 
-            products.forEach(product => {
+            db.products.forEach(product => {
                 if(product.id > lastId){
                     lastId = product.id
                 }
@@ -73,7 +73,7 @@ module.exports = {
     
             products.push(newProduct);
     
-            ProductsJSON(products)
+            writeProductsJSON(products)
     
             res.redirect('/admin/products')
         } else {
@@ -89,11 +89,19 @@ module.exports = {
        
     },
     edit: (req, res) => {
-        let product = products.find(product => product.id === +req.params.id)
+        /*let product = products.find(product => product.id === +req.params.id)
         res.render('admin/adminEditProduct', {
             title : 'Editar Producto',
             product,
             session: req.session
+        })*/
+        db.Products.findByPk(req.params.id)
+        .then(product => {
+            res.render('admin/adminEditProduct', {
+                title : 'Editar Producto',
+                product,
+                session: req.session
+            })
         })
     },
     update: (req, res) => {
@@ -108,7 +116,7 @@ module.exports = {
                 discount,
                 } = req.body;
             
-            products.forEach( product => {
+            db.products.forEach( product => {
                 if(product.id === +req.params.id){
                     product.id = product.id,
                     product.name = name,
@@ -121,7 +129,7 @@ module.exports = {
                 }
             })
     
-            writeProductsJSON(products);
+            ProductsJSON(products);
     
         res.redirect('/admin/products')
 
@@ -141,7 +149,7 @@ module.exports = {
     
     },
     remove: (req, res) => {
-        products.forEach(product => {
+        db.products.forEach(product => {
             if (product.id === +req.params.id) {
                 fs.existsSync("./public/images/productos/", product.image[0])
                 ? fs.unlinkSync("./public/images/productos/" + product.image[0])
@@ -151,7 +159,7 @@ module.exports = {
             }
         })
         
-        writeProductsJSON(products);
+        ProductsJSON(products);
 
         res.redirect('/admin/products')
     }

@@ -17,7 +17,7 @@
                         <h3 class="userProfile_title">Datos personales</h3>
                         <p class="userProfile_item">Nombre: <%= user.name ? user.name : " " %>
                         </p>
-                        <p class="userProfile_item">Apellido: <%= user.last_name ? user.last_name : " " %>
+                        <p class="userProfile_item">Apellido: <%= user.lastName ? user.lastName : " " %>
                         </p>
                         <p class="userProfile_item">Teléfono: <%= user.tel ? user.tel : " " %>
                         </p>
@@ -30,13 +30,13 @@
                     </div>
                     <div class="userProfile_box">
                         <h3 class="userProfile_title">Datos de contacto</h3>
-                        <p class="userProfile_item">Dirección: <%= address !== null && address.street ? address.street : "------" %>
+                        <p class="userProfile_item">Dirección: <%= address !== null && address.street ? address.street : " " %>
                         </p>
-                        <p class="userProfile_item">Código postal: <%= address !== null && address.postal_code ? address.postal_code : "------" %>
+                        <p class="userProfile_item">Código postal: <%= address !== null && address.postal_code ? address.postal_code : " " %>
                         </p>
-                        <p class="userProfile_item">Provincia: <%= address !== null && address.province ? address.province : "------" %>
+                        <p class="userProfile_item">Provincia: <%= address !== null && address.province ? address.province : " " %>
                         </p>
-                        <p class="userProfile_item">Localidad: <%= address !== null && address.city ? address.city : "------" %>
+                        <p class="userProfile_item">Localidad: <%= address !== null && address.city ? address.city : " " %>
                         </p>
                     </div>
                     <a href="/users/profile/editProfile/<%= user.id %>" class="btn btn-ad-primary">EDITAR PERFIL</a>

@@ -19,7 +19,7 @@
                 <label for="name-edit">Nombre</label>
                 <input type="tex" id="name-edit" name="name" value="<%- user.name %> " class="name-edit">
                 <label for="surname-edit">Apellido</label>
-                <input type="text" id="surname-edit" name="last_name" value="<%- user.last_name %> " class="surname-edit">
+                <input type="text" id="surname-edit" name="last_name" value="<%- user.lastName %> " class="surname-edit">
                 <label for="email-edit">Correo elctronico</label>
                 <input type="email" id="email-edit" name="email" readonly value="<%- user.email %> " class="email-edit">
                 <label for="tel-edit">Telefono</label>
@@ -36,7 +36,7 @@
                 <label for="surname-edit">Direccion</label>
                 <input type="text" id="address-edit" name="address" value="<%= address !== null && address.street ? address.street : "" %>" class="surname-edit">
                 <label for="surname-edit">Codigo postal</label>
-                <input type="text" id="pc-edit" name="pc" value="<%= address !== null && address.postal_code ? address.postal_code : "" %>" class="surname-edit">
+                <input type="text" id="pc-edit" name="pc" value="<%= address !== null && address.postalCode ? address.postal_code : "" %>" class="surname-edit">
                 <label for="surname-edit">Provincia</label>
                 <select type="text" name="province" class="select-species-pet">
                     <option value="" selected hidden>Provincia</option>

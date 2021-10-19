@@ -43,7 +43,8 @@ module.exports = {
                     title: 'Editar Perfil',
                     user,
                     session: req.session,
-                    address
+                    address,
+                    image: req.file && req.file.filename,
                 });
             });
         });
@@ -52,14 +53,14 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let { name, lastName, address, pc, city, province, telephone, email, image, biography } = req.body;
+            let { name, lastName, address, pc, city, province, telephone, email, biography } = req.body;
             db.User.update(
                 {
                     name,
                     lastName,
                     telephone,
                     email,
-                    image,
+                    image: req.file && req.file.filename,
                     biography,
                 },
                 {
@@ -134,15 +135,15 @@ module.exports = {
         }
 
         if (errors.isEmpty()) {
-            let { name, lastName, email, namePet, password } = req.body
+            let { name, lastName, email, namePet, telephone, biography, password } = req.body
 
             db.User.create({
                 name,
                 lastName,
                 email,
                 namePet,
-                telephone: "",
-                biography: "",
+                telephone,
+                biography,
                 password: bcrypt.hashSync(password, 12),
                 image: req.file ? req.file.filename : "autoImage.png",
                 rol: 0,
