@@ -10,7 +10,7 @@ module.exports = {
         })
     },
     products: (req, res) => {
-        db.Products.findAll()
+        db.Product.findAll()
         .then(products => {
             res.render('admin/adminListProducts', {
                 title : 'Lista de productos',
@@ -35,17 +35,15 @@ module.exports = {
     load : (req, res) => {
         res.render('admin/adminLoadProduct', {
             title : 'Cargar Producto',
-            categories,
-            subcategories,
             session: req.session
         })
     },
     store: (req, res) => {
         let errors = validationResult(req)
-        if (errors.isEmpty()) {
+        if (req.fileValidatorError) {
             let lastId = 1;
 
-            db.products.forEach(product => {
+            db.Product.forEach(product => {
                 if(product.id > lastId){
                     lastId = product.id
                 }
@@ -57,8 +55,7 @@ module.exports = {
                 subcategory, 
                 description,
                 price,
-                discount,
-                } = req.body;
+                discount } = req.body;
     
             let newProduct = {
                 id: lastId + 1,
@@ -79,8 +76,8 @@ module.exports = {
         } else {
             res.render('admin/adminLoadProduct', {
                 title : 'Cargar Producto',
-                categories,
-                subcategories,
+                category,
+                subcategory,
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
@@ -159,7 +156,7 @@ module.exports = {
             }
         })
         
-        ProductsJSON(products);
+        writeProductsJSON(products);
 
         res.redirect('/admin/products')
     }
