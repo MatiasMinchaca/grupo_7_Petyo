@@ -41,49 +41,26 @@ module.exports = {
     store: (req, res) => {
         let errors = validationResult(req)
         if (req.fileValidatorError) {
-            let lastId = 1;
-
-            db.Product.forEach(product => {
-                if(product.id > lastId){
-                    lastId = product.id
-                }
-            })
-    
-            let {
-                name, 
-                category, 
-                subcategory, 
-                description,
-                price,
-                discount } = req.body;
-    
-            let newProduct = {
-                id: lastId + 1,
-                name,
-                category,
-                subcategory,
-                description,
-                price,
-                discount,
-                image: req.file ? "/products/"+req.file.filename : ""
-            };
-    
-            products.push(newProduct);
-    
-            writeProductsJSON(products)
-    
-            res.redirect('/admin/products')
-        } else {
-            res.render('admin/adminLoadProduct', {
-                title : 'Cargar Producto',
-                category,
-                subcategory,
-                errors: errors.mapped(),
-                old: req.body,
-                session: req.session
-            })
+        } else {  
         }
-       
+        let {
+            name, 
+            category, 
+            subcategory, 
+            description,
+            price,
+            discount } = req.body;
+            db.Product.create({
+                name, category, subcategory, description, price, discount, image: req.file ? "/products/"+req.file.filename : ""
+            })
+            .then(result => {
+                res.send(result)
+            })
+
+            /*}).then(product =>{
+                res.render('admin/adminLoadProduct')
+            })*/
+
     },
     edit: (req, res) => {
         /*let product = products.find(product => product.id === +req.params.id)
@@ -126,8 +103,6 @@ module.exports = {
                 }
             })
     
-            ProductsJSON(products);
-    
         res.redirect('/admin/products')
 
         } else {
@@ -155,8 +130,6 @@ module.exports = {
                 products.splice(productRemove, 1)
             }
         })
-        
-        writeProductsJSON(products);
 
         res.redirect('/admin/products')
     }

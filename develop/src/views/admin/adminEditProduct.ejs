@@ -26,12 +26,11 @@
                     <% if (locals.errors && errors.categories) { %>
                         <small class="text-danger"><%= errors.category.msg %> </small>
                     <% } %>
-                    <select type="text" placeholder="Tipo" name="subcategory" class="select-type-product">
-                        <option value="" hidden>Subategorias</option>
-                        <% subcategories.forEach(subcategory => { %>
-                            <option value="<%- subcategory%>" <%- locals.old && old.subcategory == subcategory ? "selected" : subcategory == product.subcategory ? `selected` : ""  %>><%- subcategory %></option>
+                    <select type="text" placeholder="Tipo" name="subcategory" class="select-type-product" >
+                        <option selected hidden value="">Subcategorias</option>
+                         <% locals.categories[0].subcategories.forEach(subcategory => { %>
+                            <option value="<%- subcategory.id %>" <%= locals.old && old.subcategory == subcategory ? "selected" : null %>><%- subcategory.name %></option>
                          <% }) %>
-                        </select>
                     </select>
                     <% if (locals.errors && errors.subcategory) { %>
                         <small class="text-danger"><%= errors.subcategory.msg %> </small>
