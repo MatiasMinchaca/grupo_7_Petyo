@@ -32,7 +32,7 @@ CREATE TABLE `address` (
   PRIMARY KEY (`id`),
   KEY `address_FK` (`userId`),
   CONSTRAINT `address_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (1,'38 E/ 115 y 116','Buenos Aires','La Plata',1900,1),(2,'38 e/ 40 y 41','','',0,2);
+INSERT INTO `address` VALUES (1,'38 E/ 115 y 116','Buenos Aires','La Plata',1900,1),(2,'38 e/ 40 y 41','','',0,2),(3,NULL,NULL,NULL,0,4);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +92,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `products_FK` (`subcategoryId`),
   CONSTRAINT `products_FK` FOREIGN KEY (`subcategoryId`) REFERENCES `subcategories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,6 +146,7 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `lastName` varchar(50) NOT NULL,
   `telephone` varchar(40) NOT NULL,
+  `namePet` varchar(50) DEFAULT NULL,
   `email` varchar(70) NOT NULL,
   `password` varchar(70) NOT NULL,
   `image` varchar(150) NOT NULL,
@@ -154,7 +155,7 @@ CREATE TABLE `users` (
   `createdAt` timestamp NULL DEFAULT NULL,
   `updatedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,12 +164,12 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Juan','Doce','4150689','juandoce@gmail.com','Hola12345','autoImage.png','hola',1,NULL,NULL),(2,'ema  ','doce','','ema@mail.com','$2a$12$bZtz25njlPJkO3NHY2J61.fzXSL665mWiSoEwZNLRbJ8A34SLIChW','autoImage.png','',0,'2021-10-18 22:04:43','2021-10-19 00:33:31'),(3,'jose','de luca','','jose@mail.com','$2a$12$8KLuPNt76yvhOoCeZ/OyjuKYw3mq05sLRSosseLWhFEMGnoosM9Mm','autoImage.png','',1,'2021-10-19 00:37:38','2021-10-19 00:37:38');
+INSERT INTO `users` VALUES (1,'Juan','Doce','4150689',NULL,'juandoce@gmail.com','Hola12345','autoImage.png','hola',1,NULL,NULL),(2,'ema  ','doce','',NULL,'ema@mail.com','$2a$12$bZtz25njlPJkO3NHY2J61.fzXSL665mWiSoEwZNLRbJ8A34SLIChW','autoImage.png','',0,'2021-10-18 22:04:43','2021-10-19 00:33:31'),(3,'jose','de luca','',NULL,'jose@mail.com','$2a$12$8KLuPNt76yvhOoCeZ/OyjuKYw3mq05sLRSosseLWhFEMGnoosM9Mm','autoImage.png','',1,'2021-10-19 00:37:38','2021-10-19 00:37:38'),(4,'Matias ','Minchaca ','32456','ergbdf','matiasminchaca@gmail.com','$2a$12$7iF37lnzSa5TmG1sQ5RRUOy.h8SXwlbJ9AaTkewS9hQzG3H5h7XgG','autoImage.png','',1,'2021-10-21 16:26:03','2021-10-21 18:55:11');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'petyo'
+-- Dumping routines for database 'petyo3'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -180,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-18 22:26:59
+-- Dump completed on 2021-10-21 16:18:47
