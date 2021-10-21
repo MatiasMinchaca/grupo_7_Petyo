@@ -28,7 +28,6 @@ module.exports = {
                     userId: user.id,
                 },
             }).then((address) => {
-                res.send(user, address)
                 res.render('user/profile', {
                     title: 'Mi Perfil',
                     user,
