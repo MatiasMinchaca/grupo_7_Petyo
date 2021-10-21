@@ -6,10 +6,6 @@ module.exports = [
     .isLength({ min: 5 })
     .withMessage("Ingrese más de 5 carácteres"),
 
-    check('category')
-    .notEmpty()
-    .withMessage("Debes elegir una categoría"),
-
     check('subcategory')
     .notEmpty()
     .withMessage("Debes elegir una subcategoría"),

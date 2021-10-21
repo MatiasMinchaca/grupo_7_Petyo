@@ -20,7 +20,7 @@
                         <option value=""hidden>Categorias</option>
                         <% categories.forEach(category => { %>
                             <option value="<%- category.id %>" <%- locals.old && old.category == category.id ? "selected" : category.id == product.category ? `selected` : ""  %>><%- category.name %></option>
-                         <% }) %>                       
+                        <% }) %>                       
                         </select>
                     </select>
                     <% if (locals.errors && errors.categories) { %>
@@ -28,9 +28,9 @@
                     <% } %>
                     <select type="text" placeholder="Tipo" name="subcategory" class="select-type-product" >
                         <option selected hidden value="">Subcategorias</option>
-                         <% locals.categories[0].subcategories.forEach(subcategory => { %>
+                        <% subcategories.forEach(subcategory => { %>
                             <option value="<%- subcategory.id %>" <%= locals.old && old.subcategory == subcategory ? "selected" : null %>><%- subcategory.name %></option>
-                         <% }) %>
+                        <% }) %>
                     </select>
                     <% if (locals.errors && errors.subcategory) { %>
                         <small class="text-danger"><%= errors.subcategory.msg %> </small>
@@ -38,7 +38,7 @@
                     <div class="preview-image-container">
                         <label class="btn-load-image-admin" for="imgInp">Seleccione una imagen</label>
                         <input type='file' id="imgInp" name="image" hidden="hidden">
-                        <img class="preview-image" id="blah" src="/images<%= product.image %>" alt="Tu imagen" >
+                        <img class="preview-image" id="blah" src="/images/products/<%= product.image %>" alt="Tu imagen" >
                     </div>
                     <label for="name-product-load" class="name-product-load-label">Nombre del producto</label>
                     <input type="text" class="name-product-load" id="name-product-load" name="name" value="<%= locals.old ? old.name : product.name%>">

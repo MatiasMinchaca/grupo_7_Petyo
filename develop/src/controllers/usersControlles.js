@@ -17,12 +17,18 @@ module.exports = {
         });
     },
     profile: (req, res) => {
-        db.User.findByPk(req.session.user.id).then((user) => {
+        db.User.findOne({
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(user => {
             db.Address.findOne({
                 where: {
                     userId: user.id,
                 },
             }).then((address) => {
+                res.send(user, address)
                 res.render('user/profile', {
                     title: 'Mi Perfil',
                     user,
@@ -30,7 +36,8 @@ module.exports = {
                     session: req.session,
                 });
             });
-        });
+        })
+            
     },
     editProfile: (req, res) => {
         db.User.findByPk(req.params.id).then((user) => {
@@ -44,23 +51,37 @@ module.exports = {
                     user,
                     session: req.session,
                     address,
-                    image: req.file && req.file.filename,
                 });
             });
         });
     },
     profileUpdate: (req, res) => {
         let errors = validationResult(req);
-
         if (errors.isEmpty()) {
-            let { name, lastName, address, pc, city, province, telephone, email, biography } = req.body;
-            db.User.update(
+            let { 
+                name, 
+                lastName, 
+                street, 
+                postalCode, 
+                namePet, 
+                telephone, 
+                email,
+                biography
+            } = req.body;
+            db.User.findOne({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(user => {
+                db.User.update(
                 {
                     name,
                     lastName,
                     telephone,
+                    namePet,
                     email,
-                    image: req.file && req.file.filename,
+                    image: req.file ? req.file.filename : user.image,
                     biography,
                 },
                 {
@@ -70,15 +91,16 @@ module.exports = {
                 }
             ).then((result) => {
                 db.Address.create({
-                    street: address,
-                    city: city,
-                    province: province,
-                    postalCode: pc,
+                    street: street,
+                    //city: city, Para rellenar despues con APIS
+                    //province: province,
+                    postalCode: postalCode,
                     userId: req.params.id,
                 }).then((result) => {
                     res.redirect("/users/profile");
+                    });
                 });
-            });
+            })
         } else {
             res.render('users/editProfile', {
                 title: 'Editar Perfil',
@@ -89,31 +111,28 @@ module.exports = {
         }
     },
     procedureLogin: (req, res) => {
-
         let errors = validationResult(req)
         if (errors.isEmpty()) {
-            db.User.findOne({
-                where: {
-                    email: req.body.email
-                }
-            })
+                db.User.findOne({
+                    where: {
+                        email: req.body.email
+                    }
+                })
                 .then(user => {
                     req.session.user = {
                         id: user.id,
                         name: user.name,
                         lastName: user.lastName,
+                        telephone: user.telephone,
                         namePet: user.namePet,
                         email: user.email,
                         image: user.image,
                         rol: user.rol
                     };
-
                     if (req.body.remember) {
                         res.cookie("userPetyo", req.session.user, { expires: new Date(Date.now() + 900000), httpOnly: true });
                     }
-
                     res.locals.user = req.session.user;
-
                     res.redirect('/');
                 });
         } else {
@@ -126,26 +145,23 @@ module.exports = {
     },
     procedureRegister: (req, res) => {
         let errors = validationResult(req)
-        if (req.fileValidatorError) {
-            let image = {
-                param: "image",
-                msg: req.fileValidatorError,
-            };
-            errors.push(image);
-        }
-
         if (errors.isEmpty()) {
-            let { name, lastName, email, namePet, telephone, biography, password } = req.body
-
+            let {
+                name, 
+                lastName, 
+                email, 
+                namePet, 
+                password 
+            } = req.body
             db.User.create({
                 name,
                 lastName,
                 email,
                 namePet,
-                telephone,
-                biography,
+                telephone: '',
+                biography : '',
                 password: bcrypt.hashSync(password, 12),
-                image: req.file ? req.file.filename : "autoImage.png",
+                image: "autoImage.png",
                 rol: 0,
             }).then(() => {
                 res.redirect('/users/login')

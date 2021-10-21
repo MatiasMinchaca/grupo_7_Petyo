@@ -17,18 +17,18 @@
                 <form class="form-load" action="/admin/products/load" method="POST" enctype="multipart/form-data">
                     <select type="text" placeholder="Tipo" name="category" class="select-type-product" >
                         <option selected hidden value="">Categorias</option>
-                        <% locals.categories.forEach(category => { %>
-                            <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : null %>><%- category.name %></option>
-                         <% }) %>
+                        <% categories.forEach(category => { %>
+                            <option value="<%- category.id %>" <%= locals.old && old.category.name == category.name ? "selected" : null %>><%- category.name %></option>
+                        <% }) %>
                     </select>
                     <% if(locals.errors && errors.category) {%>
                         <small class="text-danger"><%= errors.category.msg %></small>
                     <% } %>
                     <select type="text" placeholder="Tipo" name="subcategory" class="select-type-product" >
                         <option selected hidden value="">Subcategorias</option>
-                         <% locals.categories[0].subcategories.forEach(subcategory => { %>
-                            <option value="<%- subcategory%>" <%= locals.old && old.subcategory == subcategory ? "selected" : null %>><%- subcategory.name %></option>
-                         <% }) %>
+                        <% subcategories.forEach(subcategory => { %>
+                            <option value="<%- subcategory.id%>" <%= locals.old && old.subcategory.name == subcategory.name ? "selected" : null %>><%- subcategory.name %></option>
+                        <% }) %>
                     </select>
                     <% if(locals.errors && errors.subcategory) {%>
                         <small class="text-danger"><%= errors.subcategory.msg %></small>

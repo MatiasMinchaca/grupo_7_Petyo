@@ -19,11 +19,11 @@
                 <label for="name-edit">Nombre</label>
                 <input type="tex" id="name-edit" name="name" value="<%- user.name %> " class="name-edit">
                 <label for="surname-edit">Apellido</label>
-                <input type="text" id="surname-edit" name="last_name" value="<%- user.lastName %> " class="surname-edit">
+                <input type="text" id="surname-edit" name="lastName" value="<%- user.lastName %> " class="surname-edit">
                 <label for="email-edit">Correo elctronico</label>
                 <input type="email" id="email-edit" name="email" readonly value="<%- user.email %> " class="email-edit">
                 <label for="tel-edit">Telefono</label>
-                <input type="tel" id="tel-edit" name="tel" value="<%= user.tel ? user.tel : "" %>" class="tel-edit">
+                <input type="tel" id="tel-edit" name="telephone" value="<%= user.telephone ? user.telephone : "" %>" class="tel-edit">
                 <label for="name-pet-edit">Nombre de tu mascota</label>
                 <input type="text" id="name-pet-edit" name="namePet" value="<%- user.namePet ? user.namePet : "" %>" class="name-pet-edit">
                 <select type="text"  class="select-species-pet">
@@ -36,7 +36,7 @@
                 <label for="surname-edit">Direccion</label>
                 <input type="text" id="address-edit" name="address" value="<%= address !== null && address.street ? address.street : "" %>" class="surname-edit">
                 <label for="surname-edit">Codigo postal</label>
-                <input type="text" id="pc-edit" name="pc" value="<%= address !== null && address.postalCode ? address.postal_code : "" %>" class="surname-edit">
+                <input type="text" id="pc-edit" name="postalCode" value="<%= address !== null && address.postalCode ? address.postalCode : "" %>" class="surname-edit">
                 <label for="surname-edit">Provincia</label>
                 <select type="text" name="province" class="select-species-pet">
                     <option value="" selected hidden>Provincia</option>
@@ -47,10 +47,6 @@
                 </select>
                 <label for="biography-edit">Biografia</label>
                 <textarea type="text" cols="10" rows="10"  id="biography-edit" name="biography" class="biography-edit"><%- user.biography ? user.biography : "" %></textarea>
-                <!-- <label for="password-edit">Cambiar contraseña</label>
-                <input type="password" id="password-edit" name="pass" value="" class="password-edit">
-                <label for="confirm-password-edit">Confirmar contraseña</label>
-                <input type="password" id="confirm-password-edit" name="confirm-pass" class="confirm-password-edit"> -->
                 <input type="submit" value="Guardar" class="save-profile">
             </div>
         </form>

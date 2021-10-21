@@ -11,42 +11,29 @@ module.exports = [
     .withMessage('Debes escribir un Correo Electronico válido'),
 
     body('custom')
-        .custom((value, {req}) => {
-            return db.User.findOne({
-                where: {
-                    email: req.body.email
-                }
-            })
-            .then(user => {
-                if(!bcrypt.compareSync(req.body.password, user.dataValues.password)){
-                    return Promise.reject()
-                }
-            })
-            .catch(error => {
-                return Promise.reject("Email o contraseña incorrecta")
-            })
+    .custom((value, {req}) => { 
+        return db.User.findOne({
+            where: {
+                email: req.body.email
+            }
         })
-
-    /*body('email')
-    .custom(value => {
-        let user = users.find(user => user.email === value)
-
-        if(user !== undefined){
-            return true
-        }else{
-            return false
-        }
+        .then(user =>{
+            return user
+        }).catch(error =>{
+            return Promise.reject('Datos invalidos')
+        })
+    }),
+    body('password')
+    .custom((value, {req}) => { 
+        return db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        .then(user =>{
+            return bcrypt.compareSync(req.body.password, user.dataValues.password)
+        }).catch(error =>{
+            return Promise.reject('Datos invalidos')
+        })
     })
-    .withMessage("No hay ninguna cuenta asociada a ese correo electronico"),
-
-    check('pass')
-    .notEmpty()
-    .withMessage('Debes escribir tu contraseña'),
-
-    body('pass')
-    .custom((value, {req}) => {
-        let user = users.find(user => user.email === req.body.email)
-        return bcrypt.compareSync(value, user.pass)
-    })
-    .withMessage('Contraseña incorrecta')*/
 ]
