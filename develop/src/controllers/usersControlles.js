@@ -17,7 +17,12 @@ module.exports = {
         });
     },
     profile: (req, res) => {
-        db.User.findByPk(req.session.user.id).then((user) => {
+        db.User.findOne({
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(user => {
             db.Address.findOne({
                 where: {
                     userId: user.id,
@@ -27,9 +32,10 @@ module.exports = {
                     title: 'Mi Perfil',
                     user,
                     address,
+                    session: req.session,
                 });
             });
-        });
+        })
     },
     editProfile: (req, res) => {
         db.User.findByPk(req.params.id).then((user) => {
@@ -51,32 +57,49 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let { name, lastName, tel, email, address, biography, pc, province, city } = req.body;
+            let { 
+                name, 
+                lastName, 
+                street, 
+                postalCode, 
+                namePet, 
+                telephone, 
+                email,
+                biography
+        } = req.body;
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(user => {
             db.User.update(
-                {
-                    name,
-                    lastName,
-                    telephone: tel,
-                    email,
-                    image: req.file && req.file.filename,
-                    biography
+            {
+                name,
+                lastName,
+                telephone,
+                namePet,
+                email,
+                image: req.file ? req.file.filename : user.image,
+                biography,
+            },
+            {
+                where: {
+                    id: req.params.id,
                 },
-                {
-                    where: {
-                        id: req.params.id,
-                    },
-                }
-            ).then((result) => {
-                db.Address.create({
-                    street: address,
-                    city: city,
-                    province: province,
-                    postalCode: pc,
-                    userId: req.params.id,
-                }).then((result) => {
-                    res.redirect("/users/profile");
+            }
+        ).then((result) => {
+            db.Address.create({
+                street: street,
+                //city: city, Para rellenar despues con APIS
+                //province: province,
+                postalCode: postalCode,
+                userId: req.params.id,
+            }).then((result) => {
+                res.redirect("/users/profile");
                 });
             });
+        })
         } else {
             res.render('users/editProfile', {
                 title: 'Editar Perfil',
@@ -156,7 +179,6 @@ module.exports = {
         if (req.cookies.userPetyo) {
             res.cookie('userPetyo', '', { maxAge: -1 })
         }
-
         res.redirect('/')
     }
 }
