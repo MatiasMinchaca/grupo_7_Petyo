@@ -17,15 +17,21 @@
             </div>
             <div class="inputs-edit-profile">
                 <label for="name-edit">Nombre</label>
-                <input type="tex" id="name-edit" name="name" value="<%- user.name %> " class="name-edit">
+                <input type="text" name="name-edit" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <small class="text-danger"><%= errors.name.msg %> </small>
+                <% } %>
                 <label for="surname-edit">Apellido</label>
-                <input type="text" id="surname-edit" name="lastName" value="<%- user.lastName %> " class="surname-edit">
+                <input type="text" name="lastName" placeholder="Apellido" value="<%= locals.old ? old.lastName : user.lastName %>">
+                <% if (locals.errors && errors.lastName) { %>
+                    <small class="text-danger"><%= errors.lastName.msg %> </small>
+                <% } %>
                 <label for="email-edit">Correo elctronico</label>
                 <input type="email" id="email-edit" name="email" readonly value="<%- user.email %> " class="email-edit">
                 <label for="tel-edit">Telefono</label>
-                <input type="tel" id="tel-edit" name="telephone" value="<%= user.telephone ? user.telephone : "" %>" class="tel-edit">
+                <input type="tel" id="tel-edit" name="telephone" value="<%= user.telephone %>" class="tel-edit">
                 <label for="name-pet-edit">Nombre de tu mascota</label>
-                <input type="text" id="name-pet-edit" name="namePet" value="<%- user.namePet ? user.namePet : "" %>" class="name-pet-edit">
+                <input type="text" id="name-pet-edit" name="namePet" value="<%- user.namePet %>" class="name-pet-edit">
                 <select type="text"  class="select-species-pet">
                     <option value="" selected hidden>Especie de tu mascota</option>
                     <option value="perro">Perro</option>
@@ -34,9 +40,9 @@
                     <option value="ave">Ave</option>
                 </select>
                 <label for="surname-edit">Direccion</label>
-                <input type="text" id="address-edit" name="address" value="<%= address !== null && address.street ? address.street : "" %>" class="surname-edit">
+                <input type="text" name="address" placeholder="Direccion" value="<%= address !== null && address.street ? address.street : "" %>">
                 <label for="surname-edit">Codigo postal</label>
-                <input type="text" id="pc-edit" name="postalCode" value="<%= address !== null && address.postalCode ? address.postalCode : "" %>" class="surname-edit">
+                <input type="text" id="pc-edit" name="postalCode" value="<%= address !== null && address.postalCode ? address.postalCode : "" %>">
                 <label for="surname-edit">Provincia</label>
                 <select type="text" name="province" class="select-species-pet">
                     <option value="" selected hidden>Provincia</option>
