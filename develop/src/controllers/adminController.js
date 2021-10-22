@@ -143,7 +143,7 @@ module.exports = {
     },
     update: (req, res) => {
         let errors = validationResult(req)
-        if (errors.isEmpty()) {
+        if (errors.isEmpty()) { 
             let {
                 name, 
                 subcategory, 
@@ -177,7 +177,7 @@ module.exports = {
             const categoriesPromise = db.Category.findAll();
             const subcategoriesPromise = db.Subcategory.findAll();
             Promise.all([categoriesPromise, subcategoriesPromise])
-            .then(([categories, subcategories]) => {
+            .then(([categories, subcategories]) => { 
                 db.Product.findOne({
                     where: {
                         id: req.params.id
