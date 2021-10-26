@@ -1,17 +1,25 @@
-const { products, banners } = require('../data/dataBase');
-/* const db = require('../database/models');
-const { Op } = require('sequelize'); */
+const { banners } = require('../data/dataBase');
+const db = require('../database/models');
+const { Op } = require('sequelize'); 
 
 
 
 module.exports = {
   home : (req, res) => {
-    let productsSlider = products.filter(product => product.discount >= 12)
+    db.Product.findAll({
+      where: {
+        discount: {
+          [Op.gte] : 12
+        }
+      }
+    })
+    .then(products =>{
       res.render('home', {
           title : 'Petyo petshop',
-          productsSlider,
+          productsSlider: products,
           banners, 
           session: req.session
       })
+    })
   }
 }
