@@ -38,7 +38,10 @@ module.exports = function(sequelize, dataTypes){
         rol: {
             type: dataTypes.INTEGER(2).UNSIGNED,
             allowNull: false
-        }
+        },
+        namePet: {
+            type: dataTypes.STRING(100)
+        },
     }
     
     let config = {
