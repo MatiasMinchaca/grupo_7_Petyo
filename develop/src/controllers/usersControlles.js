@@ -101,7 +101,7 @@ module.exports = {
             });
         })
         } else {
-            res.render('users/editProfile', {
+            res.render('user/editProfile', {
                 title: 'Editar Perfil',
                 errors: errors.mapped(),
                 old: req.body,

@@ -17,7 +17,7 @@ module.exports = [
     .notEmpty()
     .withMessage("Coloca un precio para el producto")
     .isLength({ min: 5, max: 11 })
-    .isDecimal()
+    .isNumeric()
     .withMessage("Solo puedes ingresar números")
     ,
 

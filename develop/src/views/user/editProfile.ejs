@@ -39,10 +39,10 @@
                     <option value="reptil">Reptil</option>
                     <option value="ave">Ave</option>
                 </select>
-                <label for="surname-edit">Direccion</label>
-                <input type="text" name="address" placeholder="Direccion" value="<%= address !== null && address.street ? address.street : "" %>">
+                <!-- <label for="surname-edit">Direccion</label>
+                <input type="text" name="address" placeholder="Direccion" value=" address !== null && address.street ? address.street : "" %>">
                 <label for="surname-edit">Codigo postal</label>
-                <input type="text" id="pc-edit" name="postalCode" value="<%= address !== null && address.postalCode ? address.postalCode : "" %>">
+                <input type="text" id="pc-edit" name="postalCode" value=" address !== null && address.postalCode ? address.postalCode : "" %>">
                 <label for="surname-edit">Provincia</label>
                 <select type="text" name="province" class="select-species-pet">
                     <option value="" selected hidden>Provincia</option>
@@ -50,7 +50,7 @@
                 <label for="surname-edit">Ciudad</label>
                 <select type="text" name="city" class="select-species-pet">
                     <option value="" selected hidden>Ciudad</option>
-                </select>
+                </select> -->
                 <label for="biography-edit">Biografia</label>
                 <textarea type="text" cols="10" rows="10"  id="biography-edit" name="biography" class="biography-edit"><%- user.biography ? user.biography : "" %></textarea>
                 <input type="submit" value="Guardar" class="save-profile">
