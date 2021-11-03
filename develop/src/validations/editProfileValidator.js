@@ -10,7 +10,7 @@ module.exports = [
     })
     .withMessage('Debes escribir un nombre'),
 
-    check('last_name').isAlpha('es-ES')
+    check('lastName').isAlpha('es-ES')
     .notEmpty()
     .isLength({
         min: 2,
