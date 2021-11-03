@@ -2,19 +2,30 @@ const { check, body } = require('express-validator')
 const db = require('../database/models')
 
 module.exports = [
-    check('name')
+    check('name').isAlpha('es-ES')
     .notEmpty()
-    .withMessage('Debes escribir tu/s Nombre/s'),
+    .withMessage('Debes escribir tu/s Nombre/s')
+    .isLength({
+        min: 2,
+        max: 15
+    })
+    ,
 
-    check('lastName')
+    check('lastName').isAlpha('es-ES')
     .notEmpty()
-    .withMessage('Debes escribir tu/s Apellido/s'),
+    .withMessage('Debes escribir tu/s Apellido/s')
+    .isLength({
+        min: 2,
+        max: 15
+    })
+    ,
 
     check('email')
     .notEmpty()
     .withMessage('Debes escribir tu Correo Electronico').bail()
     .isEmail()
-    .withMessage('Debes escribir un Correo Elctronico válido'),
+    .withMessage('Debes escribir un Correo Elctronico válido')
+    ,
 
     body('email')
     .custom(value => {
@@ -33,7 +44,8 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes escribir una contraseña')
     .isLength({
-        min: 8
+        min: 8,
+        max: 12
     })
     .withMessage('La contraseña debe tener como mínimo 8 caracteres'),
 

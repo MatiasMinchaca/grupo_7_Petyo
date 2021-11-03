@@ -2,12 +2,20 @@ const { check, body } = require('express-validator')
 const { users } = require('../data/dataBase')
 
 module.exports = [
-    check('name')
+    check('name').isAlpha('es-ES')
     .notEmpty()
+    .isLength({
+        min: 2,
+        max: 15
+    })
     .withMessage('Debes escribir un nombre'),
 
-    check('last_name')
+    check('last_name').isAlpha('es-ES')
     .notEmpty()
+    .isLength({
+        min: 2,
+        max: 15
+    })
     .withMessage('Debes escribir un apellido'),
 
     check('email')
@@ -26,13 +34,17 @@ module.exports = [
             return false
         }
     })
+    .isLength({
+        max: 30
+    })
     .withMessage("Email ya registrado"),
 
     check('pass')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
     .isLength({
-        min: 8
+        min: 8,
+        max: 12
     })
     .withMessage('La contraseña debe tener como mínimo 8 caracteres'),
 

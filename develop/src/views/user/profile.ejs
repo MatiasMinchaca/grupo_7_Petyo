@@ -32,7 +32,7 @@
                         <h3 class="userProfile_title">Datos de contacto</h3>
                         <p class="userProfile_item">Dirección: <%= address !== null && address.street ? address.street : " " %>
                         </p>
-                        <p class="userProfile_item">Código postal: <%= address !== null && address.postalCode ? address.postalCode : " " %>
+                        <p class="userProfile_item">Código postal: <%= address!== null && address.postalCode ? address.postalCode : " " %>
                         </p>
                         <p class="userProfile_item">Provincia: <%= address !== null && address.province ? address.province : " " %>
                         </p>
