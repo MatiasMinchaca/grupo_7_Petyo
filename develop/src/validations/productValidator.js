@@ -21,6 +21,13 @@ module.exports = [
     .withMessage("Solo puedes ingresar números")
     ,
 
+    check('discount')
+    .notEmpty()
+    .isLength({ min: 1, max: 11 })
+    .isNumeric()
+    .withMessage("Solo puedes ingresar números")
+    ,
+
     check('description')
     .notEmpty()
     .withMessage("El campo descripción no puede ir vacío")
