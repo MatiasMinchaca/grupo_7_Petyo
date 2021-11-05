@@ -7,10 +7,14 @@ module.exports = [
     .withMessage("Ingrese más de 5 carácteres")
     ,
 
+    check('category')
+    .notEmpty()
+    .withMessage("Debes elegir una categoria")
+    ,
+
     check('subcategory')
     .notEmpty()
     .withMessage("Debes elegir una subcategoría")
-    //validacion
     ,
 
     check('price')
@@ -22,7 +26,6 @@ module.exports = [
     ,
 
     check('discount')
-    .notEmpty()
     .isLength({ min: 1, max: 11 })
     .isNumeric()
     .withMessage("Solo puedes ingresar números")
@@ -34,5 +37,5 @@ module.exports = [
     .isLength({ min: 20, max: 500 })
     .withMessage("Ingrese más de 30 carácteres")
     ,
-    
+   
 ]

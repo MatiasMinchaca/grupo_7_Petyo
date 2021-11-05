@@ -56,7 +56,6 @@ module.exports = [
 
     check('namePet')
     .isAlpha('es-ES')
-    .notEmpty()
     .isLength({
         min: 2,
         max: 15
@@ -84,12 +83,16 @@ module.exports = [
 
     check('biography')
     .isAlphanumeric('es-ES')
-    .notEmpty()
     .isLength({
         min: 25,
         max:500
     })
     .withMessage('Debes escribir una biografia')
+    ,
+
+    check('image')
+    .notEmpty()
+    .withMessage('Debes subir una imagen')
     ,
 
     check('pass')
