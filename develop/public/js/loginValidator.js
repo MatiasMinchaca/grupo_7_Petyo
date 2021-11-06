@@ -14,11 +14,11 @@ window.addEventListener('load', () =>{
     inputEmailLogin.addEventListener('blur', () => {
         switch (true) {
             case !inputEmailLogin.value.trim():
-                errorEmailLogin.innerText = message;
+                errorEmailLogin.innerText = 'El campo correo electronico es obligatorio';
                 inputEmailLogin.style.boxShadow = '0 0 6px red'
                 break;
-            case !expresion.test(inputEmailLogin.value):
-                errorEmailLogin.innerText = message2;
+            case !regExEmail.test(inputEmailLogin.value):
+                errorEmailLogin.innerText = 'Ingrese un email valido(Ej: mail@mail.com';
                 inputEmailLogin.style.boxShadow = '0 0 6px red'
                 break;
             default:
@@ -30,11 +30,11 @@ window.addEventListener('load', () =>{
     inputEmailLogin.addEventListener('keypress', () => {
         switch (true) {
             case !inputEmailLogin.value.trim():
-                errorEmailLogin.innerText = message;
+                errorEmailLogin.innerText = 'El campo correo electronico es obligatorio';
                 inputEmailLogin.style.boxShadow = '0 0 6px red'
                 break;
-            case !expresion.test(inputEmailLogin.value):
-                errorEmailLogin.innerText = message2;
+            case !regExEmail.test(inputEmailLogin.value):
+                errorEmailLogin.innerText = 'Ingrese un email valido(Ej: mail@mail.com';
                 inputEmailLogin.style.boxShadow = '0 0 6px red'
                 break;
             default:
@@ -46,11 +46,11 @@ window.addEventListener('load', () =>{
     inputEmailLogin.addEventListener('keydown', () => {
         switch (true) {
             case !inputEmailLogin.value.trim():
-                errorEmailLogin.innerText = message;
+                errorEmailLogin.innerText = 'El campo correo electronico es obligatorio';
                 inputEmailLogin.style.boxShadow = '0 0 6px red'
                 break;
-            case !expresion.test(inputEmailLogin.value):
-                errorEmailLogin.innerText = message2;
+            case !regExEmail.test(inputEmailLogin.value):
+                errorEmailLogin.innerText = 'Ingrese un email valido(Ej: mail@mail.com';
                 inputEmailLogin.style.boxShadow = '0 0 6px red'
                 break;
             default:
