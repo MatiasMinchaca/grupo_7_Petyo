@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 
- <!-- HEAD -->
- <%- include('../partials/head') %> 
+<!-- HEAD -->
+<%- include('../partials/head') %> 
 
 <body>
-    <form action="/users/login" method="POST" class="body-login-register">
+    <form id="form-login" action="/users/login" method="POST" class="body-login-register">
         <div class="form-container">
             <img src="/images/floatingImage.png" alt="" class="floating-image-form">
             <img src="/images/logotipo.png" alt="" class="logo-form">
             <a href="javascript:history.back()" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
             <div class="div-imputs-login">
-            <input type="email" placeholder="Correo electronico o teléfono" name="email">
+            <input id="input-email-login" type="email" placeholder="Correo electronico" name="email">
             <% if (locals.errors && errors.email) { %>
                 <h6 class="error-message"><%= errors.email.msg %> </h6>
             <% } %>
+            <h6 id="error-email-login" class="error-message"></h6>
             </div>
             <div class="div-imputs-login">
-            <input type="password" placeholder="Contraseña" name="password">
+            <input id="input-password-login" type="password" placeholder="Contraseña" name="password">
             <% if (locals.errors && errors.password) { %>
                 <h6 class="error-message"><%= errors.password.msg %> </h6>
             <% } %>
+            <h6 id="error-password-login" class="error-message"></h6>
             </div>
             <h6 class="create-account">¿No tienes una cuenta?<a href="/users/register">Cree una.</a></h6>
             <div class="div-imputs-login">
                 <input type="checkbox" class="imput-checkbox" name="remember" id="check">
                 <label for="check">Mantener sesion inicida</label>
             </div>
+            <h6 id="error-form-login" class="error-message"></h6>
             <input type="submit" value="iniciar sesión" class="button-forms login-button">
         </div>
         <a href="/users/register" class="recovery-options">

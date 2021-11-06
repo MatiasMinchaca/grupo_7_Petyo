@@ -85,19 +85,11 @@ module.exports = {
             },
             {
                 where: {
-                    id: req.params.id,
+                    id: user.id,
                 },
             }
-        ).then((result) => {
-            db.Address.create({
-                street: street,
-                //city: city, Para rellenar despues con APIS
-                //province: province,
-                postalCode: postalCode,
-                userId: req.params.id,
-            }).then((result) => {
+        ).then(() => {
                 res.redirect("/users/profile");
-                });
             });
         })
         } else {

@@ -17,7 +17,7 @@ router.post('/register', uploadUserImage.single('image'), registerValidator, pro
 /* GET - LOGIN  */
 router.get('/profile', sessionUserCheck, profile)
 router.get('/profile/editProfile/:id', sessionUserCheck, editProfile);
-router.put('/profile/editProfile/:id', uploadUserImage.single('image'),editProfileValidator, profileUpdate);
+router.put('/profile/editProfile/:id', uploadUserImage.single('image'), editProfileValidator, profileUpdate);
 
 module.exports = router;
 

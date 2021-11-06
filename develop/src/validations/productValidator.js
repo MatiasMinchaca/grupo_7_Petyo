@@ -10,20 +10,12 @@ module.exports = [
     check('subcategory')
     .notEmpty()
     .withMessage("Debes elegir una subcategoría")
-    //validacion
     ,
 
     check('price')
     .notEmpty()
     .withMessage("Coloca un precio para el producto")
-    .isLength({ min: 5, max: 11 })
-    .isNumeric()
-    .withMessage("Solo puedes ingresar números")
-    ,
-
-    check('discount')
-    .notEmpty()
-    .isLength({ min: 1, max: 11 })
+    .isLength({ min: 2, max: 11 })
     .isNumeric()
     .withMessage("Solo puedes ingresar números")
     ,

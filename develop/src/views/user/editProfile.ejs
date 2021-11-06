@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 
- <!-- HEAD -->
- <%- include('../partials/head') %> 
+<!-- HEAD -->
+<%- include('../partials/head') %> 
 
 <body class="body-profile">
-       <!-- HEADER -->
+<!-- HEADER -->
 <%- include('../partials/header') %> 
 
     <div class="editProfile-container">
-        <form action="/users/profile/editProfile/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="editProfile-form">
+        <form id="form-editProfile" action="/users/profile/editProfile/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="editProfile-form">
             <div class="profile-image-container">
                 <input type='file' id="imgInp" name="image" hidden="hidden"/>
                 <img class="profile-image" id="blah" src="/images/userImageProfile/<%= user.image %>" />
                 <label class="btn-load-image-profile" for="imgInp">Cambiar foto de Perfil</label>
+                <small id="error-imgInp-editProfile" class="text-danger"></small>
             </div>
             <div class="inputs-edit-profile">
                 <label for="name-edit">Nombre</label>
-                <input type="text" name="name-edit" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
+                <input id="input-name-editProfile" type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
                 <% if (locals.errors && errors.name) { %>
                     <small class="text-danger"><%= errors.name.msg %> </small>
                 <% } %>
+                <small id="error-name-editProfile" class="text-danger"></small>
                 <label for="surname-edit">Apellido</label>
-                <input type="text" name="lastName" placeholder="Apellido" value="<%= locals.old ? old.lastName : user.lastName %>">
+                <input id="input-lastName-editProfile" type="text" name="lastName" placeholder="Apellido" value="<%= locals.old ? old.lastName : user.lastName %>">
                 <% if (locals.errors && errors.lastName) { %>
                     <small class="text-danger"><%= errors.lastName.msg %> </small>
                 <% } %>
+                <small id="error-lastName-editProfile" class="text-danger"></small>
                 <label for="email-edit">Correo elctronico</label>
-                <input type="email" id="email-edit" name="email" readonly value="<%- user.email %> " class="email-edit">
+                <input  type="email" id="email-edit" name="email" readonly value="<%- user.email %> " class="email-edit">
                 <label for="tel-edit">Telefono</label>
-                <input type="tel" id="tel-edit" name="telephone" value="<%= user.telephone %>" class="tel-edit">
+                <input type="tel" id="input-telephone-editProfile" placeholder="Telefono" name="telephone" value="<%= user.telephone %>" class="tel-edit">
+                <small id="error-telephone-editProfile" class="text-danger"></small>
                 <label for="name-pet-edit">Nombre de tu mascota</label>
                 <input type="text" id="name-pet-edit" name="namePet" value="<%- user.namePet %>" class="name-pet-edit">
                 <select type="text"  class="select-species-pet">
@@ -53,6 +57,7 @@
                 </select> -->
                 <label for="biography-edit">Biografia</label>
                 <textarea type="text" cols="10" rows="10"  id="biography-edit" name="biography" class="biography-edit"><%- user.biography ? user.biography : "" %></textarea>
+                <small id="error-form-editProfile" class="text-danger"></small>
                 <input type="submit" value="Guardar" class="save-profile">
             </div>
         </form>
@@ -62,5 +67,6 @@
     
     <!-- JavaScript -->
     <script src="/js/users.js"></script>
+    <script src="/js/editUserValidator.js"></script>
 </body>
 </html>

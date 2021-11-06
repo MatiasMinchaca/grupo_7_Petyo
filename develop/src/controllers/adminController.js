@@ -127,7 +127,14 @@ module.exports = {
             db.Product.findOne({
             where: {
                 id: req.params.id
-            }
+            },
+            include: [
+                {association: 'subcategory',
+                include: [
+                    {association: 'category'}
+                ]
+                }
+            ]
         })
         .then(product => {
             res.render('admin/adminEditProduct', {
