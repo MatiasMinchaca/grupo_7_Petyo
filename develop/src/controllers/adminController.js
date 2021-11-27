@@ -89,7 +89,7 @@ module.exports = {
                 discount, 
                 category, 
                 subcategory, 
-                description 
+                description,
             } = req.body;
             db.Product.create({
                 name,
@@ -150,6 +150,7 @@ module.exports = {
     },
     update: (req, res) => {
         let errors = validationResult(req)
+        console.log(errors)
         if (errors.isEmpty()) { 
             let {
                 name, 
