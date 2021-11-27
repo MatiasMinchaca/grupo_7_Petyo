@@ -1,7 +1,12 @@
 <section class="banners-container">
     <% banners.forEach(banner => { %>
-        <div class="slides fade">
-            <img src="/images/banners/<%- banner.image %>" alt="">
+        <div class="slides fade" 
+            style="background-repeat: no-repeat !important;
+            height: 400px ; background-size: cover !important;
+            background-position: center !important;
+            background: url('/images/banners/<%- banner.image %>')
+        ">
+            
         </div>
     <% }) %>            
     

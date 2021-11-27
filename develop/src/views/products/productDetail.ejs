@@ -9,17 +9,22 @@
     <!-- HEADER -->
 <%- include('../partials/header') %> 
 
-    <main class="productocompleto">
-        <a href="javascript:history.back()"> Volver Atrás</a>
-        <section class="productocar">
-            <section class="pruebacar">
-                <img class="dogcar" src="/images/<%- product.image%>" alt="">
-                <section">
-                    <div class="descripcar">
-                        <h1><%- product.name%></h3>
+
+        
+        <div class="container">
+            <a href="javascript:history.back()" class="btn btn-primary"> Volver Atrás</a>
+            <div class="card">
+                <h5 class="card-header"><%- product.name%></h5>
+                <div class="card-body">
+                    <div class="row">
+    
+                    
+                    <div class="col-md-4">
+                        <img  class="rounded float-left" src="/images/products/<%- product.image %>" alt="">
                     </div>
-                    <div class="codprocar">
-                        <p><%- product.subcategory %>| codigo del producto: #<%- product.id %></p>
+    
+                    <div class="col-md-8">
+                        <h5 class="card-title text-muted"><%- product.subcategory %>Codigo del producto: #<%- product.id %></h5>
                         <div>
                             <p class="precar"> $<%- product.price%> </p>
                             <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</p>
@@ -40,18 +45,20 @@
                             </section>
                         </div>
                         <button class="bot1"> comprar </button>
+                        </div>
                     </div>
-            </section>
-        </section>
-        <section class="domo1">
-            <article class="descricar">
-                <%- product.description %> 
-            </article>
-        </section>
-        </section>
+                    </div>
+    
+                    <div class="card-footer text-muted">
+                        <%- product.description %>
+                    </div>
+    
+                </div>
+              </div>
+        </div>
+        <br>
         
-    </main>
-  
+
     <!-- FOOTER -->  
 <%- include('../partials/footer') %> 
 

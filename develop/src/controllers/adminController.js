@@ -149,8 +149,9 @@ module.exports = {
         
     },
     update: (req, res) => {
+        console.log("HOOOLA")
         let errors = validationResult(req)
-        console.log(errors)
+        console.log("ERRORES: "+errors)
         if (errors.isEmpty()) { 
             let {
                 name, 
