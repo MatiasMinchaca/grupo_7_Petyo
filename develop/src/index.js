@@ -15,10 +15,11 @@ let homeRouter = require('./routers/homeRouter');
 let productsRouter = require('./routers/productsRouter');
 let usersRouter = require('./routers/usersRouter');
 let adminRouter = require('./routers/adminRouter');
+let otroRouter = require('./routers/otroRouter');
 
 /* VIEWS */
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 /* MIDDLEWARES */
 app.use(express.static(path.join(__dirname, '../public')))
@@ -40,6 +41,7 @@ app.use('/', homeRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/otro', otroRouter);
 
 
 app.listen(port, () => {

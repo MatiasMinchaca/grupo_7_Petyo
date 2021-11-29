@@ -89,5 +89,5 @@ module.exports = {
             title : 'Carrito',
             session: req.session
         })
-    }
+    },
 }
