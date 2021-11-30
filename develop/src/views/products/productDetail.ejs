@@ -22,12 +22,11 @@
                     <div class="col-md-4">
                         <img  class="rounded float-left" src="/images/products/<%- product.image %>" alt="">
                     </div>
-    
-                    <div class="col-md-8">
+                    <div class="descpre">
                         <h5 class="card-title text-muted"><%- product.subcategory %>Codigo del producto: #<%- product.id %></h5>
                         <div>
                             <p class="precar"> $<%- product.price%> </p>
-                            <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</p>
+                            <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</img></p>
                         </div>
                         <div>
                             <p class="cla1">Seleccion peso Alimento: </p>
@@ -36,13 +35,13 @@
                         </div>
                         <p class="cla2">Seleccione cantidad</p>
                         <div>
-                            <section class="quantity">
+                            <button class="quantity">
                                 <div class="counter">
                                     <span class="down" onClick='decreaseCount(event, this)'>-</span>
                                     <input type="text" value="1">
                                     <span class="up" onClick='increaseCount(event, this)'>+</span>
                                 </div>
-                            </section>
+                            </button>
                         </div>
                         <button class="bot1"> comprar </button>
                         </div>
@@ -57,6 +56,9 @@
               </div>
         </div>
         <br>
+        <a href="https://api.whatsapp.com/send?phone=+5493873693495" class="btn-flotante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
         
 
     <!-- FOOTER -->  

@@ -24,5 +24,19 @@ module.exports = {
             title : 'Preguntas frecuentes',
             session: req.session
         })
+    },
+    
+    termsandConditions: (req, res) => {
+        res.render('otro/termsandConditions', {
+            title : 'Términos y condiciones',
+            session: req.session
+        })
+    },
+
+    privacypolicy: (req, res) => {
+        res.render('otro/privacypolicy', {
+            title : 'Política de privacidad',
+            session: req.session
+        })
     }
 }

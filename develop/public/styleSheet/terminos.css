@@ -1,0 +1,13 @@
+.terminos {
+    display: flex;
+    text-align: justify;
+    color: white;
+    padding: 5%
+}
+
+.section-reglamento{
+    display: flex;
+    text-align: justify;
+    color: white;
+    padding: 5%
+}
