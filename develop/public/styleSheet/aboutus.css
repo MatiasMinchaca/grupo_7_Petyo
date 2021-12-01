@@ -1,0 +1,13 @@
+.logito {
+    width: 8%;
+    height: 8%;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.img-fluid{
+    max-width: 50%;
+    height: auto;
+    border-radius: 2%;
+}
