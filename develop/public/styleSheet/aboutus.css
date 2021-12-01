@@ -7,7 +7,17 @@
 }
 
 .img-fluid{
+    margin-left: 30%;
     max-width: 50%;
     height: auto;
     border-radius: 2%;
 }
+
+.texton {
+    display: flex;
+    text-align: justify;
+    color: white;
+    padding: 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
