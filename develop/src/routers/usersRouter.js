@@ -1,9 +1,23 @@
 let express = require('express');
 let router = express.Router();
-let {login, procedureLogin, logout, register, procedureRegister, profile, editProfile, profileUpdate} = require('../controllers/usersControlles');
+let {login, 
+    procedureLogin, 
+    logout, 
+    register, 
+    procedureRegister, 
+    profile, 
+    editProfile, 
+    profileUpdate,
+    addAddressView, 
+    editAddress, 
+    editAddressView, 
+    addAddress, 
+    removeAddress} = require('../controllers/usersControlles');
 const loginValidator = require('../validations/loginValidator');
 const registerValidator = require('../validations/registerValidator');
 const editProfileValidator = require('../validations/editProfileValidator');
+const addAddrressValidator = require('../validations/addAddressValidator');
+const editAddrressValidator = require('../validations/addAddressValidator');
 const uploadUserImage = require('../middlewares/uploadUserImage');
 const sessionUserCheck = require('../middlewares/sessionUserCheck');
 const sessionLoginCheck = require('../middlewares/sessionLoginCheck');
@@ -18,6 +32,12 @@ router.post('/register', uploadUserImage.single('image'), registerValidator, pro
 router.get('/profile', sessionUserCheck, profile)
 router.get('/profile/editProfile/:id', sessionUserCheck, editProfile);
 router.put('/profile/editProfile/:id', uploadUserImage.single('image'), editProfileValidator, profileUpdate);
+/* ADDRESS */
+router.get('/profile/addAddress/:id', sessionUserCheck, addAddressView)
+router.post('/profile/addAddress/:id', sessionUserCheck, addAddrressValidator, addAddress)
+router.get('/profile/editAddress/:id', sessionUserCheck, editAddressView)
+router.put('/profile/editAddress/:id', sessionUserCheck, editAddrressValidator, editAddress)
+router.delete('/profile/removeAddress/:id', sessionUserCheck, removeAddress)
 
 module.exports = router;
 

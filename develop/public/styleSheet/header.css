@@ -1,5 +1,5 @@
 header.header {
-    background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
+    background: linear-gradient(0deg, rgb(61, 141, 15, 49%) , rgb(98, 211, 32));
     padding: 5px 10px;
     height: 60px;
     display: flex;
@@ -28,6 +28,7 @@ header.header {
     color: var(--kombuGreen);
     margin-bottom: 3px;
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 .header .search-header{
@@ -67,6 +68,29 @@ header.header {
     background: linear-gradient(0deg, rgb(231, 250, 219) , rgb(203, 218, 195));
     transition: all 0.5s;
     font-size: 19px;
+    overflow: scroll;
+}
+
+.header .menu-lateral .div-close-lateral::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.header .menu-lateral .div-close-lateral::-webkit-scrollbar:vertical {
+    width: 3px;
+}
+.header .menu-lateral .div-close-lateral::-webkit-scrollbar-button:increment,.header .menu-lateral .div-close-lateral::-webkit-scrollbar-button {
+    display: none;
+} 
+.header .menu-lateral .div-close-lateral::-webkit-scrollbar:horizontal {
+    height: 3px;
+}
+.header .menu-lateral .div-close-lateral::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,rgb(98, 211, 32), rgb(61, 141, 15));
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 0px solid #000000;
+}
+.header .menu-lateral .div-close-lateral::-webkit-scrollbar-track {
+    border-radius: 10px;  
 }
 
 .search-logo{
@@ -157,6 +181,13 @@ header.header {
     display: flex;
     flex-direction: column;
 }
+.header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral h1{
+    font-size: 20px;
+    margin: 0;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
 .header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral{
     display: flex;
     flex-direction: row;
@@ -183,8 +214,8 @@ header.header {
 }
 .header .menu-lateral .div-close-lateral .section-menu-lateral .div-login-lateral .div2-login-lateral{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    margin-left: 10px;
 }
 .header .menu-lateral .div-close-lateral .section-menu-lateral .div-login-lateral .div2-login-lateral a{
     font-family: 'Roboto', sans-serif;
@@ -222,12 +253,15 @@ header.header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    flex-direction: column;
+    margin-left: 10px;
 }
 .header .menu-lateral .div-close-lateral .section-menu-lateral .div-contact a{
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: black;
     text-decoration: none;
+    margin: 3px 0;
 }
 header.header div.logo-menu {
     display: flex;
@@ -267,6 +301,7 @@ header.header .menu i {
     color: var(--kombuGreen);
     opacity: 0.8;
     margin: 0;
+    cursor: pointer;
 }
 
 /* MENU TABLET Y DESKTOP */
@@ -342,4 +377,416 @@ header.header div.user a i {
 .block-header{
     height: 60px;
     width: 100%;
+    background: rgb(16, 71, 2);
+}
+
+.header .search-header-desktop{
+    display: none;
+}
+
+.header .categories-header{
+    display: none;
+}
+
+.header .user-header{
+    display: none;
+}
+
+@media screen and (min-width: 800px) {
+    header.header .menu {
+        display: none;
+    }
+    .header .menu-lateral{
+        display: none;
+    }
+    .header .btn-search-mobile{
+        display: none;
+    }
+    .header .search-header{
+        display: none;
+    }
+    header.header {
+        height: 80px;
+        padding: 5px 25px;
+    }
+    .block-header{
+        height: 80px;
+    }
+    .header .search-header-desktop{
+        display: flex;
+        width: 100%;
+        left: 0;
+        top: 10px;
+        position: fixed;
+        justify-content: center;
+    }
+    .header .search-header-desktop form{
+        position: relative;
+    }
+    .header .search-header-desktop form input{
+        border: none;
+        border-radius: 20px;
+        width: 250px;
+        box-shadow: 0 0 6px black;
+        transition: cubic-bezier(0.23, 1, 0.320, 1) 0.9s;
+        padding-left: 10px;
+        padding-bottom: 1px;
+        text-transform: capitalize;
+    }
+    .header .search-header-desktop form input:focus{
+        outline: none;
+        transform: scale(1.1);
+    }
+    .header .search-header-desktop form button{
+        position: absolute;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1dc414;
+        width: 25px;
+        color: white;
+        height: 25px;
+        border-radius: 20px;
+        text-shadow: 0 0 6px black;
+        transition: cubic-bezier(0.23, 1, 0.320, 1) 0.9s;
+        font-size: 17px;
+        box-shadow: 0 0 4px black;
+    }
+    .header .search-header-desktop form button:hover{
+        cursor: pointer;
+    }
+    .header .categories-header{
+        display: flex;
+        position: fixed;
+        top: 48px;
+        left: 0;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 0 80px;
+    }
+    .header .categories-header .div-archor-header {
+        color: white;
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        text-shadow: 0 0 6px black;
+        height: 32px;
+        position: relative;
+    }
+    .header .categories-header .div-home-header {
+        color: white;
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        text-shadow: 0 0 6px black;
+        height: 32px;
+        position: relative;
+    }
+    .header .categories-header .div-archor-header:hover{
+        border-bottom: 1px solid white;
+    }
+    .header .categories-header .div-home-header:hover{
+        border-bottom: 1px solid white;
+    }
+    .header .categories-header .div-archor-header a{
+        color: white;
+        margin: 0;
+        outline: none;
+    }
+    .header .categories-header .div-home-header a{
+        color: white;
+        margin: 0;
+        outline: none;
+    }
+    .header .categories-header .div-archor-header i{
+        margin-top: 1px;
+        margin-left: 4px;
+        transition: all 0.3s;
+    }
+    .header .categories-header .div-home-header i{
+        margin-top: 1px;
+        margin-left: 4px;
+        transition: all 0.3s;
+    }
+    .header .categories-header .div-archor-header a:hover{
+        outline: none;
+        text-decoration: none;
+    }
+    .header .categories-header .div-home-header a:hover{
+        outline: none;
+        text-decoration: none;
+    }
+    .header .categories-header .div-archor-header .subcategories-header{
+        position: fixed;
+        top: 80px;;
+        left: 0;
+        width: 100%;
+        background: white;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 25px;
+        align-items: center;
+    }
+    .header .categories-header .div-archor-header .class-black-a{
+        color: black;
+    }
+
+    .header .categories-header .div-archor-header a:focus div{
+        display: flex;
+    }
+    .header .categories-header .div-archor-header .press-category{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 600;
+    }
+
+    .header .user-header{
+        display: flex;
+    }
+    .header .user-header .section-paw-header-1{
+        position: fixed;
+        background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
+        border-radius: 50%;
+        height: 18px;
+        width: 13px;
+        right: 64px;
+        top: 20px;
+        transform: rotate( 349deg);
+        box-shadow: 0 0 6px black;
+    }
+    .header .user-header .section-paw-header-2{
+        position: fixed;
+        background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
+        border-radius: 50%;
+        height: 21px;
+        width: 16px;
+        width: 16px;
+        right: 46px;
+        top: 4px;
+        transform: rotate( 0deg);
+        box-shadow: 0 0 6px black;
+    }
+    .header .user-header .section-paw-header-3{
+        position: fixed;
+        background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
+        border-radius: 50%;
+        height: 21px;
+        width: 16px;
+        right: 27px;
+        top: 4px;
+        transform: rotate( 0deg);
+        box-shadow: 0 0 6px black;
+    }
+    .header .user-header .section-paw-header-4{
+        position: fixed;
+        background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
+        border-radius: 50%;
+        height: 18px;
+        width: 13px;
+        right: 13px;
+        top: 20px;
+        transform: rotate( 11deg);
+        box-shadow: 0 0 6px black;
+    }
+    .header .user-header .user-icon-header{
+        height: 40px;
+        font-size: 26px;
+        width: 40px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        color: #000000;
+        text-shadow: 0 0 6px #e7e7e7;
+        background: linear-gradient(0deg, rgb(61, 141, 15) , rgb(98, 211, 32));
+        box-shadow: 0 0px 8px black;
+        margin-top: 15px;
+        -webkit-border-radius: 146px;
+        -webkit-border-bottom-right-radius: 90px;
+        -webkit-border-bottom-left-radius: 90px;
+        -moz-border-radius: 146px;
+        -moz-border-radius-bottomright: 90px;
+        -moz-border-radius-bottomleft: 90px;
+        border-radius: 146px;
+        border-bottom-right-radius: 90px;
+        border-bottom-left-radius: 90px;
+        position: relative;
+    }
+    .header .user-header .user-icon-header i{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: glitch 2500ms infinite;
+    }
+    .header .user-header .user-icon-header #botton-user-icon{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        -webkit-border-radius: 146px;
+        -webkit-border-bottom-right-radius: 90px;
+        -webkit-border-bottom-left-radius: 90px;
+        -moz-border-radius: 146px;
+        -moz-border-radius-bottomright: 90px;
+        -moz-border-radius-bottomleft: 90px;
+        border-radius: 146px;
+        border-bottom-right-radius: 90px;
+        border-bottom-left-radius: 90px;
+        cursor: pointer;
+    }
+    .header .user-header .user-icon-header i:hover{
+        cursor: pointer;
+    }
+    .header .user-header .login-register-header{
+        position: fixed;
+        width: 130px;
+        height: 50px;
+        top: 80px;
+        transition: cubic-bezier(0.23, 1, 0.320, 1) 0.9s;
+        border-bottom-left-radius: 10px;
+        box-shadow: 6px 5px 3px #00000036;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background:rgb(61, 141, 15, 49%);
+    }
+    .header .user-header .login-register-header section {
+        padding: 0 10px;
+        transition: cubic-bezier(0.23, 1, 0.320, 1) 0.9s;
+        width: 100%;
+        text-align: center;
+    }
+    .header .user-header .login-register-header hr {
+        margin: 0;
+        width: 100%;
+    }
+    .header .user-header .login-register-header section:hover {
+        background-color: rgb(98, 211, 32);
+        transform: scale(1.1);
+        text-align: center;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .header .user-header .login-register-header section a {
+        color: white;
+        text-shadow: 0 3px 5px black;
+        text-align: center;
+        cursor: pointer;
+    }
+    .header .user-header .login-register-header section a:hover {
+        text-decoration: none;
+        color: black;
+        text-shadow: 0 3px 5px white;
+    }
+    @keyframes glitch {
+        0% {
+            text-shadow: 0.05em 0 0 rgb(0, 255, 51),
+            -0.05em -0.025em 0 rgb(3, 150, 3),
+            -0.025em 0.05em 0 rgb(255, 255, 255);
+        }
+        15% {
+            text-shadow: -0.05em -0.025em 0 rgb(0, 255, 51),
+            0.025em 0.025em 0 rgb(7, 107, 7),
+            0.05em -0.05em 0 rgb(255, 255, 255);
+        }
+        30% {
+            text-shadow: 0.05em -0.025em 0 rgb(0, 255, 51),
+            0.025em 0.025em 0 rgb(7, 107, 7),
+            -0.05em -0.05em 0 rgb(255, 255, 255);
+        }
+        45% {
+            text-shadow: -0.05em -0.025em 0 rgb(0, 255, 51),
+            0.025em 0.025em 0 rgb(7, 107, 7),
+            -0.05em -0.05em 0 rgb(255, 255, 255);
+        }
+        50% {
+            text-shadow: 0.025em 0.05em 0 rgb(0, 255, 51),
+            0.05em 0 0 rgb(7, 107, 7), 
+            0 -0.05em 0 rgb(255, 255, 255);
+        }
+        75% {
+            text-shadow: -0.025em -0.05em 0 rgb(0, 255, 51),
+            0.05em 0 0 rgb(7, 107, 7), 
+            0 -0.05em 0 rgb(255, 255, 255);
+        }
+        100% {
+            text-shadow: 0.025em 0 0 rgb(0, 255, 51),
+            -0.025em -0.025em 0 rgb(7, 107, 7),
+            -0.025em -0.05em 0 rgb(255, 255, 255);
+        }
+    }
+    .header .user-header .div-login-header .section-botton{
+        position: fixed;
+        display: flex;
+        transition: all 0.5s;
+        width: 120px;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 1px 3px 6px #00000036;
+        background:rgb(61, 141, 15, 49%);
+        right: 2%;
+        border-radius: 0px 0px 10px 10px;
+    }
+    .header .user-header .div-login-header{
+        position: relative;
+        width: fit-content;
+        width: -moz-fit-content;
+        width: -moz-fit-content;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 6px black;
+        border-radius: 13px;
+        padding: 5px;
+        margin-bottom: 15px;
+    }
+    .header .user-header .div-login-header #press-login-header{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 13px;
+        cursor: pointer;
+    }
+    .header .user-header .div-login-header .section-botton a{
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 0 0 6px black;
+        width: 100%;
+        transition: all 0.5s;
+    }
+    .header .user-header .div-login-header .section-botton a:hover{
+        transform: scale(1.1);
+        background-color: rgba(71, 189, 3, 0.925);
+        border-radius: 10px;
+        color: rgb(255, 255, 255);
+        text-shadow: 0 0 6px rgb(0, 0, 0);
+        text-decoration: none;
+    }
+    .header .user-header .div-login-header h2{
+        margin: 0;
+        margin-right: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white;
+        text-shadow: 0 0 6px rgb(0, 0, 0);
+    }
+    .header .user-header .div-login-header .img-user-header{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
 }

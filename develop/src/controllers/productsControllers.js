@@ -1,13 +1,5 @@
-/*const { products, categories } = require('../data/dataBase')*/
 const db = require('../database/models')
-
-
-/*let subcategories = [];
-products.forEach(product => {
-    if(!subcategories.includes(product.subcategory)){
-        subcategories.push(product.subcategory)
-    }  
-});*/
+const {Op} = require('sequelize')
 
 module.exports = {
     detail : (req, res) => {
@@ -31,14 +23,6 @@ module.exports = {
             })
         })
         .catch(err => console.log)
-        /*let productId = +req.params.id;
-        let product = products.find(product => product.id === productId)
-        res.render('products/productDetail', {
-            title : 'Detalle de producto',
-            product,
-            categories,
-            session: req.session
-        })*/
     },
     category : (req, res) => {
         db.Category.findOne({
@@ -53,41 +37,101 @@ module.exports = {
             }] 
         })
         .then(category => {
-            let subcategories = category.subcategories;
-            let products = []
-            subcategories.forEach(subcategory => {
-                subcategory.products.forEach(product => products.push(product))
-            })
-            res.render('products/categories', {
-                title : `Categoria: ${category.name}`,
-                category,
-                products,
-                session: req.session
-            })
-        })
-        /*let category = categories.find(category => {
-            return category.id === +req.params.id
-        })
-        let categoryProducts = products.filter(product => +product.category === +req.params.id)
-        let subCategories = [];
-        categoryProducts.forEach(product => {
-            if(!subCategories.includes(product.subcategory)){
-                subCategories.push(product.subcategory)
+            if(category != null){
+                let subcategories = category.subcategories;
+                let products = []
+                subcategories.forEach(subcategory => {
+                    subcategory.products.forEach(product => products.push(product))
+                })
+                res.render('products/categories', {
+                    title : `Categoria: ${category.name}`,
+                    category,
+                    products,
+                    session: req.session
+                })
+            }else {
+                res.render('products/error', {
+                    title : `Subcategoria: `,
+                    messageError: 'Lo que buscas no esta disponible en este momento',
+                    session: req.session
+                })
             }
-        });
-        res.render('products/categories', {
-            title : `Categoria: ${category.name}`,
-            category,
-            products: categoryProducts,
-            subCategories,
-            categories,
-            session: req.session
-        })*/
+            
+        })
+    },
+    subcategory : (req, res) => {
+        db.Subcategory.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [{
+                association: "category"
+            },
+            {
+                association: 'products'
+            }] 
+        })
+        .then(subcategory => {
+            if(subcategory != null){
+                let products = []
+                subcategory.products.forEach(product => {
+                    products.push(product)
+                })
+                res.render('products/subcategories', {
+                    title : `Categoria: ${subcategory.name}`,
+                    subcategory,
+                    products,
+                    session: req.session
+                })
+            } else {
+                res.render('products/error', {
+                    title : `Subcategoria: `,
+                    messageError: 'Lo que buscas no esta aqui en este momento',
+                    session: req.session
+                })
+            }
+        })
     },
     cart : (req, res) => {
         res.render('products/shoppingCart', {
             title : 'Carrito',
             session: req.session
+        })
+    },
+    search: (req, res) => {
+        db.Product.findAll({
+            where: {
+                name: {
+                    [Op.like]: `%_${req.query.search}_%`,
+                },
+            },
+            include: [
+                { association: "subcategory",
+                include: [
+                    {association: 'category'}
+                ]
+                }
+            ]
+        }).then(results => {
+            db.Product.findAll({
+                include: [
+                    { association: "subcategory",
+                    include: [
+                        {association: 'category'}
+                    ]
+                    }
+                ]
+            }).then(products => {
+                res.render("products/searchProducts", {
+                    products,
+                    results,
+                    title: `(${results.length}) ${req.query.search} | Petyo`,
+                    search: req.query.search,
+                    position: "",
+                    products,
+                    session: req.session,
+                })
+            })
         })
     }
 }

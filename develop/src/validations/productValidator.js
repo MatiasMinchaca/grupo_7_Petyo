@@ -12,7 +12,7 @@ module.exports = [
     .withMessage("Debes elegir una categoria")
     ,
 
-    check('subcategory')
+    check('subcategoryId')
     .notEmpty()
     .withMessage("Debes elegir una subcategoría")
     ,
@@ -31,5 +31,4 @@ module.exports = [
     .isLength({ min: 20, max: 500 })
     .withMessage("Ingrese más de 30 carácteres")
     ,
-   
 ]

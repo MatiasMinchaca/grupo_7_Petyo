@@ -1,0 +1,160 @@
+
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    height: -moz-fit-content;
+}
+.search .div-filter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.search .div-filter .button-filter{
+    width: 100%;
+    border: none;
+    background: rgb(61, 141, 15);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+}
+.search .div-filter .button-filter:focus{
+    outline: none;
+}
+.search .product-card-div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.search .product-card-div .product-card {
+    display: flex;
+    width: 99%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    flex-direction: row;
+    border-top: 1px solid rgb(221, 221, 221);
+}
+.search .product-card-div .product-card:hover{
+    transform: scale(1.03);
+}
+.search .search-h3{
+    width: 100%;
+    padding-left: 10px;
+    margin: 0;
+}
+.search .search-h3-0{
+    width: 100%;
+    padding-left: 10px;
+    margin: 0;
+}
+.search .product-card-div .product-card .product-discount-card{
+    position: absolute;
+    top: -1px;
+    right: 0;
+    margin: 0;
+    background-color: rgb(61, 141, 15);
+    border-radius: 10px 0;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 10px;
+    text-shadow: 0 3px 6px black;
+}
+.search .product-card-div .product-card .product-detail-card{
+    position: absolute;
+    top: 100px;
+    right: 1px;
+    background-color: rgb(64, 128, 27);
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    text-shadow: 0 3px 6px black;
+    text-decoration: none;
+    font-size: 17px;
+}
+.search .product-card-div .product-card .product-detail-card:hover{
+    background-color: rgb(65, 158, 12);
+}
+.search .product-card-div .product-card .image-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search .product-card-div .product-card .image-card img{
+    width: 90px;
+    height: 80px;
+    margin: 5px 10px;
+}
+.search .product-card-div .product-card .name-price-card{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 10px 10px 15px;
+}
+.search .product-card-div .product-card .name-price-card p{
+    margin: 0;   
+}
+.search .product-card-div .product-card .name-price-card .name-card{
+    font-size: 21px;
+    font-weight: 600;
+}
+.search .product-card-div .product-card .name-price-card .price-card{
+    font-size: 15px;
+    font-weight: 600;
+}
+.search .product-card-div .product-card .name-price-card .shipping-card{
+    font-size: 12px;
+    font-weight: 600;
+    color: green;
+}
+.search .section-filter{
+    display: none;
+}
+@media screen and (min-width:768px) {
+    .search{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        padding-top: 30px;
+    }
+    .search .product-card-div .product-card .anchor-card{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .search .product-card-div .product-card .product-detail-card{
+        display: none;
+    }
+    .search .div-filter{
+        display: none;
+    }
+    .search .div-filter .button-filter{
+        display: none;
+    }
+    .search .search-h3{
+        position: absolute;
+        top: 0;
+    }
+    .search .search-h3-0{
+        margin-bottom: 30px;
+    }
+    .search .section-filter{
+        display: flex;
+        width: 20%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}

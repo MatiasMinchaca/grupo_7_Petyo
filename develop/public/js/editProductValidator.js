@@ -166,7 +166,7 @@ window.addEventListener('load', () =>{
         let elementsForm = formeditProduct.elements
         
         for (let i = 0; i < elementsForm.length-1; i++) {
-            if(elementsForm[i].value == "" && elementsForm[i].name !== "archivo" || elementsForm[i].style.boxShadow == '0 0 6px red'){
+            if(elementsForm[i].value == "" && elementsForm[i].name !== "image" || elementsForm[i].style.boxShadow == '0 0 6px red'){
                 if(i == '5'){
                     continue
                 }

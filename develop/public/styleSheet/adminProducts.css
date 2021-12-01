@@ -6,6 +6,7 @@
     height: fit-content;
     height: -moz-fit-content;
     box-shadow: none;
+    padding-bottom: 50px;
 }
 .admin-products-container{
     display: flex;
@@ -43,6 +44,7 @@
 .admin-products-container .table-products-admin-container .table-products-admin tbody tr td{
     border: 1px solid black;
     text-align: center;
+    font: 15px;
 }
 .admin-products-container .table-products-admin-container .table-products-admin tbody tr .id-products-admin{
     text-align: center;
@@ -57,7 +59,7 @@
     text-align: center;
 }
 .admin-products-container .table-products-admin-container .table-products-admin tbody tr td .btn-edit-product{
-   margin: 2px;
+    margin: 2px;
 }
 .admin-products-container .table-products-admin-container .table-products-admin tbody tr td a svg{
     height: 30px;

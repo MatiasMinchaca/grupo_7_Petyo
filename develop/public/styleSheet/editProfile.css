@@ -57,6 +57,16 @@
     font-weight: bold;
     transition: all 0.5s ease-in-out;
 }
+.editProfile-container .editProfile-form .inputs-edit-profile .addAddress{
+    margin: 0;
+    color: rgb(10, 10, 10);
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    padding: 7px;
+}
 .editProfile-container .editProfile-form .inputs-edit-profile label:hover{
     text-shadow: 0 2px 3px green;
 }
@@ -87,6 +97,19 @@
 }
 .editProfile-container .editProfile-form .inputs-edit-profile .save-profile{
     margin: 10px 0 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px black;
+    margin: 5px 0;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+.editProfile-container .editProfile-form .inputs-edit-profile .save-profile:hover{
+    outline: none;
+    text-decoration: none;
+    transform: scale(1.02);
 }
 @media screen and (min-width:475px) {
     .editProfile-container{
@@ -109,16 +132,17 @@
 @media screen and (min-width:1024px) {
 
     .editProfile-container{
-        max-width: 1000px;
         margin: 20px auto;
         box-shadow: 0 0 6px black;
         border-radius: 10px;
-
+    }
+    .max-{
+        max-width: 1000px;
     }
     .editProfile-container .editProfile-form{
-       flex-direction: row;
-       align-items: flex-start;
-       justify-content: space-around;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
     }
     .editProfile-container .editProfile-form .profile-image-container{
         margin-top: 100px;

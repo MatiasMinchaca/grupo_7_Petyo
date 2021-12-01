@@ -7,9 +7,28 @@ let {admin,
     store,  
     edit, 
     remove,
-    update} = require('../controllers/adminController');
+    update,
+    
+    } = require('../controllers/adminController');
+let {
+    categoriesListView,
+    categoryEditView,
+    categoryEdit,
+    categoryLoadView,
+    categoryLoad,
+    categoryRemove} = require('../controllers/categoriesController');
+let {
+    subcategoriesListView,
+    subcategoryEditView,
+    subcategoryLoadView,
+    subcategoryLoad,
+    subcategoryEdit,
+    subcategoryRemove} = require('../controllers/subcategoriesController');
 let loadProductFile = require('../middlewares/loadProductsFile');
+let loadCategoryFile = require('../middlewares/loadCategoryFile');
 let productValidator = require('../validations/productValidator');
+let categoryValidator = require('../validations/categoryValidator');
+let subcategoryValidator = require('../validations/subcategoryValidator');
 let sessionAdminCheck = require('../middlewares/sessionAdminCheck')
 /* GET - Muestra el inicio de la vista de admin*/
 router.get('/', sessionAdminCheck, admin);
@@ -19,10 +38,32 @@ router.get('/products', sessionAdminCheck, products);
 router.get('/search', sessionAdminCheck, searchAdmin);
 /* GET - muestra la vista para agregar un producto*/
 router.get('/products/load', sessionAdminCheck, load);
-router.post('/products/load', loadProductFile.single("image"),productValidator,store);
+/* POST - Productos */
+router.post('/products/load', loadProductFile.single("image"), productValidator,store);
 /* GET - Muestra la vista de editar productos */
 router.get('/products/edit/:id', sessionAdminCheck, edit);
-router.put('/products/edit/:id', loadProductFile.single("image"),productValidator, update);
+/* PUT - Productos */
+router.put('/products/edit/:id', loadProductFile.single("image"), productValidator, update);
+/* DELETE - Productos */
 router.delete('/products/delete/:id', remove);
-
+/* GET - Categorias */
+router.get('/categories', sessionAdminCheck, categoriesListView)
+router.get('/categories/edit/:id', sessionAdminCheck, categoryEditView)
+router.get('/categories/load', sessionAdminCheck, categoryLoadView)
+/* POST- Categorias */
+router.post('/categories/load', loadCategoryFile.single('image'), categoryValidator, categoryLoad)
+/* PUT- Categorias */
+router.put('/categories/edit/:id', loadCategoryFile.single('image'), categoryValidator, categoryEdit)
+/* DELETE- Categorias */
+router.delete('/categories/delete/:id', categoryRemove)
+/* GET - Subcategorias */
+router.get('/subcategories', sessionAdminCheck, subcategoriesListView)
+router.get('/subcategories/edit/:id', sessionAdminCheck, subcategoryEditView)
+router.get('/subcategories/load', sessionAdminCheck, subcategoryLoadView)
+/* POST - Subcategorias */
+router.post('/subcategories/load', subcategoryValidator, subcategoryLoad)
+/* PUT - Subcategorias */
+router.put('/subcategories/edit/:id', subcategoryValidator, subcategoryEdit)
+/* DELETE - Subcategorias */
+router.delete('/subcategories/delete/:id', subcategoryRemove)
 module.exports = router;

@@ -1,0 +1,48 @@
+.error-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error-container .error-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 5px;
+    margin: 10px 0;
+    max-width: 300px;
+}
+.error-container .error-div h1{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 6px rgb(255, 255, 255);
+    margin: 10px 0;
+}
+@media screen and (min-width:400px) {
+    .error-container .error-div{
+        background: white;
+        border-radius: 5px;
+        margin: 10px 0;
+        max-width: 400px;
+    }
+    .error-container .error-div h1{
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+        text-shadow: 0 0 6px rgb(255, 255, 255);
+        margin: 10px 0;
+    }
+}
+@media screen and (min-width:768px) {
+    .error-container .error-div{
+        max-width: 800px;
+    }
+    .error-container .error-div h1{
+        font-size: 20px;
+    }
+}

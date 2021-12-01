@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/images/isotipo.png" type="image/x-icon" rel="shortcut icon" />
+    <title> <%= title %> </title>
+    <link rel="stylesheet" href="/styleSheet/adminDashboard.css">
+    <link rel="stylesheet" href="/styleSheet/adminLoadCategory.css">
+    <link rel="stylesheet" href="/styleSheet/loadingImage.css">
+</head>
+<body>
+    <%- include('../partials/loadingImage') %> 
+    <%- include('../partials/adminHeader') %> 
+        </section>
+        <section class="grid">
+        <article class="article-load-category">
+            <main class="category-load-container">
+                <form class="form-load" id="form-loadProduct" action="/admin/categories/load" method="POST" enctype="multipart/form-data">
+                    <div class="preview-image-container">
+                        <label class="btn-load-image-admin" for="imgInp">Seleccione una imagen</label>
+                        <input type='file' id="imgInp" name="image" aria-label="file example" hidden="hidden" >
+                        <img class="preview-image" id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" >
+                        <small id="error-image-loadProduct" class="error-message"></small>
+                    </div>
+                    <label for="name-category-load" class="name-category-load-label">Nombre de la Categoria</label>
+                    <input type="text" class="name-category-load" id="input-name-loadProduct" name="name" value="<%= locals.old && old.name %>">
+                    <small id="error-name-loadProduct" class="error-message"><%- locals.errors && errors.name ? errors.name.msg : '' %></small>
+                    <input type="submit" value="Cargar Categoria" class="btn-load-category" >
+                    <small id="error-form-loadProduct" class="error-message"></small>
+                </form> 
+            </main></article>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="/js/admin.js"></script>
+        <script src="/js/adminDashboard.js"></script>
+</body>
+</html>

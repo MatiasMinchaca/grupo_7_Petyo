@@ -8,7 +8,7 @@
 <!-- HEADER -->
 <%- include('../partials/header') %> 
 
-    <div class="editProfile-container">
+    <div class="editProfile-container max-">
         <form id="form-editProfile" action="/users/profile/editProfile/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="editProfile-form">
             <div class="profile-image-container">
                 <input type='file' id="imgInp" name="image" hidden="hidden"/>
@@ -43,18 +43,6 @@
                     <option value="reptil">Reptil</option>
                     <option value="ave">Ave</option>
                 </select>
-                <!-- <label for="surname-edit">Direccion</label>
-                <input type="text" name="address" placeholder="Direccion" value=" address !== null && address.street ? address.street : "" %>">
-                <label for="surname-edit">Codigo postal</label>
-                <input type="text" id="pc-edit" name="postalCode" value=" address !== null && address.postalCode ? address.postalCode : "" %>">
-                <label for="surname-edit">Provincia</label>
-                <select type="text" name="province" class="select-species-pet">
-                    <option value="" selected hidden>Provincia</option>
-                </select>
-                <label for="surname-edit">Ciudad</label>
-                <select type="text" name="city" class="select-species-pet">
-                    <option value="" selected hidden>Ciudad</option>
-                </select> -->
                 <label for="biography-edit">Biografia</label>
                 <textarea type="text" cols="10" rows="10"  id="biography-edit" name="biography" class="biography-edit"><%- user.biography ? user.biography : "" %></textarea>
                 <small id="error-form-editProfile" class="text-danger"></small>

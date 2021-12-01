@@ -48,6 +48,13 @@
     position: relative;
     margin-left: 21px;
 }
+.form-container #error-form-login{
+    color: red;
+    font-size: 11px;
+    position: absolute;
+    bottom: 0px;
+    left: 21px;
+}
 .form-container .div-imputs-login input{
     position: absolute;
     top: 0;
@@ -254,5 +261,6 @@
         bottom: 11px;
         right: 13px;
         font-size: 15px;
+        cursor: pointer;
     }
 }
