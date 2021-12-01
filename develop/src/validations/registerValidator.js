@@ -2,7 +2,7 @@ const { check, body } = require('express-validator')
 const db = require('../database/models')
 
 module.exports = [
-    check('name').isAlpha('es-ES')
+    check('name')
     .notEmpty()
     .withMessage('Debes escribir tu/s Nombre/s')
     .isLength({
@@ -11,7 +11,7 @@ module.exports = [
     })
     ,
 
-    check('lastName').isAlpha('es-ES')
+    check('lastName')
     .notEmpty()
     .withMessage('Debes escribir tu/s Apellido/s')
     .isLength({

@@ -150,6 +150,7 @@ module.exports = {
         
     },
     update: (req, res) => {
+        console.log("HOOOLA")
         let errors = validationResult(req)
         if (req.fileValidatorError) {
             let image = {

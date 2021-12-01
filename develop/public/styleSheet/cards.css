@@ -89,7 +89,7 @@
 }
 .categories .product-card-div .product-card .image-card img{
     margin-top: 10px;
-    width: 130px;
+    width: 100%;
     height: 130px;
 }
 .categories .product-card-div .product-card .name-price-card{

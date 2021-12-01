@@ -24,7 +24,9 @@
                             <div class="slider">
                             <% locals.categories.forEach(category => { %>
                                 <div class="circulo slide">
-                                    <a href="/products/category/<%= category.id %>"><img class="<%= category.name %>" src="/images/categories/<%= category.image %>" alt=""></a>
+                                    <a href="/products/category/<%= category.id %>">
+                                        <img class="<%= category.name %>" src="/images/categories/<%= category.image %>" alt="">
+                                    </a>
                                 </div>
                             <% }) %>
                             </div>
@@ -33,36 +35,40 @@
             </section>
             <!-- FIN CATEGORIAS -->
             <!-- COMUNIDAD -->
-            <div class="comunidad">
+            <div class="comunidad"> 
                 <div class="comunidad-alimentacion">
-                    <a href="">
+                    <a href="/otro/feeding">
                         <h2>ALIMENTACIÓN</h2><img src="/images/alimentacion.png" alt="">
                     </a>
                 </div>
                 <div class="comunidad-comunidad">
-                    <a href="">
+                    <a href="/otro/community">
                         <h2>COMUNIDAD</h2><img src="/images/comunidad.png" alt="">
                     </a>
                 </div>
                 <div class="comunidad-quienes-somos">
-                    <a href="">
+                    <a href="/otro/aboutus">
                         <h2>¿QUIENES SOMOS?</h2><img src="/images/quienes somos.png" alt="">
                     </a>
                 </div>
             </div>
             <!-- PRODUCTOS -->
             <h3>Productos destacados</h3>
+            <% banners.forEach((banner, index) => { %>
+                <span onclick="currentSlide(`<%- index + 1 %>`)"></span>
+            <% }) %>
         </section>
-        <%- include('./partials/productsSlider') %>  
+        <%- include('./partials/productsSlider') %> 
     </main>
     <a href="https://api.whatsapp.com/send?phone=+5493873693495" class="btn-flotante">
         <i class="fab fa-whatsapp"></i>
     </a>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
 <!-- FOOTER -->
 <%- include('./partials/footer') %> 
 <script src="/js/cards.js"></script>
 <script src="/js/banners.js"></script>
+<script src="/js/bottomup.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </body>
-
 </html>

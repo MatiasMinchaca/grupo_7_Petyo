@@ -18,10 +18,11 @@ let adminRouter = require('./routers/adminRouter');
 let contactRouter = require('./routers/contactRouter');
 let apiProductsRouter = require('./routers/apiRoutes/apiProductsRouter');
 let apiCategoriesRouter = require('./routers/apiRoutes/apiCategoriesRouter');
+let otroRouter = require('./routers/otroRouter');
 
 /* VIEWS */
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 /* MIDDLEWARES */
 app.use(express.static(path.join(__dirname, '../public')))
@@ -46,6 +47,7 @@ app.use('/admin', adminRouter);
 app.use('/contact', contactRouter);
 app.use('/api/products', apiProductsRouter)
 app.use('/api/categories', apiCategoriesRouter)
+app.use('/otro', otroRouter);
 
 app.use((req, res, next)=>{
     res.status(404).render('error404',{
