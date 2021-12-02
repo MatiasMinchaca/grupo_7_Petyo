@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: petyo3
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.21-MariaDB
+-- Server version	5.5.5-10.4.22-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -95,7 +95,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `products_FK` (`subcategoryId`),
   CONSTRAINT `products_FK` FOREIGN KEY (`subcategoryId`) REFERENCES `subcategories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +104,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Arnes',1335,5,'super arnes para dsdsdsd',0,'1636153811796_img_.png',2,NULL,'2021-11-25 21:09:06');
+INSERT INTO `products` VALUES (18,'transporte junior gris claro',3124,5,'transporte junior gris claro color menta ',0,'1638480559783_img_.jpg',3,'2021-12-02 21:29:19','2021-12-02 21:29:19'),(19,'chapita identificadora basic ',1175,2,'Chapitas identificatorias alegres y sencillas de aluminio anodizado, disponibles en varios colores. Se puede personalizar con 4 líneas de 15 caracteres cada una en su parte posterior',0,'1638480677770_img_.jpg',3,'2021-12-02 21:31:17','2021-12-02 21:31:17'),(20,'piedrita sanitarias tidy cats',210,5,'Es una arena diseñada para garantizar un control duradero de olores durante todos los días de la semana. Es un mineral 100% natural de alta calidad. Gracias a sus granos seleccionados cuenta con acción prolongada. Además, posee Ph neutro que facilita la adaptación de tu gato y no se pega en las patas de tu mascota.',0,'1638480791290_img_.jpg',3,'2021-12-02 21:33:11','2021-12-02 21:33:11'),(21,'peine cardina de madera',992,3,'peine cardina de madera',0,'1638480851574_img_.jpg',3,'2021-12-02 21:34:11','2021-12-02 21:34:11'),(22,'almohadon antibacterial chico ',6534,15,'La tecnología nano de estos almohadones impide el desarrollo de bacterias y hongos que causan mal olor y enfermedades. Están rellenos de material suave para garantizar la comodidad de tu mascota y costuras reforzadas para mayor durabilidad. La funda puede retirarse para su lavado. Medidas: 50 x 70 cm.',0,'1638481094208_img_.jpg',1,'2021-12-02 21:38:14','2021-12-02 21:38:14'),(23,'buzo escoces para perro',1880,5,'Buzo para perros que cuenta con un diseño a rombos negro y gris con ribetes de colores. Es de frisa estampada y es súper calentito y bien cómodo para estar en casa o salir a pasear. Es apto para lavarropas.',0,'1638481147075_img_.jpg',1,'2021-12-02 21:39:07','2021-12-02 21:39:07'),(24,'collar para perro regulable',1232,3,'Collar regulable 3 cm XL fabricado en nylon para perros de todos los tamaños y razas. Son collares sencillos, prácticos, muy manejables y de fácil lavado.Tiene cierre de plástico duro y arandela metálica para enganchar la correa. Ideal para tu mascota.',0,'1638481190979_img_.jpg',1,'2021-12-02 21:39:50','2021-12-02 21:39:50'),(25,'juguete hueso masticable',1768,8,'juguete hueso masticable gusto a salmon',0,'1638481291440_img_.jpg',1,'2021-12-02 21:41:31','2021-12-02 21:41:31'),(26,'whole earth farms cachorro',2022,10,'Whole Earth Farm para perros cachorros está fabricado con ingredientes naturales de alta calidad que ofrecen una nutrición completa y equilibrada. Sus ingredientes totalmente naturales ayudan a soportar una digestibilidad más fácil, un pelaje más brillante, mayor energía, uñas más fuertes y una piel más sana.',0,'1638481348232_img_.jpg',2,'2021-12-02 21:42:28','2021-12-02 21:42:28'),(27,'eukanuba perro cachorro',779,0,'Eukanuba Puppy razas pequeñas es un alimento balanceado recomendado para perros de 1 a 12 meses de edad que en su vida adulta pesen menos de 10 kg. También es adecuado para hembras embarazadas y en etapa de lactancia. Colabora con la formación de huesos y músculos y estimula el sistema nervioso.',0,'1638481424225_img_.jpg',2,'2021-12-02 21:43:44','2021-12-02 21:43:44'),(28,'nutrique perro adulto ',9030,20,'Nutrique large young adult es la nutrición natural y funcional que revoluciona el paradigma de la nutrición gracias a su innovadora combinación de ingredientes excepcionales entre los que se destacan el pavo y el cerdo. Está específicamente desarrollado para perros adultos de talla grande desde los 15 meses hasta los 6 años de edad.',0,'1638481480592_img_.jpg',2,'2021-12-02 21:44:40','2021-12-02 21:44:40'),(29,'old prince perro adulto',1865,0,'Old Prince Original Recipe está basado en una balanceada combinación de pollo, carne y arroz como principales ingredientes. Su formulación fue pensada para proteger el sistema inmune, mejorar la salud ósea y dental, colaborar con el cuidado de la flora intestinal y controlar el peso de tu perro.',0,'1638481554256_img_.jpg',2,'2021-12-02 21:45:54','2021-12-02 21:45:54');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `subcategories` (
   PRIMARY KEY (`id`),
   KEY `subcategories_FK` (`categoryId`),
   CONSTRAINT `subcategories_FK` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +133,7 @@ CREATE TABLE `subcategories` (
 
 LOCK TABLES `subcategories` WRITE;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
-INSERT INTO `subcategories` VALUES (1,'Accesorios',1,NULL,NULL),(2,'Alimentos',1,NULL,NULL),(3,'prueba',2,'2021-11-28 04:33:53','2021-11-28 06:33:44'),(4,'prueba',4,'2021-11-28 06:25:15','2021-11-28 06:33:36'),(5,'prueba',3,'2021-11-28 06:28:44','2021-11-28 06:33:20'),(8,'Alimentacion',2,'2021-11-29 02:52:28','2021-11-29 02:52:28'),(9,'Accesorios',3,'2021-11-29 02:52:54','2021-11-29 02:52:54'),(10,'Alimentos',4,'2021-11-29 02:53:23','2021-11-29 02:53:23');
+INSERT INTO `subcategories` VALUES (1,'Accesorios',1,NULL,NULL),(2,'Alimentos',1,NULL,NULL),(3,'Accesorios',2,'2021-11-28 04:33:53','2021-12-02 21:22:36'),(8,'Alimentos',2,'2021-11-29 02:52:28','2021-12-02 21:22:27'),(22,'Accesorios',4,'2021-12-02 21:18:59','2021-12-02 21:18:59'),(23,'Alimentos',4,'2021-12-02 21:19:14','2021-12-02 21:19:14'),(24,'Accesorios',3,'2021-12-02 21:20:45','2021-12-02 21:20:45'),(25,'Alimentos',3,'2021-12-02 21:22:13','2021-12-02 21:22:13');
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,4 +184,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-01 18:02:01
+-- Dump completed on 2021-12-02 19:04:34
