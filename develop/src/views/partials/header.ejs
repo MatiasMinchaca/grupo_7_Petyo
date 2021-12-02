@@ -86,7 +86,6 @@
     <div class="categories-header">
         <div class="div-home-header">
             <a href="/" class="categories-archor-header ">Inicio</a>
-            <i class="fas fa-home"></i>
         </div>
         <% locals.categories.forEach(category =>{ %>
             <div id="<%= category.name %>" class="div-archor-header">
@@ -94,7 +93,7 @@
                 <a name="<%= category.name %>" class="press-category"></a>
                 <i class="fas fa-chevron-down"></i>
                 <div class="subcategories-header" id="<%= category.name %>">
-                    <a href="/products/category/<%= category.id %>">Ir a la categoria completa</a>
+                    <a href="/products/category/<%= category.id %>" style="color: black;">Ir a la categoria completa</a>
                     <% category.subcategories.forEach(subcategory => { %>
                         <a class="class-black-a" href="/products/subcategory/<%= subcategory.id %>"><%= subcategory.name %> </a>
                     <% }) %>
@@ -103,7 +102,6 @@
         <% }) %>
         <div class="div-home-header">
             <a href="/contact" class="categories-archor-header ">Contactanos</a>
-            <i class="fas fa-home"></i>
         </div>
     </div>
     <div  class="user-header" >

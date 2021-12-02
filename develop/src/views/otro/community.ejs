@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 
- <!-- HEAD -->
- <%- include('../partials/head') %> 
+<!-- HEAD -->
+<%- include('../partials/head') %>
 
-<body>
-   
-    <!-- HEADER -->
-<%- include('../partials/header') %> 
+    <body>
 
-    <!-- CONTENIDO -->  
-    <p>Hola</p>
-        
-    <a href="https://api.whatsapp.com/send?phone=+5493873693495" class="btn-flotante">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <!-- FOOTER -->  
-<%- include('../partials/footer') %> 
+        <!-- HEADER -->
+        <%- include('../partials/header') %>
 
-</body>
+            <!-- CONTENIDO -->
+
+            <section>
+                <img class="logito" src="/images/gato.png" alt="">
+                <p class="texton">
+                    Petyo es la primera y única cadena de tiendas del país especializada en productos y servicios para
+                    mascotas. Te damos una experiencia diferente de compra, ofreciendo productos y servicios de alta
+                    calidad que cumplen con las necesidades de las mascotas y la satisfacción de sus dueños.
+
+                    En Petyo reconocemos a las mascotas como un miembro más de la familia, a las que debemos cuidar,
+                    proteger, y brindar el mejor cuidado para que tengan una excelente calidad de vida. Para ello
+                    ofrecemos la más amplia variedad en productos alimenticios, accesorios, farmacia, servicios
+                    experimentados (veterinaria, peluquería), mascotas para adopción , y mucho más!
+
+                    Podés visitar nuestras sucursal, la cual cuentan con modernas y cómodas
+                    instalaciones, o navegar por nuestro sitio, donde encontrarás el más amplio catálogo de productos,
+                    promociones y servicios.
+                </p>
+            </section>
+
+
+            <a href="https://api.whatsapp.com/send?phone=+5493873693495" class="btn-flotante">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <!-- FOOTER -->
+            <%- include('../partials/footer') %>
+
+    </body>
+    <script src="/js/aboutus.js"></script>
 
 </html>
