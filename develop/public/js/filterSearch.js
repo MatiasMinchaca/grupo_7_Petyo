@@ -9,11 +9,13 @@ window.addEventListener('load', () => {
     let checkFIlterJuguetes = document.getElementById('check-subcategory-toys');
     let buttonFilterDesktop = document.getElementById('button-filter-desktop');
     let buttonDeleteDesktop = document.getElementById('button-delete-desktop');
-    let checkboxFilter = document.querySelectorAll("checkbox-filter")
-
+    let checkboxFilter = document.querySelectorAll(".checkbox-filter")
+    console.log(checkboxFilter)
     buttonFilterDesktop.addEventListener('click', () => {
         articles.forEach(element => {
             if(element.getAttribute('name') == 'Alimentos' && checkFIlterAlimentos.value == 'on'){
+                element.style.display = 'flex'
+            }else if(element.getAttribute('name') == 'Accesorios' && checkFIlterAccesorios.value == 'on'){
                 element.style.display = 'flex'
             }else {
                 element.style.display = 'none'
@@ -25,7 +27,7 @@ window.addEventListener('load', () => {
             element.style.display = 'flex'
         })
         checkboxFilter.forEach(elements => {
-            elements.value = 'off'
+            elements.checked = 0
         })
     })
     /*  labelFIlterAlimentos.addEventListener('click', () =>{

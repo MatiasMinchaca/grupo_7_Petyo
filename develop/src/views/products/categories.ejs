@@ -17,7 +17,9 @@
         <% products.forEach(product => { %>
         <section class="product-card">
             <a class="anchor-card" href="/products/detail/<%- product.id %>">
-                <h1 class="product-discount-card"><%- product.discount %>% OFF</h1>
+                <% if (product.discount > 0) { %>
+                    <h1 class="product-discount-card"><%- product.discount %>% OFF</h1>
+                <% } %>
                 <div class="image-card">
                     <a href="/products/detail/<%- product.id %>"><img src="/images/products/<%- product.image %>" alt=""></a>
                 </div>
