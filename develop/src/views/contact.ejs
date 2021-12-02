@@ -14,9 +14,9 @@
 </head>
 <body>
     <main class="main-contact">
-        <a class="home-contact" href="/">Ir al inicio</i></a>
+        <a class="home-contact" href="/" style="position: absolute; top: 1px; right: 10px;">Ir al inicio</i></a>
         <img class="img-logo-contact" src="/images/logotipo.png" alt="">
-        <form class="form-contact" action="">
+        <form class="form-contact" action="/contact" method="POST">
             <div>
                 <section style="display: flex; justify-content: center; flex-wrap: wrap;">
                     <article class="article-help">
@@ -60,14 +60,13 @@
             </div>
             <div class="message-div">
                 <label class="subtitle-section">Mensaje*</label>
-                <div style="align-items: center;">
+                <div style="align-items: center; padding: 0;">
                     <textarea name="message" id="" cols="30" rows="10"></textarea>
                 </div>
-                
             </div>
             <div>
                 <label for="input-file-contact"></label>
-                <input type="file" id="input-file-contact">
+                <input type="file" name="image" id="input-file-contact">
                 <label class="max-message">Máximo 4.3MB por archivo. Formatos permitidos: xps, pdf, doc, docx, rtf, txt, xls, xlsx, csv, bmp, png, jpeg o jpg.</label>
                 <label for="" class="max-message">Por favor incluye un adjunto para tu producto.</label>
             </div>
@@ -84,19 +83,21 @@
             </div>
             <div>
                 <label class="subtitle-section">¿Cómo quisieras que te contactemos?</label>
-                <section>
+                <section style="display:flex; justify-content: center; padding: 0 20%;">
                     <select name="contact" id="" class="select-contact-email">
                         <option value="" selected hidden>Elegir una opcion*</option> 
                         <option value="email">Correo Electronico</option> 
                     </select>
                 </section>
-                <section style="margin-bottom: 10px;">
+                <section style="margin-bottom: 10px; padding: 0 20%;">
                     <label for="">Estoy de acuerdo que Petyo procese mi información personal como indica la politica de datos <a href="">Nota de privacidad</a></label>
-                    <input type="checkbox">
+                    <input name="terms" type="checkbox">
                 </section>
             </div>
-            <button type="submit">Contactar</button>
-            <a href="/" class="button-cancel">Cancelar</a>
+            <section class="section-buttons">
+                <button type="submit">Contactar</button>
+                <a href="/" class="button-cancel">Cancelar</a>
+            </section>
         </form>
     </main>
 </body>

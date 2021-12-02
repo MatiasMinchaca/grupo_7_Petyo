@@ -263,6 +263,8 @@ module.exports = {
                     street,
                     number,
                     floorOrApartament,
+                    province,
+                    city,
                     postalCode
                 },
                 {

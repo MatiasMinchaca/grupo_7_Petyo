@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
     -webkit-appearance: none;
 }
 body::-webkit-scrollbar:vertical {
-    width: 5px;
+    width: 10px;
 }
 body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
     display: none;
