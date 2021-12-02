@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
                 subcategoriesDelete.childNodes[5].style.transform = 'rotate(0deg)'
             });
             if(e.target.name == archorCategory.childNodes[7].id){
-                    archorCategory.childNodes[7].style.height = '100px'
+                    archorCategory.childNodes[7].style.height = '150px'
                     archorCategory.childNodes[5].style.transform = 'rotate(180deg)'
                     e.target.style.height = '0%'
             }

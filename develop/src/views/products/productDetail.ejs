@@ -23,16 +23,19 @@
                         <img  class="rounded float-left" src="/images/products/<%- product.image %>" alt="">
                     </div>
                     <div class="descpre">
-                        <h5 class="card-title text-muted"><%- product.subcategory %>Codigo del producto: #<%- product.id %></h5>
+                        <h5 class="card-title text-muted"><%- product.subcategory.name %>Codigo del producto: #<%- product.id %></h5>
                         <div>
                             <p class="precar"> $<%- product.price%> </p>
                             <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</img></p>
                         </div>
-                        <div>
-                            <p class="cla1">Seleccion peso Alimento: </p>
-                            <button class="bot1">10</button>
-                            <button class="bot1">15</button>
-                        </div>
+                        <% if (product.subcategory.name == 'Alimentos') { %>
+                            <div>
+                                <p class="cla1">Seleccion peso Alimento: </p>
+                                <button class="bot1">10</button>
+                                <button class="bot1">15</button>
+                            </div>
+                        <% } %>
+                        
                         <p class="cla2">Seleccione cantidad</p>
                         <div>
                             <button class="quantity">

@@ -1,4 +1,20 @@
 document.addEventListener('click', (event) => {
+    let lateralCategory = document.querySelectorAll('.category-lateral')
+
+    lateralCategory.forEach(divCategory => {
+        divCategory.addEventListener('click', (e) => {
+            lateralCategory.forEach(subcategoriesDelete => {
+                subcategoriesDelete.childNodes[3].style.height = '0'
+                subcategoriesDelete.childNodes[1].childNodes[7].style.height = '100%'
+                subcategoriesDelete.childNodes[1].childNodes[5].style.transform = 'rotate(0deg)'
+            });
+            if(e.target.getAttribute('name') == divCategory.childNodes[3].id){
+                    divCategory.childNodes[3].style.height = '150px'
+                    divCategory.childNodes[1].childNodes[5].style.transform = 'rotate(180deg)'
+                    e.target.style.height = '0%'
+            }
+        })
+    });
     try {
         elementId = event.path[0].id
     }

@@ -7,6 +7,7 @@ let methodOverride = require('method-override');
 const session = require('express-session');
 const localsCheck = require('./middlewares/localsCheck');
 const categoriesHeader = require('./middlewares/categoriesHeader');
+const userHeader = require('./middlewares/userHeader');
 /* PORT */
 const port = 3000;
 
@@ -36,6 +37,7 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(categoriesHeader);
+app.use(userHeader);
 app.use(localsCheck);
 
 

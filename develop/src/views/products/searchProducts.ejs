@@ -22,13 +22,24 @@
             </div>
             <h3 class="search-h3"><%= search %></h3>
             <section class="section-filter">
-                <div>
+                <div style="display: none;">
                     <button class="button-filter">Ordenar</button>
                 </div>
-                <div>
-                    <button class="button-filter">Fltrar</button>
-                    <label name="Alimentos" id="label-subcategory" for="check-subcategory">Alimentación</label>
-                    <label name="Accesorios" id="label-subcategory-Acc" for="check-subcategory-Acc">Accesorios</label>
+                <div class="container-filter-desktop">
+                    <button class="button-filter-desktop" id="button-filter-desktop">Fltrar</button>
+                    <div>
+                        <input type="checkbox" class="checkbox-filter" name="" id="check-subcategory-alimentos">
+                        <label name="Alimentos" id="label-subcategory-alimentos" for="check-subcategory-alimentos">Alimentación</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox-filter"  name="" id="check-subcategory-accesorios">
+                        <label name="Accesorios" id="label-subcategory-accesorios" for="check-subcategory-accesorios">Accesorios</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox-filter" name="" id="check-subcategory-toys">
+                        <label name="Juguetes" id="label-subcategory-toys" for="check-subcategory-toys">Juguetes</label>
+                    </div>
+                    <button class="button-delete-desktop" id="button-delete-desktop">Borrar Seleccion</button>
                 </div>
             </section>
             <div id="product-card-div" class="product-card-div">

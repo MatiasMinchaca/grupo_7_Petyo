@@ -99,7 +99,7 @@ module.exports = {
                 category, 
                 subcategoryId, 
                 description,
-                image: req.file ? req.file.filename : ''
+                image: req.file ? req.file.filename : 'defaultImage.png'
             })
             .then(() => {
                 res.redirect('/admin/products')
@@ -150,7 +150,6 @@ module.exports = {
         
     },
     update: (req, res) => {
-        console.log("HOOOLA")
         let errors = validationResult(req)
         if (req.fileValidatorError) {
             let image = {

@@ -35,7 +35,7 @@
 }
 .search .product-card-div .product-card {
     display: flex;
-    width: 99%;
+    width: 100%;
     position: relative;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
@@ -48,8 +48,10 @@
 }
 .search .search-h3{
     width: 100%;
+    padding: 8px;
     padding-left: 10px;
     margin: 0;
+    background: white;
 }
 .search .search-h3-0{
     width: 100%;
@@ -125,7 +127,7 @@
         display: flex;
         flex-direction: row;
         position: relative;
-        padding-top: 30px;
+        padding-top: 48px;
     }
     .search .product-card-div .product-card .anchor-card{
         position: absolute;
@@ -156,5 +158,28 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        padding: 5px;
+    }
+    .search .section-filter .container-filter-desktop{
+        background: white;
+        border-radius: 10px;
+    }
+    .search .section-filter .button-filter-desktop{
+        border: none;
+        padding: 6px;
+        border-radius: 14px;
+        width: 100%;
+    }
+    .search .section-filter .button-filter-desktop:focus{
+        outline: none;
+    }
+    .search .section-filter .button-delete-desktop{
+        border: none;
+        padding: 6px;
+        border-radius: 14px;
+        width: 100%;
+    }
+    .search .section-filter .button-delete-desktop:focus{
+        outline: none;
     }
 }

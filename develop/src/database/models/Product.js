@@ -28,6 +28,9 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING(150),
             allowNull: false
         },
+        visited: {
+            type: dataTypes.INTEGER(11)
+        },
         subcategoryId: {
             type: dataTypes.INTEGER(11),
             allowNull: false

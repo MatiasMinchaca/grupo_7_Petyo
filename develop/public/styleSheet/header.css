@@ -190,15 +190,38 @@ header.header {
 }
 .header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 5px 0 0px;
     align-items: baseline;
 }
-.header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral a{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
+.header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral .container-lateral-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+.header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral .container-lateral-name .press-lateral{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral .subcategories-lateral{
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.5s;
+    background: white;
+    padding-left: 10px;
+    justify-content: space-evenly;
+}
+.header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral .subcategories-lateral a{
     color: black;
-    text-decoration: none;
+}
+.header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral .subcategories-lateral a:hover{
+    outline: none;
 }
 .header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral a:hover{
     font-family: 'Roboto', sans-serif;
@@ -207,7 +230,7 @@ header.header {
     text-decoration: none;
 }
 .header .menu-lateral .div-close-lateral .section-menu-lateral .div-home-and-categories-lateral .categories-lateral .category-lateral i{
-    margin-right: 5px;
+    margin-right: 0;
 }
 .header .menu-lateral .div-close-lateral .section-menu-lateral .div-login-lateral{
     display: flex;
@@ -392,7 +415,7 @@ header.header div.user a i {
     display: none;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
     header.header .menu {
         display: none;
     }
@@ -530,9 +553,48 @@ header.header div.user a i {
         overflow: hidden;
         transition: all 0.3s;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding: 0 25px;
         align-items: center;
+        background: rgb(61, 141, 15, 49%);
+        flex-direction: row;
+    }
+    .header .categories-header .div-archor-header .subcategories-header .container-category-archor{
+        display: flex;
+        height: 100%;
+        padding-top: 15px;
+        align-items: flex-start;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: rgba(126, 167, 103, 0.761);
+    }
+    .header .categories-header .div-archor-header .subcategories-header .container-category-archor a{
+        color: white;
+        text-shadow: 0 0 6px black;
+        font-size: 18px;
+    }
+    .header .categories-header .div-archor-header .subcategories-header .container-subcategories-header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        justify-content: space-around;
+        padding: 0 10px;
+        position: relative;
+        width: 33%;
+        flex-wrap: wrap;
+    }
+    .header .categories-header .div-archor-header .subcategories-header .container-subcategories-header a{
+        color: white;
+        text-shadow: 0 3px 6px black;
+        font-size: 19px;
+    }
+    .header .categories-header .div-archor-header .subcategories-header .container-subcategories-header .h2-sub{
+        position: absolute;
+        top: 13px;
+        left: 0;
+        font-size: 20px;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     }
     .header .categories-header .div-archor-header .class-black-a{
         color: black;
@@ -784,8 +846,8 @@ header.header div.user a i {
         text-shadow: 0 0 6px rgb(0, 0, 0);
     }
     .header .user-header .div-login-header .img-user-header{
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         border-radius: 50%;
     }
 

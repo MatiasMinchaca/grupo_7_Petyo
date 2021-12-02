@@ -7,6 +7,9 @@ module.exports = {
             where: {
                 id: req.params.id
             },
+            include: [
+                {association: 'subcategory'}
+            ]
         })
         .then(product => {
             db.Product.findAll({
@@ -15,11 +18,23 @@ module.exports = {
                 },
             })
             .then(products => {
-                res.render('products/productDetail', {
-                    title : 'Detalle de producto',
-                    product,
-                    session: req.session
+                let more = product.visited + 1
+                db.Product.update({
+                    visited: more
+                },
+                { where: {
+                        id: req.params.id
+                }
                 })
+                .then(() => {
+                    res.render('products/productDetail', {
+                        title : 'Detalle de producto',
+                        product,
+                        products,
+                        session: req.session
+                    })
+                })
+                
             })
         })
         .catch(err => console.log)
@@ -43,15 +58,24 @@ module.exports = {
                 subcategories.forEach(subcategory => {
                     subcategory.products.forEach(product => products.push(product))
                 })
-                res.render('products/categories', {
-                    title : `Categoria: ${category.name}`,
-                    category,
-                    products,
-                    session: req.session
-                })
+                if(products.length > 0){
+                    res.render('products/categories', {
+                        title : `Categoria: ${category.name}`,
+                        category,
+                        products,
+                        session: req.session
+                    })
+                }else {
+                    res.render('products/error', {
+                        title : `Auch`,
+                        messageError: 'Aun no hay productos en esta seccion',
+                        session: req.session
+                    })
+                }
+                
             }else {
                 res.render('products/error', {
-                    title : `Subcategoria: `,
+                    title : `Error`,
                     messageError: 'Lo que buscas no esta disponible en este momento',
                     session: req.session
                 })
@@ -73,20 +97,29 @@ module.exports = {
         })
         .then(subcategory => {
             if(subcategory != null){
-                let products = []
-                subcategory.products.forEach(product => {
-                    products.push(product)
-                })
-                res.render('products/subcategories', {
-                    title : `Categoria: ${subcategory.name}`,
-                    subcategory,
-                    products,
-                    session: req.session
-                })
+                if(subcategory.products > 0){
+                    let products = []
+                    subcategory.products.forEach(product => {
+                        products.push(product)
+                    })
+                    res.render('products/subcategories', {
+                        title : `Categoria: ${subcategory.name}`,
+                        subcategory,
+                        products,
+                        session: req.session
+                    })
+                }else {
+                    res.render('products/error', {
+                        title : `Auch:()`,
+                        messageError: 'Aun no hay productos en esta seccion',
+                        session: req.session
+                    })
+                }
+                
             } else {
                 res.render('products/error', {
-                    title : `Subcategoria: `,
-                    messageError: 'Lo que buscas no esta aqui en este momento',
+                    title : `Error`,
+                    messageError: 'Lo que buscas no esta disponible en este momento',
                     session: req.session
                 })
             }
@@ -101,9 +134,18 @@ module.exports = {
     search: (req, res) => {
         db.Product.findAll({
             where: {
-                name: {
-                    [Op.like]: `%_${req.query.search}_%`,
+                [Op.or]: [
+                {
+                    name: {
+                        [Op.like]: `%${req.query.search}%`,
+                    },
                 },
+                {
+                    description: {
+                        [Op.like]: `%${req.query.search}%`,
+                    }
+                }
+                ]
             },
             include: [
                 { association: "subcategory",
@@ -126,7 +168,7 @@ module.exports = {
                     products,
                     results,
                     title: `(${results.length}) ${req.query.search} | Petyo`,
-                    search: req.query.search,
+                    search: `${results.length} resultados para ${req.query.search}`,
                     position: "",
                     products,
                     session: req.session,
