@@ -72,7 +72,7 @@ export default class NotesView {
             });
 
             noteListItem.addEventListener("dblclick", () => {
-                const doDelete = confirm("Are you sure you want to delete this note?");
+                const doDelete = confirm("Estas seguro que queres eliminar?");
 
                 if (doDelete) {
                     this.onNoteDelete(noteListItem.dataset.noteId);

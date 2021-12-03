@@ -97,7 +97,7 @@ module.exports = {
         })
         .then(subcategory => {
             if(subcategory != null){
-                if(subcategory.products > 0){
+                if(subcategory.products.length > 0){
                     let products = []
                     subcategory.products.forEach(product => {
                         products.push(product)

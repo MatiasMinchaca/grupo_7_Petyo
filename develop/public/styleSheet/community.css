@@ -78,11 +78,14 @@
     border: none;
     outline: none;
     width: 100%;
+    padding: 10px;
 }
 
 .notes__title {
     font-size: 3em;
     font-weight: bold;
+    background: 0;
+    color: white;
 }
 
 .notes__body {
@@ -91,4 +94,5 @@
     line-height: 1.5;
     margin-top: 2em;
     resize: both;
+    border-radius: 2%;
 }
