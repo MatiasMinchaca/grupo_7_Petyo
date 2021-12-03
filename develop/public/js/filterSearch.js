@@ -13,9 +13,9 @@ window.addEventListener('load', () => {
     console.log(checkboxFilter)
     buttonFilterDesktop.addEventListener('click', () => {
         articles.forEach(element => {
-            if(element.getAttribute('name') == 'Alimentos' && checkFIlterAlimentos.value == 'on'){
+            if(element.getAttribute('name') == 'Alimentos' && checkFIlterAlimentos.checked == 1){
                 element.style.display = 'flex'
-            }else if(element.getAttribute('name') == 'Accesorios' && checkFIlterAccesorios.value == 'on'){
+            }else if(element.getAttribute('name') == 'Accesorios' && checkFIlterAccesorios.checked == 1){
                 element.style.display = 'flex'
             }else {
                 element.style.display = 'none'

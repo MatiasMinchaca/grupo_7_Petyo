@@ -44,7 +44,7 @@
 .admin-products-container .table-products-admin-container .table-products-admin tbody tr td{
     border: 1px solid black;
     text-align: center;
-    font: 15px;
+    font-size: 15px;
 }
 .admin-products-container .table-products-admin-container .table-products-admin tbody tr .id-products-admin{
     text-align: center;

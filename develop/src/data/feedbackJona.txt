@@ -1,0 +1,31 @@
+- Grupo 7 - PETYO
+- Paleta de colores genial -
+- Barra de categorías me gusta
+- Padding al textarea 
+- Se escucha bajo Pato
+- Bien por mencionar sin registrarse
+- 404
+- mencionar lo de las validaciones front
+- ojo con errores back del login
+- mencionen que tuvieron que terminar entre 2
+- padding en los inputs del formulario
+- algunos errores pisan otros textos el edicion de perfil
+- Bien por las direcciones!!
+- bien por mencionar el consumo de apis
+- el filtro funciona? 
+- ojo con las imágenes de los productos
+- en agregar categoria la imagen se agranda mucho
+- acomodar el desplegable del header
+- genial el aside
+- mostrar el responsive en el home
+- bien el desplegable del menú.
+- Ordenar la muestra
+
+- ojo con errores back del login 
+- padding en los inputs del formulario
+ - algunos errores pisan otros textos el edicion de perfil 
+ - el filtro funciona?  
+ - ojo con las imágenes de los productos 
+ - en agregar categoria la imagen se agranda mucho 
+ - acomodar el desplegable del header
+- mostrar el responsive en el home

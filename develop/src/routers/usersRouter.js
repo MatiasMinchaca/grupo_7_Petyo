@@ -12,7 +12,8 @@ let {login,
     editAddress, 
     editAddressView, 
     addAddress, 
-    removeAddress} = require('../controllers/usersControlles');
+    removeAddress,
+    cart} = require('../controllers/usersControlles');
 const loginValidator = require('../validations/loginValidator');
 const registerValidator = require('../validations/registerValidator');
 const editProfileValidator = require('../validations/editProfileValidator');
@@ -38,6 +39,7 @@ router.post('/profile/addAddress/:id', sessionUserCheck, addAddrressValidator, a
 router.get('/profile/editAddress/:id', sessionUserCheck, editAddressView)
 router.put('/profile/editAddress/:id', sessionUserCheck, editAddrressValidator, editAddress)
 router.delete('/profile/removeAddress/:id', sessionUserCheck, removeAddress)
-
+/* GET - Muestra vista de carrito de compras */
+router.get('/cart', cart);
 module.exports = router;
 

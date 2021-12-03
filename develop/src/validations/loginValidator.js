@@ -16,7 +16,7 @@ module.exports = [
         })
         .then(user => {
             if (!bcrypt.compareSync(req.body.password, user.dataValues.password)) {
-            return Promise.reject();
+            return Promise.reject("Credenciales inválidas");
             }
         })
         .catch(error => {

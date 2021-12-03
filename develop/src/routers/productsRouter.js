@@ -14,7 +14,6 @@ router.get('/category/:id', category);
 router.get('/subcategory/:id', subcategory);
 /* GET - Muestra vista Busqueda*/
 router.get('/search', search);
-/* GET - Muestra vista de carrito de compras */
-router.get('/cart', cart);
+
 
 module.exports = router;

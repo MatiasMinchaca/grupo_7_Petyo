@@ -303,5 +303,10 @@ module.exports = {
             res.redirect('/users/profile')
         }).catch(err => console.log(err))
     },
-   
+    cart : (req, res) => {
+        res.render('user/shoppingCart', {
+            title : 'Carrito',
+            session: req.session
+        })
+    },
 }

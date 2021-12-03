@@ -8,7 +8,7 @@
   --page-header-width: 220px;
   --page-content-bgColor: #f0f1f6;
   --page-content-txtColor: #171616;
-  --page-content-blockColor: #fff;
+  --page-content-blockColor:rgb(3 82 11 / 84%);
   --white: #fff;
   --black: #333;
   --blue: #00b9eb;
@@ -19,6 +19,7 @@
   --switch-sunColor: gold;
   --switch-moonColor: #f4f4f4;
   --switch-bgDarkModeColor: #203521;
+  --page-header-txtColorA: #ffff;
 }
 
 * {
@@ -170,7 +171,7 @@ body {
   letter-spacing: 0.15em;
   font-size: 12px;
   margin-top: 12px;
-  color: var(--page-header-headingColor);
+  color: #fff;
 }
 
 .page-header .admin-menu svg {
@@ -239,7 +240,7 @@ body {
   font-size: 1rem;
   padding-left: 15px;
   background: var(--page-content-blockColor);
-  color: black;
+  color: var(--page-header-txtColor);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   outline: none;
@@ -316,6 +317,8 @@ body {
   background: var(--page-content-blockColor);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  color: var(--page-header-txtColorA);
+  text-shadow: none;
 }
 
 .page-content .grid > article:first-child,
@@ -537,6 +540,8 @@ body {
   --page-header-headingColor: #979595;
   --page-content-bgColor: #fff;
   --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.25);
+  --page-content-blockColor: rgb(255, 255, 255);
+  --page-header-txtColorA: rgb(0, 0, 0);
 }
 .light-mode .page-header .admin-menu a:hover,
 .light-mode .page-header .admin-menu a:focus,

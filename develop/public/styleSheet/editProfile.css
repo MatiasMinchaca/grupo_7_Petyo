@@ -76,6 +76,7 @@
     box-shadow: 0 0 2px black;
     margin: 5px 0;
     transition: all 0.5s ease-in-out;
+    padding-left: 10px;
 }
 .editProfile-container .editProfile-form .inputs-edit-profile input:hover{
     transform: scale(1.01);

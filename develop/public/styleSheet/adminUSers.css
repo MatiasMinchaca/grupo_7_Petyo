@@ -1,0 +1,112 @@
+.page-content .grid > .article-list-users{
+    display: flex;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    height: fit-content;
+    height: -moz-fit-content;
+    box-shadow: none;
+    padding-bottom: 50px;
+}
+.admin-users-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.admin-users-container .div-user-add{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.admin-users-container .div-user-add h1{
+    color: black;
+    margin: 8px 0;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 0 3px 6px white;
+}
+.admin-users-container .table-users-admin-container{
+    margin: 0 10px;
+    background: rgba(255, 255, 255, 0.8);
+}
+.admin-users-container .table-users-admin-container .table-users-admin thead tr th{
+    box-shadow: 0 0 2px black;
+    text-align: center;
+    width: 100px;
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody{
+    color: black;
+    font-weight: bold;
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody tr td{
+    border: 1px solid black;
+    text-align: center;
+    font-size: 15px;
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody tr .id-users-admin{
+    text-align: center;
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody tr .price-td{
+    text-align: center;
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody tr .category-td{
+    text-align: center;
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody tr .options-admin{
+    text-align: center;
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody tr td .btn-edit-user{
+    margin: 2px;
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody tr td a svg{
+    height: 30px;
+    width: 30px;
+    margin: 10px 0 5px;
+    transition: all 0.5s ease-in-out;
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody tr td .btn-edit-user:hover{
+    transform: scale(1.01);
+}
+.admin-users-container .table-users-admin-container .table-users-admin tbody tr td form .btn-remove-user{
+    border: none;
+    background: none;
+}
+.admin-users-container .table-users-admin-container .table-users-admin .sub-category-th{
+    display: none;
+}
+.admin-users-container .table-users-admin-container .table-users-admin .sub-category-td{
+    display: none;
+}
+.admin-users-container .table-users-admin-container .table-users-admin .discount-th{
+    display: none;
+}
+.admin-users-container .table-users-admin-container .table-users-admin .discount-td{
+    display: none;
+}
+@media screen and (min-width:480px) {
+    .admin-users-container .div-user-add h1{
+        margin-left: 30px;
+        font-size: 35px;
+    }
+    .admin-users-container .table-users-admin-container .table-users-admin {
+        font-size: 18px;
+    }
+    .admin-users-container .table-users-admin-container .table-users-admin thead tr th{
+        width: 120px;
+    }
+}
+@media screen and (min-width:1024px) {
+    .admin-users-container .div-user-add h1{
+        margin-left: 30px;
+        font-size: 35px;
+    }
+    .admin-users-container .table-users-admin-container .table-users-admin {
+        font-size: 18px;
+    }
+    .admin-users-container .table-users-admin-container .table-users-admin thead tr th{
+        width: 120px;
+    }
+}

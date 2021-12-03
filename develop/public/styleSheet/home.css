@@ -74,6 +74,7 @@ a {
 
 .home main section.body div.slider div img {
     width: 128px;
+    border-radius: 50%;
 }
 
 .home main section.body div.slider div.circulo-perro img.perro {

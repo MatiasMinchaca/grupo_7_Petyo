@@ -27,13 +27,7 @@ module.exports = {
     },
     categoryLoad: (req, res) =>{
         let errors = validationResult(req)
-        if (req.fileValidatorError) {
-            let image = {
-                param: "image",
-                msg: req.fileValidatorError,
-            };
-            errors.push(image);
-        }
+
         if (errors.isEmpty()) {
             let{
                 name

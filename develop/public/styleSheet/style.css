@@ -55,3 +55,6 @@ body::-webkit-scrollbar-track {
 a{
     text-decoration: none;
 }
+textarea{
+    padding-left: 10px;
+}

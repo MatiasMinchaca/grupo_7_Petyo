@@ -54,7 +54,7 @@
                             <a href="/products/cart">Mi carrito</a>
                             <a href="/products/cart">Mis compras</a>
                             <a href="/users/logout">Cerrar sesión</a>
-                            <% if (session.user.rol === 1) { %>
+                            <% if (session.user.rol === 1 || session.user.rol === 7) { %>
                                 <a href="/admin/">Panel de administrador</a>
                             <% } %>
                         </div>
@@ -131,7 +131,7 @@
                     <img class="img-user-header" src="/images/userImageProfile/<%- locals.user.image %>" alt="">
                 </a>
                 <div class="section-botton" id="section-botton-opcions" style="top: -100%;">
-                    <% if (session.user.rol == 1) { %>
+                    <% if (session.user.rol == 1 || session.user.rol === 7) { %>
                         <a href="/admin">Panel Admin</a>
                     <% } %>
                     <a href="/users/profile">Mi Perfil</a>
@@ -155,7 +155,7 @@
                 </section>
                 <hr>
                 <section>
-                    <a href="users/register" id="button-register" >Registrarse</a>
+                    <a href="/users/register" id="button-register" >Registrarse</a>
                 </section>
             </div>
         <% } %>

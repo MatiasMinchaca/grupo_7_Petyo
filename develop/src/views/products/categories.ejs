@@ -32,7 +32,11 @@
                             <%= product.name %>
                         <% } %></p>
                     </p>
-                    <p class="price-card">$<%- product.price %></p>
+                    <% if (product.shipping <= 0) { %>
+                        <p class="shipping-card">Envio Gratis</p>
+                    <% } else {%>
+                        <p class="shipping-card">Envio desde: $<%= product.shipping %> </p>
+                    <% } %>
                     <p class="shipping-card">Envio Gratis</p>
                     <p class="description-card">
                         <% if (product.description.length > 60) { %>

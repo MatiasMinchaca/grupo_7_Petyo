@@ -127,7 +127,8 @@
         display: flex;
         flex-direction: row;
         position: relative;
-        padding-top: 48px;
+        padding-top: 50px;
+        padding-left: 19%;
     }
     .search .product-card-div .product-card .anchor-card{
         position: absolute;
@@ -148,6 +149,7 @@
     .search .search-h3{
         position: absolute;
         top: 0;
+        left: 0;
     }
     .search .search-h3-0{
         margin-bottom: 30px;
@@ -158,7 +160,9 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        padding: 5px;
+        position: absolute;
+        top: 50px;
+        left: 0;;
     }
     .search .section-filter .container-filter-desktop{
         background: white;
@@ -169,6 +173,7 @@
         padding: 6px;
         border-radius: 14px;
         width: 100%;
+        cursor: pointer;
     }
     .search .section-filter .button-filter-desktop:focus{
         outline: none;
@@ -178,6 +183,7 @@
         padding: 6px;
         border-radius: 14px;
         width: 100%;
+        cursor: pointer;
     }
     .search .section-filter .button-delete-desktop:focus{
         outline: none;

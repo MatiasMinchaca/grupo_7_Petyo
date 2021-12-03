@@ -25,7 +25,7 @@
                         <% }) %>
                     </select>
                     <small id="error-category-loadProduct" class="error-message"><%- locals.errors && errors.category ? errors.category.msg : ''  %></small>
-                    <label for="name-subcategory-load" class="name-subcategory-load-label">Nombre de la Subcategoria</label>
+                    <label for="name-subcategory-load" style="font-size: 17px;" class="name-subcategory-load-label">Nombre de la Subcategoria</label>
                     <input type="text" class="name-subcategory-load" id="input-name-loadProduct" name="name" value="<%= locals.old && old.name %>">
                     <small id="error-name-loadProduct" class="error-message"><%- locals.errors && errors.name ? errors.name.msg : '' %></small>
                     <input type="submit" value="Cargar Subcategoria" class="btn-load-subcategory" >

@@ -9,7 +9,7 @@
         <div class="form-container-register">
             <img src="/images/floatingImage.png" alt="" class="floating-image-form">
             <img src="/images/logotipo.png" alt="" class="logo-form">
-            <a href="javascript:history.back()" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
+            <a href="/" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
             <div class="div-imputs-register">
             <input id="input-name-register" type="name" placeholder="Nombre" name="name" value="<%= locals.old && old.name %>">
             <% if (locals.errors && errors.name) { %>
@@ -50,13 +50,13 @@
             </div>
             <h6 class="have-account">¿Ya tienes una cuenta?<a href="/users/login">Inicie sesión.</a></h6>
             <div class="div-imputs-register">
-            <h6 class="terms-and-conditions"><input id="input-terms-register"  type="checkbox" class="terms-imput" name="terms">Acepto los <a href="#">Terminos y Condiciones.</a></h6>
+            <h6 class="terms-and-conditions"><input id="input-terms-register"  type="checkbox" class="terms-imput" name="terms"> <label style="cursor: pointer; user-select: none;" for="input-terms-register">Acepto los</label>  <a href="#">Terminos y Condiciones.</a></h6>
             <% if (locals.errors && errors.terms) { %>
                 <h6 class="error-message"><%= errors.terms.msg %> </h6>
             <% } %>
             <h6 id="error-terms-register" class="error-message"></h6>
             </div>
-            <input type="submit" value="Crear cuenta"  class="button-form-create-account">
+            <input style="cursor: pointer;" type="submit" value="Crear cuenta"  class="button-form-create-account">
             <h6 id="error-form-register" class="error-message"></h6>
         </div>
     </form>

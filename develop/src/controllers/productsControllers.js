@@ -125,12 +125,6 @@ module.exports = {
             }
         })
     },
-    cart : (req, res) => {
-        res.render('products/shoppingCart', {
-            title : 'Carrito',
-            session: req.session
-        })
-    },
     search: (req, res) => {
         db.Product.findAll({
             where: {

@@ -228,7 +228,27 @@
     </button>
     <ul class="admin-menu">
       <li class="menu-heading">
-        <h3>Admin</h3>
+        <h3>
+          <%= session.user.rol == 7 ? 'Super Administrador' : 'Administrador'  %> 
+        </h3>
+      </li>
+      <% if (session.user.rol == 7) { %>
+        <li>
+          <a href="/admin/users">
+            <svg>
+              <use xlink:href="#users"></use>
+            </svg>
+            <span>Usuarios</span>
+          </a>
+        </li>
+      <% } %>
+      <li>
+        <a href="/admin">
+          <svg>
+            <use xlink:href="#charts"></use>
+          </svg>
+          <span>Graficos</span>
+        </a>
       </li>
       <li>
         <a href="/admin/products">
@@ -236,14 +256,6 @@
             <use xlink:href="#pages"></use>
           </svg>
           <span>Productos</span>
-        </a>
-      </li>
-      <li>
-        <a href="#0">
-          <svg>
-            <use xlink:href="#users"></use>
-          </svg>
-          <span>Usuarios</span>
         </a>
       </li>
       <li>
@@ -292,14 +304,6 @@
             <use xlink:href="#comments"></use>
           </svg>
           <span>Comentarios</span>
-        </a>
-      </li>
-      <li>
-        <a href="#0">
-          <svg>
-            <use xlink:href="#charts"></use>
-          </svg>
-          <span>Graficos</span>
         </a>
       </li>
       <li>

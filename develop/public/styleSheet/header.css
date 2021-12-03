@@ -1,5 +1,5 @@
 header.header {
-    background: linear-gradient(0deg, rgb(61, 141, 15, 49%) , rgb(98, 211, 32));
+    background: linear-gradient(0deg, rgb(61, 141, 15, 80%) , rgb(98, 211, 32));
     padding: 5px 10px;
     height: 60px;
     display: flex;
@@ -556,7 +556,7 @@ header.header div.user a i {
         justify-content: space-evenly;
         padding: 0 25px;
         align-items: center;
-        background: rgb(61, 141, 15, 49%);
+        background: rgb(61, 141, 15, 80%);
         flex-direction: row;
     }
     .header .categories-header .div-archor-header .subcategories-header .container-category-archor{

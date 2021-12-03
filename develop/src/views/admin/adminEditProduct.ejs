@@ -56,6 +56,10 @@
                         <small class="text-danger"><%= errors.price.msg %> </small>
                     <% } %>
                     <small id="error-price-editProduct" class="text-danger"></small>
+                    <label for="shipping-load-product">Costo de Envio</label>
+                    <section class="price-section-load">
+                        <input id="input-price-loadProduct"  type="number" class="price-input-load" id="shipping-load-product" name="shipping" value="<%= locals.old && old.shipping ? old.shipinng : product.shipping %>" >
+                    </section>
                     <label for="id-load-product">Descuento</label>
                     <section class="id-section-load">
                         <input id="input-discount-editProduct"  type="number" id="id-load-product" class="id-load-product" name="discount" value="<%= locals.old ? old.discount : product.discount%>">

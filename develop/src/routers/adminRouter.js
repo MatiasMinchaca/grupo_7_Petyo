@@ -8,8 +8,9 @@ let {admin,
     edit, 
     remove,
     update,
-    
-    } = require('../controllers/adminController');
+    usersView,
+    userChangeAdmin,
+    adminChangeUser} = require('../controllers/adminController');
 let {
     categoriesListView,
     categoryEditView,
@@ -30,6 +31,7 @@ let productValidator = require('../validations/productValidator');
 let categoryValidator = require('../validations/categoryValidator');
 let subcategoryValidator = require('../validations/subcategoryValidator');
 let sessionAdminCheck = require('../middlewares/sessionAdminCheck')
+let superAdminCheck = require('../middlewares/superAdminCheck')
 /* GET - Muestra el inicio de la vista de admin*/
 router.get('/', sessionAdminCheck, admin);
 /* GET - muestra todos los productos de la base de datos*/
@@ -66,4 +68,11 @@ router.post('/subcategories/load', subcategoryValidator, subcategoryLoad)
 router.put('/subcategories/edit/:id', subcategoryValidator, subcategoryEdit)
 /* DELETE - Subcategorias */
 router.delete('/subcategories/delete/:id', subcategoryRemove)
+/* GET - Usuarios */
+router.get('/users/', superAdminCheck, usersView)
+/* PUT - Usuarios */
+router.put('/users/rolAdmin/:id', superAdminCheck, userChangeAdmin)
+router.put('/users/rolUser/:id', superAdminCheck,adminChangeUser)
+/* DELETE - Usuarios */
+router.delete('/users/delelte/:id', superAdminCheck,usersView)
 module.exports = router;

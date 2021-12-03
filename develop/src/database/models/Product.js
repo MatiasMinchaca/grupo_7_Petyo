@@ -24,6 +24,9 @@ module.exports = function(sequelize, dataTypes){
         discount: {
             type: dataTypes.INTEGER(11)
         },
+        shipping: {
+            type: dataTypes.INTEGER(11)
+        },
         image: {
             type: dataTypes.STRING(150),
             allowNull: false

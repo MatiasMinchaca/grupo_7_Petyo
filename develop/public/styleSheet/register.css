@@ -66,6 +66,7 @@
     font-size: 10px;
     transition: all 0.7s;
     margin: 0;
+    left: 0;
 }
 .form-container-register .error-message{
     margin: 0;
@@ -96,6 +97,7 @@
     top: 10px;
     font-weight: 400;
     font-size: 12px;
+    cursor: pointer;
 }
 .form-container-register .terms-and-conditions input{
     background-color: #ffffff00;

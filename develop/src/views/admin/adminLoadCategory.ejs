@@ -24,7 +24,7 @@
                         <img class="preview-image" id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" >
                         <small id="error-image-loadProduct" class="error-message"></small>
                     </div>
-                    <label for="name-category-load" class="name-category-load-label">Nombre de la Categoria</label>
+                    <label for="name-category-load" style="font-size: 17px;" class="name-category-load-label">Nombre de la Categoria</label>
                     <input type="text" class="name-category-load" id="input-name-loadProduct" name="name" value="<%= locals.old && old.name %>">
                     <small id="error-name-loadProduct" class="error-message"><%- locals.errors && errors.name ? errors.name.msg : '' %></small>
                     <input type="submit" value="Cargar Categoria" class="btn-load-category" >
