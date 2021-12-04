@@ -14,12 +14,23 @@ module.exports = {
       }
     })
     .then(products =>{
-      res.render('home', {
-          title : 'Petyo petshop',
-          productsSlider: products,
-          banners, 
-          session: req.session
+      db.Product.findAll({
+        where: {
+          visited: {
+            [Op.gte] : 5
+          }
+        }
       })
+      .then(productsSliderMoreVisited => {
+        res.render('home', {
+            title : 'Petyo petshop',
+            productsSlider: products,
+            banners,
+            productsSliderMoreVisited,
+            session: req.session
+        })
+      })
+      
     })
   }
 }

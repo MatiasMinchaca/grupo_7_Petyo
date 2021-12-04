@@ -8,8 +8,10 @@
     <title> <%= title %> </title>
     <link rel="stylesheet" href="/styleSheet/adminDashboard.css">
     <link rel="stylesheet" href="/styleSheet/adminLoad.css">
+    <link rel="stylesheet" href="/styleSheet/loadingImage.css">
 </head>
 <body>
+    <%- include('../partials/loadingImage') %>
     <%- include('../partials/adminHeader') %> 
         </section>
         <section class="grid">
@@ -19,7 +21,7 @@
                     <select id="select-category-editProduct" type="text" placeholder="Tipo" name="category" class="select-type-product">
                         <option value=""hidden>Categorias</option>
                         <% categories.forEach(category => { %>
-                            <option value="<%- category.id %>" <%- locals.old && old.category.name == product.subcategory ? "selected" : category.name == product.subcategory.category.name ? `selected` : ""  %>><%- category.name %></option>
+                            <option value="<%- category.id %>" <%- locals.old && old.category.name == product.subcategory? "selected" : category.name == product.subcategory.category.name ? `selected` : ""  %>><%- category.name %></option>
                         <% }) %>                       
                         </select>
                     </select>
@@ -27,11 +29,8 @@
                         <small class="text-danger"><%= errors.category.msg %> </small>
                     <% } %>
                     <small id="error-category-editProduct" class="text-danger"></small>
-                    <select id="select-subcategory-editProduct" type="text" placeholder="Tipo" name="subcategory" class="select-type-product" >
-                        <option selected hidden value="">Subcategorias</option>
-                        <% subcategories.forEach(subcategory => { %>
-                            <option value="<%- subcategory.id %>" <%= locals.old && old.subcategory.name == product.subcategory.name ? "selected" : subcategory.name == product.subcategory.name ? `selected` : ""   %>><%- subcategory.name %></option>
-                        <% }) %>
+                    <select id="select-subcategory-editProduct" type="text" placeholder="Tipo" name="subcategoryId" class="select-type-product" >
+                        <option value="<%= product.subcategory.id %>" <%= product.subcategory.name ? `selected` : ""%> ><%= product.subcategory.name%></option>
                     </select>
                     <% if (locals.errors && errors.subcategory) { %>
                         <small class="text-danger"><%= errors.subcategory.msg %> </small>
@@ -39,7 +38,7 @@
                     <small id="error-subcategory-editProduct" class="text-danger"></small>
                     <div class="preview-image-container">
                         <label class="btn-load-image-admin" for="imgInp">Seleccione una imagen</label>
-                        <input type='file' id="imgInp" name="image" hidden="hidden">
+                        <input type='file' id="imgInp" value="<%= locals.old ? old.image : product.image%>" name="image" hidden="hidden">
                         <img class="preview-image" id="blah" src="/images/products/<%= product.image %>" alt="Tu imagen" >
                         <small id="error-image-editProduct" class="text-danger"></small>
                     </div>
@@ -51,17 +50,19 @@
                     <small id="error-name-editProduct" class="text-danger"></small>
                     <label for="price-load-product">Precio</label>
                     <section class="price-section-load">
-                        <h2 class="sing-price-load">$</h2>
                         <input id="input-price-editProduct"  type="number" class="price-input-load" id="price-load-product" name="price" value="<%= locals.old ? old.price : product.price%>">
                     </section>
                     <% if (locals.errors && errors.price) { %>
                         <small class="text-danger"><%= errors.price.msg %> </small>
                     <% } %>
                     <small id="error-price-editProduct" class="text-danger"></small>
+                    <label for="shipping-load-product">Costo de Envio</label>
+                    <section class="price-section-load">
+                        <input id="input-price-loadProduct"  type="number" class="price-input-load" id="shipping-load-product" name="shipping" value="<%= locals.old && old.shipping ? old.shipinng : product.shipping %>" >
+                    </section>
                     <label for="id-load-product">Descuento</label>
                     <section class="id-section-load">
                         <input id="input-discount-editProduct"  type="number" id="id-load-product" class="id-load-product" name="discount" value="<%= locals.old ? old.discount : product.discount%>">
-                        <h2 class="sing-id-load">%</h2>
                     </section>
                     <textarea id="input-description-editProduct" cols="10" rows="10" class="description-product-load" name="description" placeholder="Descripción del producto"><%= locals.old ? old.description : product.description%></textarea>
                     <% if (locals.errors && errors.description) { %>
@@ -85,5 +86,6 @@
         <script src="/js/adminDashboard.js"></script>
         <script src="/js/admin.js"></script>
         <script src="/js/editProductValidator.js"></script>
+        <script src="/js/subcategory2.js"></script>
 </body>
 </html>

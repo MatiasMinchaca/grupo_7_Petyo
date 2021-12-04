@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <!-- HEAD -->
+    <%- include('../partials/head') %> 
+
+<body class="body-profile">
+    <%- include('../partials/loadingImage') %> 
+    <!-- HEADER -->
+<%- include('../partials/header') %> 
+
+    <div class="editProfile-container">
+        <form action="/users/profile/editAddress/<%= address.id %>?_method=PUT" method="POST" class="editProfile-form">
+            <div class="inputs-edit-profile">
+                <label for="street">Calle</label>
+                <input type="text" id="street" name="street" value="<%= address.street ? address.street : "" %>" class="surname-edit">
+                <label for="number">Numero</label>
+                <input type="text" id="number" name="number" value="<%= address.number ? address.number : "" %>" class="surname-edit">
+                <label for="floorOrApartament">Piso o Departamento</label>
+                <input type="text" id="floorOrApartament" name="floorOrApartament" value="<%= address.floorOrApartament? address.floorOrApartament: "" %>" class="surname-edit">
+                <label for="provinceSelect">Provincia</label>
+                <select type="text" id="provinceSelect" name="province" class="select-species-pet">
+                    <% if (address.province) { %>
+                        <option value="<%= address.province %>" selected hidden><%= address.province %></option>
+                    <% } else { %>
+                        <option value="" selected hidden>Provincia</option>
+                    <% } %>
+                </select>
+                <label for="citySelect">Ciudad</label>
+                <select type="text" id="citySelect" name="city" class="select-species-pet">
+                    <% if (address.city) { %>
+                        <option value="<%= address.city %>" selected hidden><%= address.city %></option>
+                    <% } else { %>
+                        <option value="" selected hidden>Ciudad</option>
+                    <% } %>
+                </select>
+                <label for="postalCode">Codigo postal</label>
+                <input type="text" id="postalCode" name="postalCode" value="<%= address.postalCode ? address.postalCode : "" %>" class="surname-edit">
+                <input type="submit" value="Guardar" class="save-profile">
+                <a href="javascript:history.back()" class="save-profile">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <!-- FOOTER -->  
+    <%- include('../partials/footer') %>
+    <!-- JavaScript -->
+    <script src="/js/users.js"></script>
+    <script src="/js/address.js"></script>
+</body>
+</html>

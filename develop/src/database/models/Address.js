@@ -10,6 +10,12 @@ module.exports = function(sequelize, dataTypes){
         street: {
             type: dataTypes.STRING(100),
         },
+        number: {
+            type: dataTypes.INTEGER(11)
+        },
+        floorOrApartament: {
+            type: dataTypes.INTEGER(11)
+        },
         province: {
             type: dataTypes.STRING(100),
         },
@@ -26,7 +32,7 @@ module.exports = function(sequelize, dataTypes){
     }
 
     let config = {
-        tableName: "address",
+        tableName: "addresses",
         timestamps: false
     }
 

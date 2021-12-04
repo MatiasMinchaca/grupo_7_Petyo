@@ -23,18 +23,19 @@ module.exports = {
             }
         })
         .then(user => {
-            db.Address.findOne({
+            db.Address.findAll({
                 where: {
-                    userId: user.id,
-                },
-            }).then((address) => {
+                    UserId: user.id
+                }
+            })
+            .then(address => {
                 res.render('user/profile', {
                     title: 'Mi Perfil',
                     user,
                     address,
-                    session: req.session,
-                });
-            });
+                    session: req.session
+                }) 
+            })
         })
     },
     editProfile: (req, res) => {
@@ -60,8 +61,6 @@ module.exports = {
             let { 
                 name, 
                 lastName, 
-                street, 
-                postalCode, 
                 namePet, 
                 telephone, 
                 email,
@@ -172,5 +171,142 @@ module.exports = {
             res.cookie('userPetyo', '', { maxAge: -1 })
         }
         res.redirect('/')
-    }
+    },
+    addAddressView: (req,res) =>{
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(user => {
+            res.render('user/addAddress', {
+                title: 'Agregar nueva Dirección',
+                user,
+                session: req.session
+            })
+        })
+    },
+    addAddress: (req,res) =>{
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            let {
+                street,
+                number,
+                floorOrApartament,
+                province,
+                city,
+                postalCode
+            } = req.body
+            db.User.findOne({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(user => {
+                db.Address.create({
+                    street,
+                    number,
+                    floorOrApartament,
+                    province,
+                    city,
+                    postalCode,
+                    userId: user.id
+                })
+                .then(() => {
+                    res.redirect('/users/profile')
+                })
+            })
+        }else{
+            db.User.findOne({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(user => {
+                res.render('user/addAddress', {
+                    title: 'Agregar nueva Dirección',
+                    user,
+                    errors: errors.mapped(),
+                    old: req.body,
+                    session: req.session
+                })
+            })
+        }
+    },
+    editAddressView: (req,res) =>{
+            db.Address.findOne({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(address => {
+                res.render('user/editAddress', {
+                    title: 'Editar Dirección',
+                    address,
+                    session: req.session
+                })
+            })
+    },
+    editAddress: (req,res) =>{
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            let {
+                street,
+                number,
+                floorOrApartament,
+                province,
+                city,
+                postalCode
+            } = req.body
+            db.Address.update(
+                {
+                    street,
+                    number,
+                    floorOrApartament,
+                    province,
+                    city,
+                    postalCode
+                },
+                {
+                    where: {
+                        id: req.params.id
+                    }
+                }
+            )
+            .then(() => {
+                res.redirect('/users/profile')
+            })
+        } else {
+            db.Address.findOne({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(address => {
+                res.render('user/editAddress', {
+                    title: 'Editar Dirección',
+                    address,
+                    errors: errors.mapped(),
+                    old: req.body,
+                    session: req.session
+                })
+            })
+        }
+    },
+    removeAddress: (req,res) =>{
+        db.Address.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(() => {
+            res.redirect('/users/profile')
+        }).catch(err => console.log(err))
+    },
+    cart : (req, res) => {
+        res.render('user/shoppingCart', {
+            title : 'Carrito',
+            session: req.session
+        })
+    },
 }

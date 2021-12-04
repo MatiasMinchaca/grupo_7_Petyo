@@ -105,7 +105,7 @@ window.addEventListener('load', () => {
     
     eventsAndValidation(inputNameEditProfile, regExName, errorNameEditProfile, `El campo ${inputNameEditProfile.placeholder} es obligatorio`, 'No se admiten caracteres especiales ni numeros')
     eventsAndValidation(inputLastNameEditProfile, regExName, errorLastNameEditProfile, `El campo ${inputLastNameEditProfile.placeholder} es obligatorio`, 'No se admiten caracteres especiales ni numeros')
-    eventsAndValidation(inputTelephoneEditProfile, regExTel, errorTelephoneEditProfile, `El campo ${inputLastNameEditProfile.placeholder} es obligatorio`, "Debes escribir un nummero de telefono valido sin espacios(ejemplo: 5491146385478)")
+    eventsAndValidation(inputTelephoneEditProfile, regExTel, errorTelephoneEditProfile, `El campo ${inputTelephoneEditProfile.placeholder} es obligatorio`, "Debes escribir un nummero de telefono valido sin espacios(ejemplo: 5491146385478)")
     
     inputImageFIle.addEventListener('change', 
     function fileValidation(){

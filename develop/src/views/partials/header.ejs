@@ -1,4 +1,6 @@
 <script src="/js/headerMobile.js" defer></script>
+<script src="/js/headerDescktop.js" defer></script>
+<script src="/js/validationSearch.js" defer></script>
 <header class="header">
     <button class="menu" >
         <i class="fas fa-bars" id="menu-mobile"></i>
@@ -12,8 +14,8 @@
                 <% if (typeof session.user != "undefined") { %>
                     <a href="/users/profile" class="anchor-user-lateral">
                     <div class="div-user-lateral">
-                        <img class="img-user-lateral" src="/images/userImageProfile/<%- session.user.image %> " alt="">
-                        <h3 class="h3-user-lateral">Bienvenido <%- session.user.name %></h3>
+                        <img class="img-user-lateral" src="/images/userImageProfile/<%- locals.user.image %> " alt="">
+                        <h3 class="h3-user-lateral">Bienvenido <%- locals.user.name %></h3>
                     </div>
                     </a>
                     <hr class="hr-lateral">
@@ -24,11 +26,22 @@
                         <a href="/">Inicio</a>
                     </div>
                     <div class="categories-lateral">
-                        Categorias
+                        <h1>Categorias</h1>
                         <% locals.categories.forEach(category => { %>
                             <div class="category-lateral">
-                                <i class="fas fa-<%-category.name == 'Perros' ? 'dog' : "" || category.name == 'Gatos' ? 'cat' : "" || category.name == 'Aves' ? 'crow' : "" || category.name == 'Reptiles' ? 'paw' : ""%>"></i>
-                                <a href="/products/category/<%= category.id %>"><%= category.name %></a>
+                                <div class="container-lateral-name">
+                                    <i style="margin-bottom: 6px;" class="fas fa-<%-category.name == 'Perros' ? 'dog' : "" || category.name == 'Gatos' ? 'cat' : "" || category.name == 'Aves' ? 'crow' : "" || category.name == 'Reptiles' ? 'paw' : ""%>"></i>
+                                    <a><%= category.name %></a>
+                                    <i style="margin-left: 2px; transition: all 0.6s; margin-top: 2px;" class="fas fa-chevron-down"></i>
+                                    <div class="press-lateral" name="<%= category.name %>"></div>
+                                </div>
+                                <div class="subcategories-lateral" id="<%= category.name %>" >
+                                    <a href="/products/category/<%= category.id %>" style="color: black;">Ir a la categoria</a>
+                                    <h1 style="font-size: 17px; margin-top: 3px;">subcategorias</h1>
+                                    <% category.subcategories.forEach(subcategory => { %>
+                                        <a style="margin-top: 3px;"  class="class-black-a" href="/products/subcategory/<%= subcategory.id %>"><%= subcategory.name %> </a>
+                                    <% }) %>
+                                </div>
                             </div>
                         <% }) %>
                     </div>
@@ -41,7 +54,7 @@
                             <a href="/products/cart">Mi carrito</a>
                             <a href="/products/cart">Mis compras</a>
                             <a href="/users/logout">Cerrar sesión</a>
-                            <% if (session.user.rol === 1) { %>
+                            <% if (session.user.rol === 1 || session.user.rol === 7) { %>
                                 <a href="/admin/">Panel de administrador</a>
                             <% } %>
                         </div>
@@ -54,10 +67,10 @@
                 </div>
                 <hr class="hr-lateral">
                 <div class="div-contact">
-                    <a href="#">Contactanos</a>
-                    <a href="#">Comunidad</a>
-                    <a href="#">¿Quienes somos?</a>
-                    <a href="#">Terminos y condiciones</a>
+                    <a href="/contact">Contactanos</a>
+                    <a href="/otro/community">Comunidad</a>
+                    <a href="/otro/aboutus">¿Quienes somos?</a>
+                    <a href="/otro/termsandConditions">Términos y condiciones</a>
                 </div>
             </section>
         </div>
@@ -69,55 +82,83 @@
         <i id="i-header" class='fas fa-search'></i>
     </button>
     <div id="search-header" style="right: -208px;" class="search-header">
-        <form action="">
-            <input type="search" name="searchb" id="search-bar" class="search-bar" placeholder="Buscar">
+        <form action="/products/search" id="form-search-mobile" method="GET">
+            <input type="search" name="search" id="search-bar" value="" class="search-bar" placeholder="Buscar">
             <button class="search-logo" type="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>
+    <div class="search-header-desktop">
+        <form action="/products/search" id="form-search-desktop" method="GET">
+            <input id="input-search-header" name="search" type="search" placeholder="Buscar..." name="" id="">
+            <button id="button-search-header" type="submit" id="button-search-desktop" style="right: 0px; top: 0px;"><i  class="fas fa-search"></i></button>
+        </form>
+    </div>
+
+    <div class="categories-header">
+        <div class="div-home-header">
+            <a href="/" class="categories-archor-header ">Inicio</a>
+        </div>
+        <% locals.categories.forEach(category =>{ %>
+            <div id="<%= category.name %>" class="div-archor-header">
+                <a class="categories-archor-headera"><%= category.name%></a>
+                <a name="<%= category.name %>" class="press-category"></a>
+                <i class="fas fa-chevron-down"></i>
+                <div class="subcategories-header" id="<%= category.name %>">
+                    <div class="container-category-archor">
+                        <a href="/products/category/<%= category.id %>">Ir a la categoria completa</a>
+                    </div>
+                    
+                    <div class="container-subcategories-header">
+                        <a class="h2-sub">Subcategorias</a>
+                        <% category.subcategories.forEach(subcategory => { %>
+                            <a class="class-black-a" href="/products/subcategory/<%= subcategory.id %>"><%= subcategory.name %> </a>
+                        <% }) %>
+                    </div>
+                    
+                </div>
+            </div>
+        <% }) %>
+        <div class="div-home-header">
+            <a href="/contact" class="categories-archor-header ">Contactanos</a>
+        </div>
+    </div>
+    <div  class="user-header" >
+        <% if (typeof session.user != "undefined") { %>
+            <div class="div-login-header">
+                <div id="press-login-header"></div>
+                <h2><%- locals.user.name %></h2>
+                <a >
+                    <img class="img-user-header" src="/images/userImageProfile/<%- locals.user.image %>" alt="">
+                </a>
+                <div class="section-botton" id="section-botton-opcions" style="top: -100%;">
+                    <% if (session.user.rol == 1 || session.user.rol === 7) { %>
+                        <a href="/admin">Panel Admin</a>
+                    <% } %>
+                    <a href="/users/profile">Mi Perfil</a>
+                    <a href="/users/cart">Mi carrito</a>
+                    <a href="/users/cart">Mis compras</a>
+                    <a href="/users/logout">Cerrar sesión</a>
+                </div>
+            </div>
+        <% } else {%>
+            <div class="section-paw-header-1"></div>
+            <div class="section-paw-header-2"></div>
+            <div class="section-paw-header-3"></div>
+            <div class="section-paw-header-4"></div>
+            <div id="user-icon" class="user-icon-header">
+                <i id="div-user-header" class="far fa-user"></i>
+                <div id="botton-user-icon"></div>
+            </div>
+            <div id="login-register-header" class="login-register-header" style="right: -200px; transform: rotate(180deg);">
+                <section>
+                    <a href="/users/login" id="button-login" >Iniciar sesión</a>
+                </section>
+                <hr>
+                <section>
+                    <a href="/users/register" id="button-register" >Registrarse</a>
+                </section>
+            </div>
+        <% } %>
+    </div>
 </header>
 <div class="block-header"></div>
-<!--  <div class="banner">
-        <div class="menu">
-            <label for="menu"><i class="fas fa-bars"></i></label>
-            <input type="checkbox" id="menu">
-            <ul>
-                <li><a href="/"> Inicio</a></li>
-                <li><a href="/users/login"> Iniciar sesión</a></li>
-                <li><a href="/users/register">Registrarse</a></li>
-                <li><a href="/products/cart">Carrito</a></li>
-                <li><a href="/products/detail/">Productos</a></li>
-            </ul>
-        </div>
-        <div class="logo">
-            <a href="/"><img src="/images/logotipo.png" alt=""></a>
-        </div>
-        <button type="button"  class="btn-search-mobile"><i id="i-header" class="fas fa-search"></i></button>
-        <div id="search-header" class="lupa">
-            <form action="">
-                <input type="search" name="busqueda" id="search-bar" placeholder="Buscar">
-                <button class="search-logo" type="submit"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
-        <div class="logo-menu">
-            <div class="menu-tablet-desktop">
-                <label for="menu">Menú<i class="fas fa-angle-down"></i></label>
-                <input type="checkbox" id="menu">
-                <ul>
-                    <li><a href="/"> Inicio</a></li>
-                    <li><a href="/users/login"> Iniciar sesión</a></li>
-                    <li><a href="/users/register">Registrarse</a></li>
-                    <li><a href="/products/cart">Carrito</a></li>
-                    <li><a href="/products/detail/1">Productos</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="lupa-menu">
-            <div class="user">
-                <a href="/users/login"><i class="fas fa-user"></i></a>
-                
-            </div>
-            <div class="carrito">
-                <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-        </div>
-    </div> -->

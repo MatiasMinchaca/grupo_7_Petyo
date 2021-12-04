@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD -->
+<%- include('../partials/head') %> 
+
+<body>
+<!-- HEADER -->
+<%- include('../partials/header') %> 
+
+<main class="categories">
+    <div class="product-card-div">
+        <% products.forEach(product => { %>
+        <section class="product-card">
+            <a class="anchor-card" href="/products/detail/<%- product.id %>">
+                <% if (product.discount > 0) { %>
+                    <h1 class="product-discount-card"><%- product.discount %>% OFF</h1>
+                <% } %>
+                <div class="image-card">
+                    <a href="/products/detail/<%- product.id %>"><img src="/images/products/<%- product.image %>" alt=""></a>
+                </div>
+                <div class="name-price-card">
+                    <p class="subcategory-card"><%- product.subcategory %></p>
+                    <p class="name-card">
+                        <% if (product.name.length > 17) { %>
+                            <%- `${product.name.slice(0,17)}...` %>
+                        <% } else { %>
+                            <%= product.name %>
+                        <% } %></p>
+                    </p>
+                    <p class="price-card">$<%- product.price %></p>
+                    <% if (product.shipping <= 0) { %>
+                        <p class="shipping-card">Envio Gratis</p>
+                    <% } else {%>
+                        <p class="shipping-card">Envio desde: $<%= product.shipping %> </p>
+                    <% } %>
+                    <p class="description-card">
+                        <% if (product.description.length > 60) { %>
+                            <%- `${product.description.slice(0,60)}...` %>
+                        <% } else { %>
+                            <%= product.description %>
+                        <% } %></p>
+                    </p>
+                </div>
+            </a>
+        </section>
+        <% }) %> 
+    </div>
+</main>
+    
+    <!-- FOOTER -->  
+    <%- include('../partials/footer') %> 
+
+    <a href="https://api.whatsapp.com/send?phone=+5493873693495" class="btn-flotante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

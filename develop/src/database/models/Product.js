@@ -21,14 +21,23 @@ module.exports = function(sequelize, dataTypes){
         description: {
             type: dataTypes.STRING(500)
         },
-        subcategoryId: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false
+        discount: {
+            type: dataTypes.INTEGER(11)
+        },
+        shipping: {
+            type: dataTypes.INTEGER(11)
         },
         image: {
             type: dataTypes.STRING(150),
             allowNull: false
         },
+        visited: {
+            type: dataTypes.INTEGER(11)
+        },
+        subcategoryId: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        }
     }
     
     let config = {

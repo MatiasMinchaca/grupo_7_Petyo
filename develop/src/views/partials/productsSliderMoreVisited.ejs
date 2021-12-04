@@ -1,0 +1,43 @@
+
+<section>
+    <div class="block 1">
+        <div class="slider-box">
+            <div class="slider">
+                <% productsSliderMoreVisited.forEach(product => { %>
+                <div class="slide categories" >
+                    <div class="product-card-div">
+                            <section class="product-card">
+                                <a class="anchor-card" href="/products/detail/<%- product.id %>">
+                                    <a class="product-detail-card" href="/products/detail/<%- product.id %>">Detalles</a>
+                                    <h1 class="product-discount-card"><%- product.discount %>% OFF</h1>
+                                    <div class="image-card">
+                                        <a href="/products/detail/<%- product.id %>"><img src="/images/products/<%- product.image %>" alt=""></a>
+                                    </div>
+                                    <div class="name-price-card">
+                                        <p class="subcategory-card"><%- product.subcategory %></p>
+                                        <p class="name-card">
+                                            <% if (product.name.length > 17) { %>
+                                                <%- `${product.name.slice(0,17)}...` %>
+                                            <% } else { %>
+                                                <%= product.name %>
+                                            <% } %></p>
+                                        </p>
+                                        <p class="price-card">$<%- product.price %></p>
+                                        <p class="shipping-card">Envio Gratis</p>
+                                        <p class="description-card">
+                                            <% if (product.description.length > 60) { %>
+                                                <%- `${product.description.slice(0,60)}...` %>
+                                            <% } else { %>
+                                                <%= product.description %>
+                                            <% } %></p>
+                                        </p>
+                                    </div>
+                                </a>
+                            </section>   
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</section>

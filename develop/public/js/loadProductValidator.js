@@ -152,7 +152,7 @@ window.addEventListener('load', () =>{
                     previewImage.innerHTML = '<img src="' + e.target.result +'"/>';
                 };
                 reader.readAsDataURL(imageLoadProduct.files[0]);
-                errorImageEditProfile.innerText = '';
+                errorImageLoadProduct.innerText = '';
             }
         }
     })
@@ -162,8 +162,8 @@ window.addEventListener('load', () =>{
         let elementsForm = formLoadProduct.elements
         
         for (let i = 0; i < elementsForm.length-1; i++) {
-            if(elementsForm[i].value == "" && elementsForm[i].name !== "archivo" || elementsForm[i].style.boxShadow == '0 0 6px red'){
-                if(i == '5'){
+            if(elementsForm[i].value == "" && elementsForm[i].name !== "image" || elementsForm[i].style.boxShadow == '0 0 6px red'){
+                if(i == '5' || i == '6'){
                     continue
                 }
                 addError(elementsForm[i])

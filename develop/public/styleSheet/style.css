@@ -3,6 +3,9 @@
 @import url('banners.css');
 @import url('login.css');
 @import url('register.css');
+@import url('search.css');
+@import url('loadingImage.css');
+@import url('errorProducts.css');
 @import url('editProfile.css');
 @import url('productDetail.css');
 @import url('shoppingCart.css');
@@ -18,6 +21,30 @@ body{
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: center;
+    overflow-x: hidden;
+    scrollbar-color: rgb(98, 211, 32) rgba(255, 255, 255, 0);
+    scrollbar-width: thin;
+}
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+body::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
+    display: none;
+} 
+body::-webkit-scrollbar:horizontal {
+    height: 5px;
+}
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,rgb(98, 211, 32), rgb(61, 141, 15));
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 0px solid #000000;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 10px;  
 }
 
 *{
@@ -27,4 +54,7 @@ body{
 }
 a{
     text-decoration: none;
+}
+textarea{
+    padding-left: 10px;
 }

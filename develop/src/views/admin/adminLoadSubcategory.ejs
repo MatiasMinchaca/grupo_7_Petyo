@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/images/isotipo.png" type="image/x-icon" rel="shortcut icon" />
+    <title> <%= title %> </title>
+    <link rel="stylesheet" href="/styleSheet/adminDashboard.css">
+    <link rel="stylesheet" href="/styleSheet/adminLoadSubcategory.css">
+    <link rel="stylesheet" href="/styleSheet/loadingImage.css">
+</head>
+<body>
+    <%- include('../partials/loadingImage') %> 
+    <%- include('../partials/adminHeader') %> 
+        </section>
+        <section class="grid">
+        <article class="article-load-subcategory">
+            <main class="subcategory-load-container">
+                <form class="form-load" id="form-loadProduct" action="/admin/subcategories/load" method="POST" >
+                    <select id="select-category-loadProduct" type="text" placeholder="Tipo" name="category" class="select-type-category" >
+                        <option selected hidden value="">Categorias</option>
+                        <% locals.categories.forEach(category => { %>
+                            <option value="<%- category.id %>" <%= locals.old && old.category.name == category.name ? "selected" : null %>><%- category.name %></option>
+                        <% }) %>
+                    </select>
+                    <small id="error-category-loadProduct" class="error-message"><%- locals.errors && errors.category ? errors.category.msg : ''  %></small>
+                    <label for="name-subcategory-load" style="font-size: 17px;" class="name-subcategory-load-label">Nombre de la Subcategoria</label>
+                    <input type="text" class="name-subcategory-load" id="input-name-loadProduct" name="name" value="<%= locals.old && old.name %>">
+                    <small id="error-name-loadProduct" class="error-message"><%- locals.errors && errors.name ? errors.name.msg : '' %></small>
+                    <input type="submit" value="Cargar Subcategoria" class="btn-load-subcategory" >
+                    <small id="error-form-loadProduct" class="error-message"></small>
+                </form> 
+            </main></article>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="/js/admin.js"></script>
+        <script src="/js/adminDashboard.js"></script> 
+</body>
+</html>

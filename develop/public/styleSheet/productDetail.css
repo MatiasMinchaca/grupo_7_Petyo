@@ -8,15 +8,13 @@
 
 
 /* quantity selector */
+
 .quantity {
     display: flex;
     background-color: rgb(113, 208, 73);
-    margin-right: 55%;
-    margin-bottom: 8%;
-    padding-right: 20%;
-    image-resolution: 100%;
     box-shadow: 0px 5px 10px rgb(100, 100, 100);
     border-radius: 3%;
+    margin-bottom: 10%;
 }
 
 .counter {
@@ -66,8 +64,8 @@
 
 .cardca {
     display: flex;
-    width: 10%;
-    
+    width: 25%;
+    font-size: 10px;
 }
 
 .codprocar {
@@ -77,13 +75,13 @@
 }
 
 .cla1 {
-    padding-bottom: 4px;
-    padding-top: 8px;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
 
 .cla2 {
-    padding-bottom: 6px;
-    padding-top: 8px;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
 
 .dato {
@@ -103,6 +101,9 @@
     font-size: 10px;
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
+}
+.descpre{
+    margin-left: 6%;
 }
 
 .dogcar {
@@ -130,8 +131,7 @@
 }
 
 .precar {
-    font-size: 20px;
-    margin-top: 5px;
+    font-size: 10%;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -151,7 +151,7 @@
     border-radius: 3%;*/
 }
 
-@media (min-width: 730px) {
+@media screen and (min-width: 475px) {
     .bot1 {
         padding: 8px 15px;
         box-shadow: 0px 5px 10px rgb(100, 100, 100);
@@ -192,13 +192,9 @@
         border-radius: 1%;
         margin-right: 10%;
     }
-
-    .quantity {
-        padding-right: 0%;
-    }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
     .descripcar {
         font-size: 23px;
     }
@@ -221,10 +217,6 @@
 
     .precar {
         font-size: 40px;
-    }
-
-    .quantity {
-        margin-right: 50%;
     }
 
 }

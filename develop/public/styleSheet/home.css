@@ -36,6 +36,10 @@ a {
     margin-bottom: 20px;
     color: white;
     text-shadow: 0 3px 6px rgb(0, 0, 0);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
 }
 
 .home main section.body div.slider {
@@ -70,6 +74,7 @@ a {
 
 .home main section.body div.slider div img {
     width: 128px;
+    border-radius: 50%;
 }
 
 .home main section.body div.slider div.circulo-perro img.perro {
@@ -348,66 +353,66 @@ footer {
 }
 
 
-footer article.redes h3 {
+footer .redes h3 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     font-weight: bold;
    
 }
 
-footer article.redes div a i {
+footer .redes div a i {
     font-size: 35px;
     margin-bottom: 10px;
 }
 
-footer article.lista {
+footer .lista {
     display: none;
     padding-top: 10px;
 }
 
-footer article.lista nav {
+footer .lista nav {
     display: flex;
     
 }
-footer section article.lista nav a{
+footer section .lista nav a{
     color: rgb(196, 196, 196);
 }
 
-footer article.lista nav ul h4,
-footer article.lista nav ul li {
+footer .lista nav ul h4,
+footer .lista nav ul li {
    
     color: rgb(196, 196, 196);
     text-align: initial;
 }
 
-footer article.servicios {
+footer .servicios {
     display: none;
     padding-top: 10px;
 }
 
-footer article.servicios nav ul h4,
-footer article.servicios nav ul li {
+footer .servicios nav ul h4,
+footer .servicios nav ul li {
    
     color: rgb(196, 196, 196);
     text-align: initial;
 }
 
-footer article.redes h3 {
+footer .redes h3 {
     color: rgb(196, 196, 196);
     padding: 10px 0;
 }
 
-footer article.redes div a {
+footer .redes div a {
     color: rgb(196, 196, 196);
     margin: 0 5px;
 }
 
-footer article.redes p {
+footer .redes p {
     color: rgb(196, 196, 196);
     font-size: 15px;
 }
 
-footer article div.ayuda {
+footer  div.ayuda {
     padding-bottom: 10px;
 }
 
@@ -506,29 +511,27 @@ header.header div.banner div.menu label i {
     
     .home main div.comunidad div.comunidad-quienes-somos {
         display: inline-block;
-      }
+    }
 
-      .home main div.productos article.producto-cuatro {
+    .home main div.productos article.producto-cuatro {
         display: inline-block;
         width: 225px;
-      }
-      
-      footer section {
-          display: flex;
-          width: 100%;
-          justify-content:space-around ;
-          
-      }
+    }  
+    footer section {
+        display: flex;
+        width: 100%;
+        justify-content:space-around ;      
+    }
 
-      footer article.redes h3 {
-          font-size: 25px;
-      }
+    footer .redes h3 {
+        font-size: 25px;
+    }
 
-    footer article.lista{
+    footer .lista{
         display: block;
     }
 
-    footer article.servicios {
+    footer .servicios {
         display: block;
     }
 }

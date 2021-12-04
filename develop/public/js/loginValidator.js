@@ -15,14 +15,14 @@ window.addEventListener('load', () =>{
         switch (true) {
             case !inputEmailLogin.value.trim():
                 errorEmailLogin.innerText = 'El campo correo electronico es obligatorio';
-                inputEmailLogin.style.boxShadow = '0 0 6px red'
+                inputEmailLogin.style.borderBottom = '1px solid red'
                 break;
             case !regExEmail.test(inputEmailLogin.value):
-                errorEmailLogin.innerText = 'Ingrese un email valido(Ej: mail@mail.com';
-                inputEmailLogin.style.boxShadow = '0 0 6px red'
+                errorEmailLogin.innerText = 'Ingrese un email valido(Ej: mail@mail.com)';
+                inputEmailLogin.style.borderBottom = '1px solid red'
                 break;
             default:
-                inputEmailLogin.style.boxShadow = '0 0 6px green'
+                inputEmailLogin.style.borderBottom = '1px solid var(--mantis)'
                 errorEmailLogin.innerText = "";
                 break;
         }
@@ -31,14 +31,14 @@ window.addEventListener('load', () =>{
         switch (true) {
             case !inputEmailLogin.value.trim():
                 errorEmailLogin.innerText = 'El campo correo electronico es obligatorio';
-                inputEmailLogin.style.boxShadow = '0 0 6px red'
+                inputEmailLogin.style.borderBottom = '1px solid red'
                 break;
             case !regExEmail.test(inputEmailLogin.value):
-                errorEmailLogin.innerText = 'Ingrese un email valido(Ej: mail@mail.com';
-                inputEmailLogin.style.boxShadow = '0 0 6px red'
+                errorEmailLogin.innerText = 'Ingrese un email valido(Ej: mail@mail.com)';
+                inputEmailLogin.style.borderBottom = '1px solid red'
                 break;
             default:
-                inputEmailLogin.style.boxShadow = '0 0 6px green'
+                inputEmailLogin.style.borderBottom = '1px solid var(--mantis)'
                 errorEmailLogin.innerText = "";
                 break;
         }
@@ -47,14 +47,14 @@ window.addEventListener('load', () =>{
         switch (true) {
             case !inputEmailLogin.value.trim():
                 errorEmailLogin.innerText = 'El campo correo electronico es obligatorio';
-                inputEmailLogin.style.boxShadow = '0 0 6px red'
+                inputEmailLogin.style.borderBottom = '1px solid red'
                 break;
             case !regExEmail.test(inputEmailLogin.value):
-                errorEmailLogin.innerText = 'Ingrese un email valido(Ej: mail@mail.com';
-                inputEmailLogin.style.boxShadow = '0 0 6px red'
+                errorEmailLogin.innerText = 'Ingrese un email valido(Ej: mail@mail.com)';
+                inputEmailLogin.style.borderBottom = '1px solid red'
                 break;
             default:
-                inputEmailLogin.style.boxShadow = '0 0 6px green'
+                inputEmailLogin.style.borderBottom = '1px solid var(--mantis)'
                 errorEmailLogin.innerText = "";
                 break;
         }
@@ -65,9 +65,9 @@ window.addEventListener('load', () =>{
         event.preventDefault()
         let elementsForm = formLogin.elements
         
-        for (let i = 0; i < 1 ; i++) {
+        for (let i = 0; i < 2 ; i++) {
             if(elementsForm[i].value == "" || elementsForm[i].style.borderBottom == '1px solid red'){
-                elementsForm[i].style.boxShadow = '0 0 6px red'
+                elementsForm[i].style.borderBottom = '1px solid red'
                 errorFormLogin.innerText = "Los campos señalados son obligatorios";
                 error = true;
             }

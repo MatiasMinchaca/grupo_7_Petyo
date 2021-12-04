@@ -9,32 +9,31 @@
         <div class="form-container">
             <img src="/images/floatingImage.png" alt="" class="floating-image-form">
             <img src="/images/logotipo.png" alt="" class="logo-form">
-            <a href="javascript:history.back()" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
+            <a href="/" class="close"><img src="/svg/check-and-cross-marks.svg" alt=""></a>
             <div class="div-imputs-login">
             <input id="input-email-login" type="email" placeholder="Correo electronico" name="email">
-            <% if (locals.errors && errors.email) { %>
-                <h6 class="error-message"><%= errors.email.msg %> </h6>
-            <% } %>
             <h6 id="error-email-login" class="error-message"></h6>
             </div>
             <div class="div-imputs-login">
             <input id="input-password-login" type="password" placeholder="Contraseña" name="password">
-            <% if (locals.errors && errors.password) { %>
-                <h6 class="error-message"><%= errors.password.msg %> </h6>
-            <% } %>
+            <h6 id="error-form-login" class="error-message"><%= (locals.errors && errors.custom && !errors.email && !errors.pass) ? errors.custom.msg : "" %></h6>
             <h6 id="error-password-login" class="error-message"></h6>
             </div>
             <h6 class="create-account">¿No tienes una cuenta?<a href="/users/register">Cree una.</a></h6>
-            <div class="div-imputs-login">
+            <div style="display: flex; align-items: center;" class="div-imputs-login">
                 <input type="checkbox" class="imput-checkbox" name="remember" id="check">
-                <label for="check">Mantener sesion inicida</label>
+                <label style="margin: 0 0 0 3px; cursor: pointer;" for="check">Mantener sesion inicida</label>
             </div>
             <h6 id="error-form-login" class="error-message"></h6>
             <input type="submit" value="iniciar sesión" class="button-forms login-button">
         </div>
-        <a href="/users/register" class="recovery-options">
+        <a style="display: none;" href="/users/register" class="recovery-options">
             <i class="fas fa-key"></i><p>Opciones de recuperacion de tu cuenta</p>
         </a>
     </form>
+    <script src="/js/loginValidator.js"></script>
+    <a href="https://api.whatsapp.com/send?phone=+5493873693495" class="btn-flotante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>

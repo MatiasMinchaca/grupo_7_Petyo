@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD -->
+<%- include('./partials/head') %> 
+
+<body>
+<!-- HEADER -->
+<%- include('./partials/header') %> 
+
+<main class="error-container">
+    <div class="error-div">
+        <h1><%= messageError %> </h1>
+        <img src="/images/banners/perroTriste.png" alt="">
+    </div>
+</main>
+    
+    <!-- FOOTER -->  
+    <%- include('./partials/footer') %> 
+
+    <a href="https://api.whatsapp.com/send?phone=+5493873693495" class="btn-flotante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

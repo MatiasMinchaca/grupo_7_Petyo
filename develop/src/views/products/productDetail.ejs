@@ -3,57 +3,119 @@
 
  <!-- HEAD -->
  <%- include('../partials/head') %> 
-
+<link rel="stylesheet" href="/styleSheet/sliderDetail.css">
+<script src="/js/sliderDetail.js"></script>
 <body>
    
     <!-- HEADER -->
 <%- include('../partials/header') %> 
 
-    <main class="productocompleto">
-        <a href="javascript:history.back()"> Volver Atrás</a>
-        <section class="productocar">
-            <section class="pruebacar">
-                <img class="dogcar" src="/images/<%- product.image%>" alt="">
-                <section">
-                    <div class="descripcar">
-                        <h1><%- product.name%></h3>
+
+        
+        <div class="container">
+            <a href="javascript:history.back()" class="btn btn-primary" style="background: green; border: 1px solid black;"> Volver Atrás</a>
+            <div class="card">
+                <h5 class="card-header"><%- product.name%></h5>
+                <div class="card-body">
+                    <div class="row">
+    
+                    
+                    <div class="col-md-4">
+                        <img  class="rounded float-left" src="/images/products/<%- product.image %>" alt="">
                     </div>
-                    <div class="codprocar">
-                        <p><%- product.subcategory %>| codigo del producto: #<%- product.id %></p>
+                    <div class="descpre">
+                        <h5 class="card-title text-muted"><%- product.subcategory.name %>Codigo del producto: #<%- product.id %></h5>
                         <div>
                             <p class="precar"> $<%- product.price%> </p>
-                            <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</p>
+                            <p><img class="cardca" src="/svg/cardca.svg" alt="">ver medio de pago</img></p>
                         </div>
-                        <div>
-                            <p class="cla1">Seleccion peso Alimento: </p>
-                            <button class="bot1">10</button>
-                            <button class="bot1">15</button>
-                        </div>
+                        <% if (product.subcategory.name == 'Alimentos') { %>
+                            <div>
+                                <p class="cla1">Seleccion peso Alimento: </p>
+                                <button class="bot1">10</button>
+                                <button class="bot1">15</button>
+                            </div>
+                        <% } %>
+                        
                         <p class="cla2">Seleccione cantidad</p>
                         <div>
-                            <section class="quantity">
+                            <button class="quantity">
                                 <div class="counter">
                                     <span class="down" onClick='decreaseCount(event, this)'>-</span>
                                     <input type="text" value="1">
                                     <span class="up" onClick='increaseCount(event, this)'>+</span>
                                 </div>
-                            </section>
+                            </button>
                         </div>
                         <button class="bot1"> comprar </button>
+                        </div>
                     </div>
-            </section>
-        </section>
-        <section class="domo1">
-            <article class="descricar">
-                <%- product.description %> 
-            </article>
-        </section>
-        </section>
-        
-    </main>
-  
+                    </div>
+    
+                    <div class="card-footer text-muted">
+                        <%- product.description %>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <br>
+        <a href="https://api.whatsapp.com/send?phone=+5493873693495" class="btn-flotante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+<h1 class="text-center" style="color: white; text-shadow: 0 0 6px black;">Productos Relacionados</h1>
+
+<div class="container" style="margin: 0; width: 100%;">
+    <ul>
+        <% products.forEach(product => { %>
+            <li class="slide categories" style="width: 280px;">
+                <div class="product-card-div">
+                        <section class="product-card">
+                            <a class="anchor-card" href="/products/detail/<%- product.id %>">
+                                <a class="product-detail-card" href="/products/detail/<%- product.id %>">Detalles</a>
+                                <% if (product.discount > 0) { %>
+                                    <h1 class="product-discount-card"><%- product.discount %>% OFF</h1>
+                                <% } %>
+                                <div class="image-card">
+                                    <a href="/products/detail/<%- product.id %>"><img src="/images/products/<%- product.image %>" alt=""></a>
+                                </div>
+                                <div class="name-price-card">
+                                    <p class="subcategory-card"><%- product.subcategory %></p>
+                                    <p class="name-card">
+                                        <% if (product.name.length > 17) { %>
+                                            <%- `${product.name.slice(0,17)}...` %>
+                                        <% } else { %>
+                                            <%= product.name %>
+                                        <% } %></p>
+                                    </p>
+                                    <p class="price-card">$<%- product.price %></p>
+                                    <% if (product.shipping <= 0) { %>
+                                        <p class="shipping-card">Envio Gratis</p>
+                                    <% } else {%>
+                                        <p class="shipping-card">Envio desde: $<%= product.shipping %> </p>
+                                    <% } %>
+                                    <p class="description-card">
+                                        <% if (product.description.length > 60) { %>
+                                            <%- `${product.description.slice(0,60)}...` %>
+                                        <% } else { %>
+                                            <%= product.description %>
+                                        <% } %></p>
+                                    </p>
+                                </div>
+                            </a>
+                        </section>   
+                </div>
+            </li>
+            <% }) %>
+    </ul>
+    <a id="prev" style="left: 0;"><i class="fas fa-angle-left"></i></a>
+    <a id="next"><i class="fas fa-angle-right"></i></a>
+    
+</div>
+    
     <!-- FOOTER -->  
 <%- include('../partials/footer') %> 
+
 
 </body>
 

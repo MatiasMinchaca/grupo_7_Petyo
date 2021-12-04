@@ -1,9 +1,9 @@
 let { check } = require('express-validator');
 module.exports = [
-    check('name').isAlphanumeric('es-ES')
+    check('name')
     .notEmpty()
     .withMessage("El campo nombre no puede ir vacío")
-    .isLength({ min: 5, max: 30 })
+    .isLength({ min: 2, max: 30 })
     .withMessage("Ingrese más de 5 carácteres")
     ,
 
@@ -12,7 +12,7 @@ module.exports = [
     .withMessage("Debes elegir una categoria")
     ,
 
-    check('subcategory')
+    check('subcategoryId')
     .notEmpty()
     .withMessage("Debes elegir una subcategoría")
     ,
@@ -26,10 +26,6 @@ module.exports = [
     ,
 
     check('description')
-    .notEmpty()
-    .withMessage("El campo descripción no puede ir vacío")
-    .isLength({ min: 20, max: 500 })
-    .withMessage("Ingrese más de 30 carácteres")
+    .isLength({ max: 500 })
     ,
-   
 ]

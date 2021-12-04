@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD -->
+<%- include('../partials/head') %> 
+
+<body>
+<!-- HEADER -->
+<%- include('../partials/header') %> 
+
+<main class="search">
+    <% if (results.length == 0) { %>
+        <h3 class="search-h3-0">No hay productos relacionados: <%= search %></h3>
+    <% } else{ %>
+        <div class="div-filter">
+                <button class="button-filter">Ordenar</button>
+                
+                <button class="button-filter">Fltrar</button>
+                <section style="display: none;">
+
+                </section>
+            </div>
+            <h3 class="search-h3"><%= search %></h3>
+            <section class="section-filter">
+                <div style="display: none;">
+                    <button class="button-filter">Ordenar</button>
+                </div>
+                <div class="container-filter-desktop">
+                    <button class="button-filter-desktop" id="button-filter-desktop">Fltrar</button>
+                    <div>
+                        <input type="checkbox" class="checkbox-filter" name="" id="check-subcategory-alimentos">
+                        <label name="Alimentos" style="cursor: pointer;" id="label-subcategory-alimentos" for="check-subcategory-alimentos">Alimentación</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox-filter"  name="" id="check-subcategory-accesorios">
+                        <label name="Accesorios" style="cursor: pointer;" id="label-subcategory-accesorios" for="check-subcategory-accesorios">Accesorios</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox-filter" name="" id="check-subcategory-toys">
+                        <label name="Juguetes" style="cursor: pointer;" id="label-subcategory-toys" for="check-subcategory-toys">Juguetes</label>
+                    </div>
+                    <button class="button-delete-desktop" id="button-delete-desktop">Borrar Seleccion</button>
+                </div>
+            </section>
+            <div id="product-card-div" class="product-card-div">
+                <% results.forEach(product => { %>
+                <article name="<%= product.subcategory.name %>" price="<%= product.price  %> " style="display: flex;" class="product-card">
+                    <a class="anchor-card" href="/products/detail/<%- product.id %>">
+                        <% if (product.discount > 0) { %>
+                            <h1 class="product-discount-card"><%- product.discount %>% OFF</h1>
+                        <% } %>
+                        <div class="image-card">
+                            <a href="/products/detail/<%- product.id %>"><img src="/images/products/<%- product.image %>" alt=""></a>
+                        </div>
+                        <div class="name-price-card">
+                            <p class="name-card">
+                                <% if (product.name.length > 17) { %>
+                                    <%- `${product.name.slice(0,17)}...` %>
+                                <% } else { %>
+                                    <%= product.name %>
+                                <% } %></p>
+                            <p class="price-card">$<%- product.price %></p>
+                            <p class="shipping-card">Envio Gratis</p>
+                        </div>
+                    </a>
+                </article>
+                <% }) %> 
+            </div>
+    <% } %>
+    
+</main>
+    <!-- FOOTER -->  
+    <%- include('../partials/footer') %> 
+
+    <a href="https://api.whatsapp.com/send?phone=+5493873693495" class="btn-flotante">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script src="/js/filterSearch.js"></script>
+</body>
+</html>

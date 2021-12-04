@@ -17,9 +17,11 @@
         <% products.forEach(product => { %>
         <section class="product-card">
             <a class="anchor-card" href="/products/detail/<%- product.id %>">
-                <h1 class="product-discount-card"><%- product.discount %>% OFF</h1>
+                <% if (product.discount > 0) { %>
+                    <h1 class="product-discount-card"><%- product.discount %>% OFF</h1>
+                <% } %>
                 <div class="image-card">
-                    <a href="/products/detail/<%- product.id %>"><img src="/images<%- product.image %>" alt=""></a>
+                    <a href="/products/detail/<%- product.id %>"><img src="/images/products/<%- product.image %>" alt=""></a>
                 </div>
                 <div class="name-price-card">
                     <p class="subcategory-card"><%- product.subcategory %></p>
@@ -30,7 +32,11 @@
                             <%= product.name %>
                         <% } %></p>
                     </p>
-                    <p class="price-card">$<%- product.price %></p>
+                    <% if (product.shipping <= 0) { %>
+                        <p class="shipping-card">Envio Gratis</p>
+                    <% } else {%>
+                        <p class="shipping-card">Envio desde: $<%= product.shipping %> </p>
+                    <% } %>
                     <p class="shipping-card">Envio Gratis</p>
                     <p class="description-card">
                         <% if (product.description.length > 60) { %>

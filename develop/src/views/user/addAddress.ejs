@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <!-- HEAD -->
+    <%- include('../partials/head') %> 
+
+<body class="body-profile">
+    <%- include('../partials/loadingImage') %> 
+    <!-- HEADER -->
+<%- include('../partials/header') %> 
+
+    <div class="editProfile-container">
+        <form action="/users/profile/addAddress/<%= user.id%>" method="POST" class="editProfile-form">
+            <div class="inputs-edit-profile">
+                <label class="addAddress" for="">Agregar Dirección</label>
+                <label for="street">Calle</label>
+                <input type="text" id="street" name="street" class="surname-edit">
+                <label for="number">Numero</label>
+                <input type="text" id="number" name="number" class="surname-edit">
+                <label for="floorOrApartament">Piso o Departamento</label>
+                <input type="text" id="floorOrApartament" name="floorOrApartament" class="surname-edit">
+                <label for="provinceSelect">Provincia</label>
+                <select type="text" name="province" id="provinceSelect" class="select-species-pet">
+                    <option value="" selected hidden>Provincia</option>
+                </select>
+                <label for="citySelect">Ciudad</label>
+                <select type="text" name="city" id="citySelect" class="select-species-pet">
+                    <option value="" selected hidden>Ciudad</option>
+                    <option value="" >Seleccione una provincia</option>
+                </select>
+                <label for="postalCode">Codigo postal</label>
+                <input type="text" id="postalCode" name="postalCode" class="surname-edit">
+                <input type="submit" value="Agregar dirección" class="save-profile">
+                <a href="/users/profile" class="save-profile">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <!-- FOOTER -->  
+    <%- include('../partials/footer') %>
+    <!-- JavaScript -->
+    <script src="/js/users.js"></script>
+    <script src="/js/address.js"></script>
+</body>
+</html>

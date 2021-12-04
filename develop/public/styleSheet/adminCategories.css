@@ -1,0 +1,120 @@
+.page-content .grid > .article-list-categories{
+    display: flex;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    height: fit-content;
+    height: -moz-fit-content;
+    box-shadow: none;
+    padding-bottom: 50px;
+}
+.admin-categories-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.admin-categories-container .div-category-add{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.admin-categories-container .div-category-add h1{
+    color: black;
+    margin: 8px 0;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 0 3px 6px white;
+}
+.admin-categories-container .table-categories-admin-container{
+    margin: 0 10px;
+    background: rgba(255, 255, 255, 0.8);
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin thead tr th{
+    box-shadow: 0 0 2px black;
+    text-align: center;
+    width: 100px;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody{
+    color: black;
+    font-weight: bold;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr td{
+    border: 1px solid black;
+    text-align: center;
+    font-size: 15px;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr td p{
+    text-align: center;
+    font-size: 12px;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr .id-categories-admin{
+    text-align: center;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr .price-td{
+    text-align: center;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr .category-td{
+    text-align: center;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr .category-td .image-catgegory{
+    width: 50px;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr .options-admin{
+    text-align: center;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr td .btn-edit-category{
+    margin: 2px;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr td a svg{
+    height: 30px;
+    width: 30px;
+    margin: 10px 0 5px;
+    transition: all 0.5s ease-in-out;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr td .btn-edit-category:hover{
+    transform: scale(1.01);
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin tbody tr td form .btn-remove-category{
+    border: none;
+    background-color: none;
+    margin: 5px 0 10px;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin .sub-category-th{
+    display: none;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin .sub-category-td{
+    display: none;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin .discount-th{
+    display: none;
+}
+.admin-categories-container .table-categories-admin-container .table-categories-admin .discount-td{
+    display: none;
+}
+@media screen and (min-width:480px) {
+    .admin-categories-container .div-category-add h1{
+        margin-left: 30px;
+        font-size: 35px;
+    }
+    .admin-categories-container .table-categories-admin-container .table-categories-admin {
+        font-size: 18px;
+    }
+    .admin-categories-container .table-categories-admin-container .table-categories-admin thead tr th{
+        width: 120px;
+    }
+}
+@media screen and (min-width:1024px) {
+    .admin-categories-container .div-category-add h1{
+        margin-left: 30px;
+        font-size: 35px;
+    }
+    .admin-categories-container .table-categories-admin-container .table-categories-admin {
+        font-size: 18px;
+    }
+    .admin-categories-container .table-categories-admin-container .table-categories-admin thead tr th{
+        width: 120px;
+    }
+}

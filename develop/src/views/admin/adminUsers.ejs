@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/images/isotipo.png" type="image/x-icon" rel="shortcut icon" />
+  
+    <link rel="stylesheet" href="/styleSheet/adminDashboard.css">
+    <link rel="stylesheet" href="/styleSheet/adminUsers.css">
+</head>
+<body>
+    <%- include('../partials/adminHeader') %> 
+        </section>
+        <section class="grid">
+        <article class="article-list-users">
+            <main class="admin-users-container">
+                <div class="div-user-add">
+                    <h1>Usuarios</h1>
+                </div>
+                <div class="table-users-admin-container">
+                    <table class="table-users-admin">
+                    <thead>
+                        <tr>
+                        <th scope="col">Rol</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Correo Electronico</th>
+                        <th scope="col">Cambiar Rol</th>
+                        <th scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach(user => { %>
+                            <tr>
+                                <td class="id-users-admin"><%- user.rol == 1 ? 'Admin' : 'User'%></td>
+                                <td class="name-td"><%- user.name%></td>
+                                <td class="category-td"><%- user.email %></td>
+                                <td >
+                                    <form action="/admin/users/rolAdmin/<%- user.id %>?_method=PUT" method="POST">
+                                        <button type="submit" class="btn-remove-user" >
+                                            <img style="width: 35px; margin: 3px 0;" title="Cambiar a Rol Admin" src="/images/iconsPNG/iconAdmin.png" alt="">
+                                        </button>
+                                        </form>
+                                    <form action="/admin/users/rolUser/<%- user.id %>?_method=PUT" method="POST">
+                                        <button type="submit" class="btn-remove-user" >
+                                            <img style="width: 35px; margin: 3px 0;" title="Cambiar a Rol Admin" src="/images/iconsPNG/iconUser.png" alt="">
+                                        </button>
+                                    </form>
+                                </td>
+                                <td class="options-admin">
+                                    <form action="/admin/users/delete/<%- user.id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="btn-remove-user" >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/></svg>
+                                    </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                    </table>
+                </div>
+            </main></article>
+            </section>
+            
+        <script src="/js/adminDashboard.js"></script>
+</body>
+</html>
